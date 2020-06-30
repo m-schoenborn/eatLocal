@@ -5,10 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'faker'
 
-50.times do
+
+
+10.times do
   Producer.create(
     name: Faker::FunnyName.two_word_name,
-    address: Faker::Address.city)
+    phone_number: Faker::PhoneNumber.phone_number,
+    address: Faker::Address.city,
+    email: Faker::Internet.email,
+    description: Faker::Restaurant.description,
+    status: Faker::String.random(length: 4)
+    )
+
 end
