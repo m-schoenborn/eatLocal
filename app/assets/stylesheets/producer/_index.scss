@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+}
+
+.producer-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  flex-grow: 1;
+}
