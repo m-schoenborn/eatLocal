@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :role, inclusion: {in: %w(customer producer admin)}
+  has_one_attached :photo
 
+  validates :role, inclusion: { in: %w(customer producer admin) }
 end
