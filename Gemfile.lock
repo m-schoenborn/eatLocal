@@ -24,6 +24,12 @@ GIT
       railties (>= 5.2, < 6.1)
       responders (>= 2, < 4)
 
+GIT
+  remote: https://github.com/vigetlabs/active_material.git
+  revision: ea09eaccf07c49508a3a5e5b3dbfbf41a5f85a83
+  specs:
+    active_material (1.4.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -86,6 +92,10 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     arbre (1.2.1)
       activesupport (>= 3.0.0)
+    arctic_admin (3.2.0)
+      activeadmin (>= 1.1.0, < 3.0)
+      font-awesome-sass (~> 5.0)
+      jquery-rails
     autoprefixer-rails (9.8.4)
       execjs
     bcrypt (3.1.13)
@@ -290,7 +300,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_material!
   activeadmin!
+  arctic_admin
   autoprefixer-rails
   bootsnap (>= 1.4.2)
   byebug
