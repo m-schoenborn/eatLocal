@@ -1,9 +1,21 @@
-.container {
-  display: flex;
+.big-container {
+  position: relative;
 }
 
-.producer-cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  flex-grow: 1;
+#map-button {
+  position: absolute;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+
+.specific-info {
+   display: flex;
+  p {
+    margin: 0;
+    margin-left: 10px;
+  }
 }
