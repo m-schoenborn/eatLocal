@@ -17,18 +17,16 @@ ActiveAdmin.register_page "Dashboard" do
           end
         end
       end
-      column do
-         panel "Recent Users" do
-          table_for User.order("id desc").limit(10).each do |_user|
-            column(:email)    { |user| link_to(user.email, admin_user_path(user)) }
-          end
-        end
-      end
     end
-    # end of columns
 
-
-
-
+    columns do
+     column do
+       panel "Producer request" do
+        span link_to "Accept"
+        span link_to "Edit"
+       end
+      end
+     end
+      # end of columns
   end
 end
