@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/update'
   ActiveAdmin.routes(self)
   devise_for :users
   resources :users, only: [:update]
