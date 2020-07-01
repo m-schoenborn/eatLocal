@@ -33,6 +33,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
 
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
 # ADMIN STYLE GEMS
 gem 'arctic_admin'
 gem "active_material", github: "vigetlabs/active_material"

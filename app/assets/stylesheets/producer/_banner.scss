@@ -1,0 +1,40 @@
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.producer_details {
+  margin-left: 50px;
+  margin-right: 20px;
+}
+
+.card-body {
+  box-shadow: 3px 3px 10px;
+  background-color: #E5EDB7;
+}
+
+.btn-main {
+  margin-top: 50px;
+}
+
+.list-group-item {
+  background-color: #E5EDB7;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
