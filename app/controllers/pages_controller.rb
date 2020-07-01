@@ -5,6 +5,5 @@ class PagesController < ApplicationController
   end
 
   def profile
-    @user == current_user
   end
 end
