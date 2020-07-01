@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'whatisinseason', to: 'pages#whatisinseason'
   get 'articles', to: 'pages#articles'
 
+  get "profile", to: "pages#profile", as: "profile"
+
   resources :producers, only: [:index, :show] do
     resources :comments, only: [:new, :create, :destroy]
   end
