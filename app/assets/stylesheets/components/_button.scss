@@ -1,6 +1,6 @@
 .btn-main {
-  color: #394648;
-  border: 2px solid #394648;
+  color: $gray;
+  border: 2px solid $gray;
   padding: 8px 24px;
   opacity: 0.6;
   transition: opacity 0.3s ease;
@@ -11,13 +11,13 @@
 .btn-main:hover {
   opacity: 1;
   text-decoration: none;
-  color: black;
-  border: 2px solid black;
+  color: $black;
+  border: 2px solid $black;
 }
 
 .btn-green {
-  color: #838B55;
-  border: 1.5px solid #838B55;
+  color: $green;
+  border: 1.5px solid $green;
   padding: 8px 24px;
   opacity: 0.6;
   transition: opacity 0.3s ease;
@@ -29,6 +29,6 @@
   opacity: 1;
   text-decoration: none;
   color: black;
-  border: 2px solid #6B7246;
-  color: #6B7246;
+  border: 2px solid $green-hover;
+  color: $green-hover;
 }
