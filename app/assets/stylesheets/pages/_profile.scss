@@ -1,0 +1,18 @@
+.welcome, h3 {
+  letter-spacing: 3px;
+}
+
+
+.info-container {
+  letter-spacing: 3px;
+  border: 1px solid $gray;
+  width: 330px;
+  padding: 20px;
+  margin-top: 20px;
+  .avatar-info {
+    text-align: center;
+    margin-bottom: 30px;
+    .update-info-links {
+    }
+  }
+}

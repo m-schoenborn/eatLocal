@@ -1,17 +1,23 @@
 <div class="container">
-  <div>
-    <h3><%= "WELCOME BACK #{current_user.first_name} #{current_user.last_name}" %>
+  <div class="WELCOME">
+    <h3><%= "WELCOME BACK #{current_user.first_name.upcase} #{current_user.last_name.upcase} !" %>
   </div>
   <div class="container d-flex">
-    <div class="update-info border">
-      <p><%= link_to "UPDATE PASSWORD", edit_user_registration_path, class: "text-secondary" %> </p>
-      <a href="#" class="text-secondary" data-toggle="modal" data-target="#exampleModalLong">UPDATE PERSONAL INFO</a>
+    <div class="info-container">
+      <div class="avatar-info">
+        <%= user_image(current_user) %>
+      </div>
+      <div class="update-info-links">
+        <p><%= link_to "UPDATE PASSWORD", edit_user_registration_path, class: "text-secondary" %> </p>
+        <a href="#" class="text-secondary" data-toggle="modal" data-target="#exampleModalLong">UPDATE PERSONAL INFO</a>
+      </div>
     </div>
-    <div class="saved-info">
+    <div class="saved-container border w-500">
 
     </div>
   </div>
 </div>
+
 
 <!-- MODAL -->
 

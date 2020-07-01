@@ -1,5 +1,5 @@
 
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-xl navbar-light navbar-lewagon">
   <%= link_to "#", class: "navbar-brand" do %>
     <%= image_tag "eat_local_logo.png", width: "250" %>
     <% end %>
@@ -11,26 +11,40 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "ABOUT", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "WHAT'S IN SEASON", "#", class: "nav-link" %>
-        </li>
+      <li class="nav-item active">
+        <%= link_to "ABOUT", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "WHAT'S IN SEASON", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "ARTICLES", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "BECOME A PRODUCER", "#", class: "nav-link" %>
+      </li>
+    </ul>
+
+    <% if user_signed_in? %>
+      <ul class="nav navbar-nav navbar-right">
         <li class="nav-item dropdown">
           <%= user_avatar_image(current_user) %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "My profile", profile_path , class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%= link_to "MY PROFILE", profile_path , class: "dropdown-item" %>
+            <%= link_to "MESSAGES", profile_path , class: "dropdown-item" %>
+            <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
+      </ul>
       <% else %>
-        <li class="nav-item">
-          <%= link_to "LOGIN", new_user_session_path, class: "nav-link" %>
-          <%= link_to "SIGN UP", new_user_registration_path, class: "nav-link" %>
-        </li>
-      <% end %>
-    </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%= link_to "LOGIN", new_user_session_path, class: "nav-link" %>
+          </li>
+          <li>
+            <%= link_to "SIGN UP", new_user_registration_path, class: "nav-link" %>
+          </li>
+        </ul>
+    <% end %>
   </div>
 </div>
