@@ -7,6 +7,14 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-#map {
+.map-box {
   height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+#button-map {
+  color: #6B7246;
+  border-color: white;
+  background-color: #6B7246;
 }
