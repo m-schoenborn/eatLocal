@@ -1,0 +1,28 @@
+.producer-card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.producer-card h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.producer-card p {
+  font-size: 12px;
+  opacity: 0.7;
+  margin: 0;
+}
+
+.producer-card > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.producer-card .card-infos {
+  padding: 16px;
+  display: flex;
+}
