@@ -10,25 +10,22 @@ ActiveAdmin.register_page "Dashboard" do
     end
 
     # Here is an example of a simple dashboard with columns and panels.
-    #
-    # columns do
-    #   column do
-    #     panel "Recent Posts" do
-    #       ul do
-    #         Post.recent(5).map do |post|
-    #           li link_to(post.title, admin_post_path(post))
-    #         end
-    #       end
-    #     end
-    #   end
 
-    #   column do
-    #     panel "Info" do
-    #       para "Welcome to ActiveAdmin."
-    #     end
-    #   end
-    # end
-    # content
+   columns do
+      column do
+        panel "Registered producers" do
+          table_for Producer.all.order("id desc").limit(5) do
+            column("Name") { |producer| status_tag(producer.name) }
+            column("Address") { |producer| status_tag(producer.address) }
+            column("Phone number") { |producer| status_tag(producer.phone_number) }
+            column("E-mail") { |producer| status_tag(producer.email) }
+
+
+          end
+        end
+      end
+    end
+
 
 
   end
