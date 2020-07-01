@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="d-flex justify-content-center">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1 style="text-align: center;">Request to become a featured producer</h1>
+    <%= simple_form_for @producer,  url: new_admin_producer_path(@producer), method: :post) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address%>
+      <%= f.input :email %>
+      <%= f.input :phone_number %>
+      <%= f.input :description %>
+      <%= f.input :location %>
+      <div class="row d-flex justify-content-center">
+        <div class="col-align-self-center">
+          <div>
+             <%= f.button :submit, "Send", id:"button-book" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+        <div class="container mt-5 pt-4">
+            <div class="row d-flex justify-content-center">
+             <div class="col-align-self-center">
+                <div>
+                    <%= link_to "Back", root_path, :class => "btn-back"%>
+                </div>
+             </div>
+           </div>
+        </div>
+    </div>
+  </div>
+</div>

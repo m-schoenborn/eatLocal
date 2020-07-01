@@ -37,6 +37,18 @@ class ProducersController < ApplicationController
     @producer.update(producer_params)
   end
 
+  def accept
+    @producer = Producer.find(params[:id])
+    @producer.status = 'accepted'
+    @producer.save
+  end
+
+  def decline
+    @producer = Producer.find(params[:id])
+    @producer.status = 'declined'
+    @producer.save
+  end
+
   private
 
   def producer_params

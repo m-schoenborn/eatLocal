@@ -22,5 +22,12 @@ Rails.application.routes.draw do
     end
   end
 
+resources :producers do
+  member do
+    get :accept
+    get :decline
+  end
+end
+
  #TO ADD ADMIN GEM
 end
