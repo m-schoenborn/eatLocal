@@ -15,6 +15,8 @@
     address: Faker::Address.city,
     email: Faker::Internet.email,
     description: Faker::Restaurant.description,
+    latitude: Faker::Address.latitude,
+    longitude: Faker::Address.longitude,
     status: Faker::String.random(length: 4)
     )
 

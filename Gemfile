@@ -38,6 +38,7 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 # ADMIN STYLE GEMS
 gem 'arctic_admin'
 gem "active_material", github: "vigetlabs/active_material"
+gem 'chartkick'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
