@@ -1,50 +1,55 @@
-<body style="background-color: powderblue;">
+<body style="background-color: #f2f2f0;">
 
 
 <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1507598641400-ec3536ba81bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
-  Breakfast
+  <%= @producer.name %>
 </div>
 
+<div class="container">
+    <div>
+      <img src="https://source.unsplash.com/random/250x300">
+    </div>
 
-<div class="col-md-8 mx-auto" style="background-image: url('../images/carrots.jpg');">
-    <div class="card mb-3" style="margin-top: 10%">
-      <img class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title"><%= @producer.name %></h5>
-        <p class="card-text">As the leading voice of the natural products industry, the Natural Products Association’s mission is to advocate for the rights of consumers to have access to products that will maintain and improve their health, and for the rights of retailers and suppliers to sell these products.</p>
-      </div>
+    <div class="col-md-8 mx-auto">
+        <div class="card mb-3" style="margin-top: 5%">
+          <div class="card-body">
+            <p class="card-text">As the leading voice of the natural products industry, the Natural Products Association’s mission is to advocate for the rights of consumers to have access to products that will maintain and improve their health, and for the rights of retailers and suppliers to sell these products.</p>
+          </div>
+        </div>
     </div>
 </div>
 
 
+<div class="producer_details">
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title d-flex justify-content-center">Info details</h5>
+              <li class="list-group-item">Phone number - <%= @producer.phone_number %></li>
+              <li class="list-group-item">E-mail - <%= @producer.email %></li>
+              <li class="list-group-item">Address - <%= @producer.address %></li>
+              <br>
+              <a class="btn-main d-flex justify-content-around" href="#" class="btn btn-primary">Contact</a>
+            </div>
+          </div>
+        </div>
 
+        <div class="col-sm-8">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">The way we do our quality products</h5>
+              <p class="card-text">Before agriculture became widespread, people spent most of their lives searching for food—hunting wild animals and gathering wild plants. About 11,500 years ago, people gradually learned how to grow cereal and root crops, and settled down to a life based on farming.</p>
+              <p class="card-text">Agriculture enabled people to produce surplus food. They could use this extra food when crops failed or trade it for other goods. Food surpluses allowed people to work at other tasks unrelated to farming.
 
-<div class="row" style="margin-top: 10%">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Info details</h5>
-        <li class="list-group-item">Phone number - <%= @producer.phone_number %></li>
-        <li class="list-group-item">E-mail - <%= @producer.email %></li>
-        <li class="list-group-item">Address - <%= @producer.address %></li>
+    Agriculture kept formerly nomadic people near their fields and led to the development of permanent villages. These became linked through trade. New economies were so successful in some areas that cities grew and civilizations developed. The earliest civilizations based on intensive agriculture arose near the Tigris and Euphrates Rivers in Mesopotamia (now Iraq and Iran) and along the Nile River in Egypt.Improved Technology</p>
 
-        <a href="#" class="btn btn-primary">Contacts</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">The way we do our quality products</h5>
-        <p class="card-text"><%= @producer.description %></p>
-
-      </div>
-    </div>
-  </div>
 </div>
-
-
 
 
 
