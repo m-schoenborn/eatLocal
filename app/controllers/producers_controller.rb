@@ -25,6 +25,7 @@ class ProducersController < ApplicationController
     @producer = Producer.new(producer_params)
     current_user.role = 'admin'
     @producer.save
+    ProducerMailer.acceptance_email(@producer).deliver_now
     redirect_to admin_dashboard_path
   end
 
