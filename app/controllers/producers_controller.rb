@@ -1,6 +1,10 @@
 class ProducersController < ApplicationController
   def index
-    @producers = Producer.geocoded
+    if params[:query].present?
+      @producers = Producer.near([params[:lat], params[:lng]], 20)
+    else
+      @producers = Producer.geocoded
+    end
 
     @markers = @producers.map do |producer|
       {
