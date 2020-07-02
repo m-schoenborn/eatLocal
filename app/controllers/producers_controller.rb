@@ -32,6 +32,8 @@ class ProducersController < ApplicationController
   def new
     @producer = Producer.new
     current_user.role = 'admin'
+    # flash[:notice] = 'Request successful. You will be contacted by eatLocal'
+
   end
 
   def create
