@@ -40,7 +40,8 @@ class ProducersController < ApplicationController
     @producer = Producer.new(producer_params)
     current_user.role = 'admin'
     @producer.save
-    redirect_to admin_dashboard_path
+    redirect_to root_path
+    flash[:notice] = 'Request successful. You will be contacted by eatLocal'
   end
 
   def edit
