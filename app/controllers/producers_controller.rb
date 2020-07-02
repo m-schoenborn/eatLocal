@@ -6,8 +6,8 @@ class ProducersController < ApplicationController
       {
         lat: producer.latitude,
         lng: producer.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { producer: producer })
-        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+        infoWindow: render_to_string(partial: "info_window", locals: { producer: producer }),
+        image_url: helpers.asset_url('https://images.unsplash.com/photo-1507598641400-ec3536ba81bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'),
       }
     end
   end
