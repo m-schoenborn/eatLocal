@@ -14,6 +14,7 @@ class ProducersController < ApplicationController
 
   def show
     @producer = Producer.find(params[:id])
+    @producer = Producer.new
   end
 
   def new

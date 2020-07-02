@@ -23,7 +23,7 @@ ActiveAdmin.register_page "Dashboard" do
      column do
        panel "Producer request" do
         span link_to "Accept", producer_producers_path(@producer)
-        span link_to "Edit"
+        span link_to "Decline"
        end
       end
      end
