@@ -97,6 +97,7 @@
 
 
 .container_grid {
+  padding: 6px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-auto-rows: 200px;
@@ -105,6 +106,7 @@
 }
 
 .container_grid img {
+  padding: 5px;
    width: 100%;
    height: 100%;
 }
