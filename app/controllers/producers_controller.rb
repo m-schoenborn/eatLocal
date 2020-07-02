@@ -1,10 +1,17 @@
 class ProducersController < ApplicationController
   def index
+
+    if params[:query].present?
+      @producers = Producer.near([params[:lat], params[:lng]], 20)
+    else
+      @producers = Producer.geocoded
+    end
     @producers = Producer.where(status: 'accepted')
     if params[:query].present?
       @producers = Producer.where(status: 'accepted').near([params[:lat], params[:lng]], 20)
     else
       @producers = Producer.where(status: 'accepted').geocoded
+
     end
 
     @markers = @producers.map do |producer|

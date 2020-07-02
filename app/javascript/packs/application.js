@@ -37,6 +37,7 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 
 import { initMapbox } from '../plugins/init_mapbox';
+import { initAutocomplete } from '../plugins/init_autocomplete';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -45,4 +46,6 @@ document.addEventListener('turbolinks:load', () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   initMapbox();
+  initAutocomplete();
 });
+
