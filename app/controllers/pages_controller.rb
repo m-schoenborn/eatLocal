@@ -6,4 +6,13 @@ class PagesController < ApplicationController
 
   def profile
   end
+
+  def about
+  end
+
+  def whatisinseason
+  end
+
+  def articles
+  end
 end

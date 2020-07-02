@@ -1,9 +1,10 @@
 .navbar-lewagon {
+  z-index: 9999;
   top: 0;
   position: fixed;
   width: 100%;
   // justify-content: space-between;
-  background: transparent;
+  background-color: white;
   transition: 0.5s background-color ease;
   letter-spacing: 3px;
 }
@@ -18,4 +19,23 @@
 
 .navbar-lewagon .navbar-brand img {
 //   width: 40px;
+}
+
+.pages.home {
+  .navbar-lewagon {
+    background-color: transparent;
+  }
+}
+
+
+@media (max-width: 1222px) {
+  .navbar-nav {
+    text-align: right;
+    background-color: white;
+    padding-right: 10px;
+    ul {
+      width: 300px;
+    }
+
+  }
 }
