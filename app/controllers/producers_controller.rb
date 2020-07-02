@@ -1,9 +1,17 @@
 class ProducersController < ApplicationController
   def index
+
     if params[:query].present?
       @producers = Producer.near([params[:lat], params[:lng]], 20)
     else
       @producers = Producer.geocoded
+    end
+    @producers = Producer.where(status: 'accepted')
+    if params[:query].present?
+      @producers = Producer.where(status: 'accepted').near([params[:lat], params[:lng]], 20)
+    else
+      @producers = Producer.where(status: 'accepted').geocoded
+
     end
 
     @markers = @producers.map do |producer|
@@ -17,12 +25,13 @@ class ProducersController < ApplicationController
   end
 
   def show
-    @producer = Producer.find(params[:id])
+    # @producer = Producer.find(params[:id])
+    @producer = Producer.new
   end
 
   def new
     @producer = Producer.new
-    current_user.role == 'admin'
+    current_user.role = 'admin'
   end
 
   def create
@@ -39,6 +48,20 @@ class ProducersController < ApplicationController
   def update
     current_user.role = 'admin'
     @producer.update(producer_params)
+  end
+
+  def accept
+    @producer = Producer.find(params[:id])
+    @producer.status = 'accepted'
+    @producer.save
+    ProducerMailer.with(producer: @producer).acceptance_email.deliver_now
+    # ProducerMailer.acceptance_email(@producer).deliver_now
+  end
+
+  def decline
+    @producer = Producer.find(params[:id])
+    @producer.status = 'declined'
+    @producer.save
   end
 
   private
