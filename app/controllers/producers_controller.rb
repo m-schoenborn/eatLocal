@@ -1,6 +1,10 @@
 class ProducersController < ApplicationController
   def index
-    @producers = Producer.geocoded
+    if params[:query].present?
+      @producers = Producer.near([params[:lat], params[:lng]], 20)
+    else
+      @producers = Producer.geocoded
+    end
 
     @markers = @producers.map do |producer|
       {
@@ -13,20 +17,19 @@ class ProducersController < ApplicationController
   end
 
   def show
-    @producer = Producer.find(params[:id])
+    # @producer = Producer.find(params[:id])
     @producer = Producer.new
   end
 
   def new
     @producer = Producer.new
-    current_user.role == 'admin'
+    current_user.role = 'admin'
   end
 
   def create
     @producer = Producer.new(producer_params)
     current_user.role = 'admin'
     @producer.save
-    ProducerMailer.acceptance_email(@producer).deliver_now
     redirect_to admin_dashboard_path
   end
 
@@ -41,8 +44,9 @@ class ProducersController < ApplicationController
 
   def accept
     @producer = Producer.find(params[:id])
-    @producer.status = 'accepted'
+    @producer.status = 'confirmed'
     @producer.save
+    ProducerMailer.acceptance_email(@producer).deliver_now
   end
 
   def decline

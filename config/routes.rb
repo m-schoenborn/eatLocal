@@ -12,17 +12,12 @@ Rails.application.routes.draw do
 
   get "profile", to: "pages#profile", as: "profile"
 
-  resources :producers, only: [:index, :show] do
-    resources :comments, only: [:new, :create, :destroy]
-  end
 
-  namespace :producer do
-    resources :producers, only: [:new, :create, :edit, :update, :destroy] do
-      resources :products, only: [:new, :create, :edit, :update, :destroy]
-    end
-  end
+
+
 
 resources :producers do
+  resources :comments, only: [:new, :create, :destroy]
   member do
     get :accept
     get :decline
