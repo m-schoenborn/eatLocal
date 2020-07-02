@@ -1,3 +1,8 @@
+.pages.profile {
+  margin-top: 80px;
+}
+
+
 .welcome, h3 {
   letter-spacing: 3px;
 }
@@ -6,13 +11,23 @@
 .info-container {
   letter-spacing: 3px;
   border: 1px solid $gray;
-  width: 330px;
+  width: 430px;
   padding: 20px;
-  margin-top: 20px;
+  margin-right: 20px;
   .avatar-info {
     text-align: center;
     margin-bottom: 30px;
     .update-info-links {
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .body-container {
+    flex-direction: column;
+    .info-container {
+      width: 100%;
+      margin-bottom: 15px;
     }
   }
 }

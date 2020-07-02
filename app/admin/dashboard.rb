@@ -8,8 +8,8 @@ ActiveAdmin.register_page "Dashboard" do
 
     columns do
       column do
-         panel " Recent Registered Producers" do
-          table_for Producer.order("id desc").limit(5) do
+         panel " RECENT REGISTERED PRODUCERS" do
+          table_for Producer.order("id desc").where(status: 'accepted').limit(5) do
             column("Name") { |producer| (producer.name) }
             column("Address") { |producer| (producer.address) }
             column("Phone number") { |producer| (producer.phone_number) }
@@ -17,18 +17,44 @@ ActiveAdmin.register_page "Dashboard" do
           end
         end
       end
+    end
+
+    columns do
       column do
-         panel "Recent Users" do
-          table_for User.order("id desc").limit(10).each do |_user|
-            column(:email)    { |user| link_to(user.email, admin_user_path(user)) }
+         panel "PRODUCERS PENDING REQUESTS" do
+          table_for Producer.where(status: 'unconfirmed') do |producer|
+            column("Name") { |producer| (producer.name) }
+            column("Address") { |producer| (producer.address) }
+            column("Phone number") { |producer| (producer.phone_number) }
+            column("E-mail") { |producer| (producer.email) }
+            column span: 2 do |producer|
+              span link_to("Accept", accept_producer_path(producer))
+           end.join(', ').html_safe
+            column do
+              span link_to("Decline", decline_producer_path(producer))
+            end.join(', ').html_safe
+           # { (span ) (span ) }
+
+             # accept_producer_path(producer)
+             # decline_producer_path(producer)
           end
         end
       end
     end
-    # end of columns
 
 
 
+    # columns do
+    # column do
+     #  panel "Producer request" do
+
+      # end
+     # end
+    # end
+      # end of columns
+
+      #column("Accept") { |producer| (producer.status == 'accepted') }
+           # column("Decline") { |producer| (producer.status == 'declined') }
 
   end
 end

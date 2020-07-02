@@ -1,7 +1,7 @@
 
 <div class="navbar navbar-expand-xl navbar-light navbar-lewagon">
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "eat_local_logo.png", width: "250" %>
+    <%= link_to image_tag("eat_local_logo.png", width: "250"), root_path %>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,16 +12,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "ABOUT", "#", class: "nav-link" %>
+        <%= link_to "ABOUT", about_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "WHAT'S IN SEASON", "#", class: "nav-link" %>
+        <%= link_to "WHAT'S IN SEASON", whatisinseason_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "ARTICLES", "#", class: "nav-link" %>
+        <%= link_to "ARTICLES", articles_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "BECOME A PRODUCER", "#", class: "nav-link" %>
+        <%= link_to "BECOME A PRODUCER", new_producer_path, class: "nav-link" %>
       </li>
     </ul>
 

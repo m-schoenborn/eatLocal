@@ -1,19 +1,20 @@
-<div class="container">
-  <div class="WELCOME">
-    <h3><%= "WELCOME BACK #{current_user.first_name.upcase} #{current_user.last_name.upcase} !" %>
+
+<div class="container d-flex flex-column">
+  <div class="WELCOME mb-3 mt-3">
+    <h3><%= "WELCOME BACK #{current_user.first_name} #{current_user.last_name} !" %>
   </div>
-  <div class="container d-flex">
-    <div class="info-container">
+  <div class="body-container d-flex p-0">
+    <div class="info-container align-items-start">
       <div class="avatar-info">
         <%= user_image(current_user) %>
       </div>
-      <div class="update-info-links">
+      <div class="update-info-links border-top pt-3">
         <p><%= link_to "UPDATE PASSWORD", edit_user_registration_path, class: "text-secondary" %> </p>
         <a href="#" class="text-secondary" data-toggle="modal" data-target="#exampleModalLong">UPDATE PERSONAL INFO</a>
       </div>
     </div>
-    <div class="saved-container border w-500">
-
+    <div class="saved-container flex-wrap border border-dark w-100 p-5">
+      <p>You have no favourites yet</p>
     </div>
   </div>
 </div>

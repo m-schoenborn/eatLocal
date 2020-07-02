@@ -17,10 +17,10 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-
     <div class="<%= controller_name %> <%= action_name %>">
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/flashes' %>
+
       <%= yield %>
     </div>
   </body>
