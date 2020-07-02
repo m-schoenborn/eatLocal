@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_02_140955) do
+ActiveRecord::Schema.define(version: 2020_07_02_152106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,22 +65,22 @@ ActiveRecord::Schema.define(version: 2020_07_02_140955) do
   end
 
   create_table "product_tags", force: :cascade do |t|
-    t.bigint "products_id", null: false
-    t.bigint "tags_id", null: false
+    t.bigint "product_id", null: false
+    t.bigint "tag_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["products_id"], name: "index_product_tags_on_products_id"
-    t.index ["tags_id"], name: "index_product_tags_on_tags_id"
+    t.index ["product_id"], name: "index_product_tags_on_product_id"
+    t.index ["tag_id"], name: "index_product_tags_on_tag_id"
   end
 
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.string "status"
-    t.bigint "producers_id"
+    t.bigint "producer_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["producers_id"], name: "index_products_on_producers_id"
+    t.index ["producer_id"], name: "index_products_on_producer_id"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -107,6 +107,6 @@ ActiveRecord::Schema.define(version: 2020_07_02_140955) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "product_tags", "products", column: "products_id"
-  add_foreign_key "product_tags", "tags", column: "tags_id"
+  add_foreign_key "product_tags", "products"
+  add_foreign_key "product_tags", "tags"
 end
