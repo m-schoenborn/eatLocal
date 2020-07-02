@@ -22,3 +22,14 @@
   border-color: white;
   background-color: #6B7246;
 }
+
+.text {
+  box-shadow: none;
+}
+
+.card-body {
+  padding: 0;
+  padding-top: 1rem;
+  box-shadow: 0px 0px 0px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
