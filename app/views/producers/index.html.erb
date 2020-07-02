@@ -41,7 +41,12 @@
         <div class="card-infos d-flex justify-content-between">
           <div class="info flex-column">
             <div class="specific-info-name"><h4><%= producer.name %></h4></div>
-            <div class="specific info"><p>Location:<%= producer.address %></p></div>
+            <% producer.products.each do |product| %>
+               <div class="specific info"><p><%= product.name %></p></div>
+               <% product.tags.each do |tag| %>
+               <div class="specific info"><p><%= tag.name %></p></div>
+               <% end %>
+            <% end %>
           </div>
           <div class="star">
             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" id="star" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
