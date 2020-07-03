@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'support@eatlocal.com'
+  default from: 'eatlocal419@gmail.com'
   layout 'mailer'
 end
