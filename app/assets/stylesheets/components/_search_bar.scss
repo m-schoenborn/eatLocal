@@ -18,8 +18,9 @@
   .search-bar {
     display: block;
     width: 75%;
-    .btn-green {
-    width: 100%;
+    input.btn-green {
+      margin-top: 5px;
+      width: 100%;
     }
   }
 }
