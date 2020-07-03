@@ -29,5 +29,3 @@ end
     producer: Producer.all.sample
     )
 end
-
-
