@@ -1,8 +1,12 @@
 
 <div class="navbar navbar-expand-xl navbar-light navbar-lewagon">
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= link_to image_tag("eat_local_logo.png", width: "250"), root_path %>
+    <% if controller_name == "pages" && action_name == "home" %>
+      <%= link_to image_tag("logo_branco.png", width: "250"), root_path %>
+    <% else  %>
+      <%= link_to image_tag("eat_local_logo.png", width: "250"), root_path %>
     <% end %>
+  <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

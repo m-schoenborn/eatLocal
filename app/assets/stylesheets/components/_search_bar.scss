@@ -4,7 +4,7 @@
   width: 30vw;
   .btn-green {
     background-color: white;
-
+    opacity: 1;
   }
 }
 
@@ -14,7 +14,7 @@
   padding: 11px;
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 1070px) {
   .search-bar {
     display: block;
     width: 75%;
