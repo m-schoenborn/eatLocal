@@ -26,9 +26,17 @@
     background-color: transparent;
     .nav-link {
       color: white;
-
     }
   }
+  .navbar-toggler i {
+    color: white;
+  }
+}
+
+
+.navbar-toggler i {
+  font-size: 25px;
+  color: black;
 }
 
 //.nav-link {
@@ -43,6 +51,14 @@
     ul {
       width: 300px;
     }
-
   }
+  .pages.home {
+  .navbar-lewagon {
+    background-color: transparent;
+    .nav-link {
+      color: black;
+
+    }
+  }
+}
 }
