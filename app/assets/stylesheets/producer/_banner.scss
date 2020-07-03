@@ -38,7 +38,6 @@
   margin-top: 30px;
 }
 
-
 .gallery {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -95,7 +94,6 @@
 }
 
 
-
 .container_grid {
   padding: 6px;
   display: grid;
@@ -114,9 +112,11 @@
 .horizontal{
     grid-column: span 2;
 }
+
 .vertical {
     grid-row: span 2;
 }
+
 .big{
     grid-column: span 2;
     grid-row: span 2;
