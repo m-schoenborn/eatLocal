@@ -27,6 +27,12 @@
       <li class="nav-item">
         <%= link_to "BECOME A PRODUCER", new_producer_path, class: "nav-link nav-topic" %>
       </li>
+      <% if current_user.role == 'admin' %>
+      <li class="nav-item">
+        <%= link_to "Admin", admin_dashboard_path, class: "nav-link nav-topic" %>
+      </li>
+      <% end %>
+
     </ul>
 
     <% if user_signed_in? %>
