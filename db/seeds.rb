@@ -70,7 +70,7 @@ Product.create(
   producer: Producer.find_by(name: 'Cobrey Farm')
   )
 
-  Producer.create(
+Producer.create(
   name: 'Miel la Molina',
   phone_number: 93759929,
   address: 'Sesimbra, Setúbal, Lisbon, 2970, Portugal',
@@ -104,3 +104,4 @@ Product.create(
 
 
 puts 'finish creating products seeds'
+
