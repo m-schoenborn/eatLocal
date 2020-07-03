@@ -5,7 +5,7 @@ ActiveAdmin.register Producer do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-   permit_params :name, :phone_number, :address, :email, :description, :status, :latitude, :longitude
+  permit_params :name, :phone_number, :address, :email, :description, :status
   #
   # or
   #
@@ -13,7 +13,7 @@ ActiveAdmin.register Producer do
   #   permitted = [:name, :phone_number, :address, :email, :description, :status, :latitude, :longitude]
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
-  # end
+  #  end
 
 
 end
