@@ -1,0 +1,25 @@
+.footer {
+    position:absolute;
+    bottom:0;
+    flex-shrink: 0;
+    width: 100vw;
+    padding: 0;
+    background-color: rgba(242,242,240,0.5);
+    margin-top: 10px;
+  
+    a {
+      color: $green;
+      padding: 0 10px;
+      font-size: 24px;
+      &:hover {
+        color: $green-hover;
+        text-decoration: none;
+      }
+    }
+  
+  .social-media {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }  
+}
