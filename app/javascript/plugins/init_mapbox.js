@@ -2,10 +2,12 @@ import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 const initMapbox = () => {
-  const mapElements = document.querySelectorAll('.map-box');
-  mapElements.forEach(mapElement => {
-    initMap(mapElement);
-  });
+  setTimeout(function(){
+    const mapElements = document.querySelectorAll('.map-box');
+    mapElements.forEach(mapElement => {
+      initMap(mapElement);
+    });
+  }, 2000);
 };
 
 const addMarkersToMap = (map, markers) => {
