@@ -1,5 +1,35 @@
 .banner {
-    opacity: 90%;
-    width: cover;
-    height: cover;
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.banner-container {
+  // text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .search-bar {
+    text-align: center;
+    input.btn-green {
+      margin-top: 5px;
+    }
+  }
+}
+
+.banner-container h1 {
+  color: white;
+  letter-spacing: 15px;
+}
+
+
+.banner-container p {
+  color: white;
+}
+

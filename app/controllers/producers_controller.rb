@@ -32,16 +32,18 @@ class ProducersController < ApplicationController
   def new
     @producer = Producer.new
     current_user.role = 'admin'
-    # flash[:notice] = 'Request successful. You will be contacted by eatLocal'
+
 
   end
 
   def create
     @producer = Producer.new(producer_params)
-    current_user.role = 'admin'
-    @producer.save
+    if @producer.save
     redirect_to root_path
     flash[:notice] = 'Request successful. You will be contacted by eatLocal'
+    else
+      render :new
+    end
   end
 
   def edit
@@ -56,8 +58,14 @@ class ProducersController < ApplicationController
   def accept
     @producer = Producer.find(params[:id])
     @producer.status = 'accepted'
-    @producer.save
+    if @producer.save
     ProducerMailer.with(producer: @producer).acceptance_email.deliver_now
+    redirect_to admin_dashboard_path
+    flash[:notice] = 'Mail sent successful'
+    else
+      redirect_to admin_dashboard_path
+    flash[:notice] = 'Mail not sent. Please try again'
+    end
     # ProducerMailer.acceptance_email(@producer).deliver_now
   end
 
