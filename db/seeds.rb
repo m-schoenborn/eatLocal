@@ -116,6 +116,16 @@ Product.create(
   description: 'Ingredients: Pumpkin, Brown Sugar, and various Spices. Prepared with 70.7g of pumpkin, 29g of sugar and 0.3g of spices per 100g.',
   producer: Producer.find_by(name: 'Alquimia dos Sabores')
   )
+Product.create(
+  name: 'Rock Pear with Moscatel Wine Jam',
+  description: 'Ingredients: Rock Pear, Sugar and “Moscatel” Wine. Prepared with 62g of pear, 34g of sugar and 4g of ‘’Moscatel’’ per 100g.',
+  producer: Producer.find_by(name: 'Alquimia dos Sabores')
+  )
+Product.create(
+  name: 'Marmalade With Coconut Sugar',
+  description: 'Ingredients: Quince, Coconut Sugar, Lemon Zest and Cinnamon Stick. Prepared with 80 g of fruit and 20 g of sugar per 100g.',
+  producer: Producer.find_by(name: 'Alquimia dos Sabores')
+  )
 
 Producer.create(
   name: 'Quinta do Olival da Murta',
