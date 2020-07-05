@@ -100,6 +100,102 @@ Product.create(
   producer: Producer.find_by(name: 'Burrow Hill Cider')
   )
 
+Producer.create(
+  name: 'Alquimia dos Sabores',
+  phone_number: 936 050 601,
+  address: 'Rua Augusto Barba Santa, CCI - 23304, 2965 - 291 Poceirão, Palmela',
+  email: 'geral@alquimia-sabores.com',
+  description: 'Everything has changed in a year of great zucchini production in which we have embraced the challenge of also taking advantage of the excess vegetables, turning them into delicious jams that have become our best bet to enter the market.
+  Combining the experience and craft method of the older with the knowledge of chemistry of the younger, new combinations of textures and flavors were born and finally led to the birth in 2011 of the brand Alquimia dos Sabores, totally dedicated to the production of jams and jellies combinated with different raw materials such as flowers and herbs, and also to the creation of unlikely combinations of fruits and vegetables.
+  The project Alquimia dos Sabores is the result of a special relationship with nature and its motivation to always produce “products with love” is due to the fact that this project reflects the lifestyle of this Portuguese family and its traditions.'
+  latitude: 38.718542,
+  longitude: -8.750787
+  )
+Product.create(
+  name: 'Pumpkin & Spices Jam',
+  description: 'Ingredients: Pumpkin, Brown Sugar, and various Spices. Prepared with 70.7g of pumpkin, 29g of sugar and 0.3g of spices per 100g.',
+  producer: Producer.find_by(name: 'Alquimia dos Sabores')
+  )
+
+Producer.create(
+  name: 'Quinta do Olival da Murta',
+  phone_number: 916 471 885,
+  address: 'Quinta do Olival da Murta , 2550-451 Cadaval - Portugal'
+  email: ' geral@quintadoolivaldamurta.pt',
+  description: 'Quinta do Olival da Murta is a traditional agricultural structure of family nature, developed over four generations. It is located 80 km from Lisbon, next to the Serra de Montejunto.
+  As is typical of these rural areas, around the main grape and wine production, a wide variety of complementary activities have emerged over time that, in an organic way, integrate a diverse unit rich in traditional histories and knowledge. A story that teaches us again to respect nature and to value the use of environmentally sustainable production methods.',
+  latitude: 39.2406945,
+  longitude: -9.0866073
+  )
+Product.create(
+  name: 'Serra Oca Wines',
+  description: 'Serra Oca wines are produced from Portuguese grape varieties, with a non-intensive viticulture and without the use of synthetic chemicals.',
+  producer: Producer.find_by(name: 'Quinta do Olival da Murta')
+  )
+
+Producer.create(
+  name: 'Mestre Henriques',
+  phone_number: 243 992 404,
+  address: 'Henricarnes, Lda. Zona Industrial de Rio Maior, 2040-357 Rio Maior - Portugal',
+  email: 'comercial@henricarnes.com',
+  description: 'Mestre Henriques is a family company established in 1978. Dedicated to the production of fine smoked sausages, manufactured according to the rich and authentic Portuguese traditions, strictly following the highest quality standards and satisfying the most demanding tastes.',
+  latitude: 39.316331,
+  longitude: -8.917514
+  )
+Product.create(
+  name: 'Flour & Pork sausage',
+  description: 'Pork Meat and Fat, Corn and Wheat Flour, Red Capsicum Paste, Salt, Spices (Paprika, Piri-piri Sauce, Cloves, Garlic).',
+  producer: Producer.find_by(name: 'Mestre Henriques')
+  )
+Product.create(
+  name: 'Extra Spicy chouriço',
+  description: 'Pork Meat, Red Capsicum Paste, Salt, Spices (Paprika, Piri-piri Sauce, Cloves, Garlic), Red Wine and White Pepper.',
+  producer: Producer.find_by(name: 'Mestre Henriques')
+  )
+Product.create(
+  name: 'Paiola',
+  description: 'Pork Meat, Red Capsicum Paste, Salt, Spices (Paprika, White Pepper, Piri-piri Sauce, Cloves, Garlic) and Red Wine.',
+  producer: Producer.find_by(name: 'Mestre Henriques')
+  )
+
+Producer.create(
+  name: 'Vumba Organic Farm',
+  phone_number: 914 093 739,
+  address: 'Rua da Teixugueira, 3300-367 São Martinho da Cortiça',
+  email: 'joana.linhares@vumba.pt',
+  description: 'Vumba produces genuinely local, high quality products and services, while at the same time preserving and improving the environment. We do so because we believe that this is the only way to contribute effectively to the
+  sustained development of our neighborhood. Vumba’s products are manually processed and most of the raw materials are from our own farm. We take care of our land with much pride and a high respect for both flora and fauna. As result of these practices, Vumba’s farm has a license for organic farming attributed by Sativa.',
+  latitude: 40.273371,
+  longitude: -8.151597
+  )
+Product.create(
+  name: 'Quinta do Carapinhal cheese - Traditional Maturation',
+  description: 'Our cheese’s traditional maturation period is around 45 days. The cheese is normally sold cut into halves (estimated weight: 420 grams) and packed in vacuum. According to its tradition, we also sell the cheese whole and wrapped in a white band (weight between 800 and 900 grams).',
+  producer: Producer.find_by(name: 'Vumba Organic Farm')
+  )
+Product.create(
+  name: 'Quinta do Carapinhal cheese - Long Maturation',
+  description: 'For strong flavor cheese lovers we have the “Quinta do Carapinhal – Long maturation”. As a result of the long maturation period the cheese gains a drier texture and a more intense flavor.',
+  producer: Producer.find_by(name: 'Vumba Organic Farm')
+  )
+
+Producer.create(
+  name: 'Ervitas Catitas',
+  phone_number:
+  address:
+  email: 'geral@ervitascatitas.eu',
+  description: 'Ervitas Catitas started in 2008 as a family-owned farm. Organic production is a life choice for us, not just an economic option. We grow several varieties of aromatic, medicinal and culinary herbs. Harvesting, drying and packaging are carried out at our facilities and we installed a distillation unit for essential oils to explore all the potential of our herbs. We provide this distillation service to other producers. In our farm there was also a traditional olive grove, from which we make organic olive oil at the Cooperative of Olivicultores de Sousel. We promote biodiversity in our fields by using appropriate agricultural practices, and use recyclable materials as much as possible in our packaging.',
+  latitude:
+  longitude:
+  )
+
+
+
+
+
+
+
+
 
 
 
