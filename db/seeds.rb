@@ -102,12 +102,12 @@ Product.create(
 
 Producer.create(
   name: 'Alquimia dos Sabores',
-  phone_number: 936 050 601,
+  phone_number: 936050601,
   address: 'Rua Augusto Barba Santa, CCI - 23304, 2965 - 291 Poceirão, Palmela',
   email: 'geral@alquimia-sabores.com',
   description: 'Everything has changed in a year of great zucchini production in which we have embraced the challenge of also taking advantage of the excess vegetables, turning them into delicious jams that have become our best bet to enter the market.
   Combining the experience and craft method of the older with the knowledge of chemistry of the younger, new combinations of textures and flavors were born and finally led to the birth in 2011 of the brand Alquimia dos Sabores, totally dedicated to the production of jams and jellies combinated with different raw materials such as flowers and herbs, and also to the creation of unlikely combinations of fruits and vegetables.
-  The project Alquimia dos Sabores is the result of a special relationship with nature and its motivation to always produce “products with love” is due to the fact that this project reflects the lifestyle of this Portuguese family and its traditions.'
+  The project Alquimia dos Sabores is the result of a special relationship with nature and its motivation to always produce “products with love” is due to the fact that this project reflects the lifestyle of this Portuguese family and its traditions.',
   latitude: 38.718542,
   longitude: -8.750787
   )
@@ -129,9 +129,9 @@ Product.create(
 
 Producer.create(
   name: 'Quinta do Olival da Murta',
-  phone_number: 916 471 885,
-  address: 'Quinta do Olival da Murta , 2550-451 Cadaval - Portugal'
-  email: ' geral@quintadoolivaldamurta.pt',
+  phone_number: 916471885,
+  address: 'Quinta do Olival da Murta , 2550-451 Cadaval - Portugal',
+  email: 'geral@quintadoolivaldamurta.pt',
   description: 'Quinta do Olival da Murta is a traditional agricultural structure of family nature, developed over four generations. It is located 80 km from Lisbon, next to the Serra de Montejunto.
   As is typical of these rural areas, around the main grape and wine production, a wide variety of complementary activities have emerged over time that, in an organic way, integrate a diverse unit rich in traditional histories and knowledge. A story that teaches us again to respect nature and to value the use of environmentally sustainable production methods.',
   latitude: 39.2406945,
@@ -145,7 +145,7 @@ Product.create(
 
 Producer.create(
   name: 'Mestre Henriques',
-  phone_number: 243 992 404,
+  phone_number: 243992404,
   address: 'Henricarnes, Lda. Zona Industrial de Rio Maior, 2040-357 Rio Maior - Portugal',
   email: 'comercial@henricarnes.com',
   description: 'Mestre Henriques is a family company established in 1978. Dedicated to the production of fine smoked sausages, manufactured according to the rich and authentic Portuguese traditions, strictly following the highest quality standards and satisfying the most demanding tastes.',
@@ -170,7 +170,7 @@ Product.create(
 
 Producer.create(
   name: 'Vumba Organic Farm',
-  phone_number: 914 093 739,
+  phone_number: 914093739,
   address: 'Rua da Teixugueira, 3300-367 São Martinho da Cortiça',
   email: 'joana.linhares@vumba.pt',
   description: 'Vumba produces genuinely local, high quality products and services, while at the same time preserving and improving the environment. We do so because we believe that this is the only way to contribute effectively to the
@@ -191,7 +191,7 @@ Product.create(
 
 Producer.create(
   name: 'Queijaria Flor da Beira',
-  phone_number: 232 960 220,
+  phone_number: 232960220,
   address: 'Parque Industrial, Lote 5, 3430-132 Carregal do Sal, PORTUGAL',
   email: 'geral@queijariaflordabeira.com',
   description: 'Este processo acontecia devido à enzima digestiva, extraída do estômago dos animais, denominada coalho, elemento de extrema importância no processo de fabricação do queijo.
@@ -213,7 +213,7 @@ Product.create(
 
 Producer.create(
   name: 'Spiracol',
-  phone_number: 91 739 5604,
+  phone_number: 917395604,
   address: 'Estrada M509, Nº000, 4540-378 Fermedo',
   email: 'spiracol@gmail.com',
   description: 'Spiracol is a young and dynamic company in Arouca, Portugal. It has been actively working in the heliciculture sector since 2015. The companys activity is diverse, exploring all the stages of snails cycle, from breeding to commercialization.',
@@ -228,9 +228,9 @@ Product.create(
 
 Producer.create(
   name: 'Casa Anadia Olive Oils',
-  phone_number: 932 951 119,
+  phone_number: 932951119,
   address: 'Quinta do Bom Sucesso, 2200-484 Alferrarede, Abrantes',
-  email: 'info@casaanadia.pt'
+  email: 'info@casaanadia.pt',
   description: 'Casa Anadia olive oil, is heir to an ancient tradition that dates back to at least the 17th century, when the ancient Manor House with a chapel were built, nowadays part of the Bom Sucesso Estate in Alferrarede. The olive groves on the Estate occupy an area of 100ha, having traditional groves and also intense olive groves, with Galega and Cobrançosa as well as Picual, Arbequina among other International varieties, the estate produces quality Protected Designation of Origin (P.D.O.) Olive Oils. Also used in the production are olives from the Estate’s centuries-old olive trees.
   Casa Anadia olive oils are the result of three different terroirs in Alferrarede, with clay, chalky and shale soils to the north. The result is single olive oil lots, a perfect alchemy of varieties and the corresponding soil.',
   latitude: 39.483291,
@@ -251,7 +251,7 @@ Producer.create(
   name: 'Hipólito - Tudo o Que a Terra Dá',
   phone_number: 249106007,
   address: 'Rua da Caniceira, nº105-A, 2140-416, Vale de Cavalos, Chamusca, Santarém',
-  email: 'tudoqueaterrada@sapo.pt'
+  email: 'tudoqueaterrada@sapo.pt',
   description: 'A company that dedicates itself to the production and commercialisation of wild products with environmental sustainability natural.
   Production and commercialisation of mushrooms and wild products; Since the production and commercialisations and the harvest of the best wild mushrooms, our company wants to acquire the status of wild company.
   Meet our products and delight in your own home, a wonderful walk through the forest!!! ',
