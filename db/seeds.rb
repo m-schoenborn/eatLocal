@@ -180,19 +180,126 @@ Product.create(
   )
 
 Producer.create(
-  name: 'Ervitas Catitas',
-  phone_number:
-  address:
-  email: 'geral@ervitascatitas.eu',
-  description: 'Ervitas Catitas started in 2008 as a family-owned farm. Organic production is a life choice for us, not just an economic option. We grow several varieties of aromatic, medicinal and culinary herbs. Harvesting, drying and packaging are carried out at our facilities and we installed a distillation unit for essential oils to explore all the potential of our herbs. We provide this distillation service to other producers. In our farm there was also a traditional olive grove, from which we make organic olive oil at the Cooperative of Olivicultores de Sousel. We promote biodiversity in our fields by using appropriate agricultural practices, and use recyclable materials as much as possible in our packaging.',
-  latitude:
-  longitude:
+  name: 'Queijaria Flor da Beira',
+  phone_number: 232 960 220,
+  address: 'Parque Industrial, Lote 5, 3430-132 Carregal do Sal, PORTUGAL',
+  email: 'geral@queijariaflordabeira.com',
+  description: 'Este processo acontecia devido à enzima digestiva, extraída do estômago dos animais, denominada coalho, elemento de extrema importância no processo de fabricação do queijo.
+  Durante séculos, a elaboração do queijo tem-se modiﬁcado e reﬁnado. A elaboração de queijos manteve-se uma actividade artesanal até à aplicação das bases cientíﬁcas, com início no começo de século XX, permitindo às fabricas produzi-los em grande escala.',
+  latitude: 40.425709,
+  longitude: -8.022512
+  )
+Product.create(
+  name: 'Buttery Ripened cheese',
+  description: 'Cheese with a sheep’s typical aroma, ripened in a controlled environment and slightly acidulous taste, presenting in its interior a soft paste with little or no eye, buttery kind with a white ivory colour and a thin straw yellow crust.',
+  producer: Producer.find_by(name: 'Queijaria Flor da Beira')
+  )
+Product.create(
+  name: 'Flor da Beira Tradição',
+  description: 'Our best milk and "know" comes Cheese Flower Border Traditional.
+  This cheese is obtained by a very strict control on the selection of our best producers of sheep Bordaleira Serra da Estrela milk, meeting the expectations of our most discerning consumer and connoisseur of traditional products.',
+  producer: Producer.find_by(name: 'Queijaria Flor da Beira')
   )
 
+Producer.create(
+  name: 'Spiracol',
+  phone_number: 91 739 5604,
+  address: 'Estrada M509, Nº000, 4540-378 Fermedo',
+  email: 'spiracol@gmail.com',
+  description: 'Spiracol is a young and dynamic company in Arouca, Portugal. It has been actively working in the heliciculture sector since 2015. The companys activity is diverse, exploring all the stages of snails cycle, from breeding to commercialization.',
+  latitude: 40.963127,
+  longitude: -8.421260
+  )
+Product.create(
+  name: 'Snails',
+  description: 'We focus primarily in the production of snails for commercialization for food industry',
+  producer: Producer.find_by(name: 'Spiracol')
+  )
 
+Producer.create(
+  name: 'Casa Anadia Olive Oils',
+  phone_number: 932 951 119,
+  address: 'Quinta do Bom Sucesso, 2200-484 Alferrarede, Abrantes',
+  email: 'info@casaanadia.pt'
+  description: 'Casa Anadia olive oil, is heir to an ancient tradition that dates back to at least the 17th century, when the ancient Manor House with a chapel were built, nowadays part of the Bom Sucesso Estate in Alferrarede. The olive groves on the Estate occupy an area of 100ha, having traditional groves and also intense olive groves, with Galega and Cobrançosa as well as Picual, Arbequina among other International varieties, the estate produces quality Protected Designation of Origin (P.D.O.) Olive Oils. Also used in the production are olives from the Estate’s centuries-old olive trees.
+  Casa Anadia olive oils are the result of three different terroirs in Alferrarede, with clay, chalky and shale soils to the north. The result is single olive oil lots, a perfect alchemy of varieties and the corresponding soil.',
+  latitude: 39.483291,
+  longitude: -8.171802
+  )
+Product.create(
+  name: 'Private Collection Olive Oil',
+  description: 'The most exquisite and balanced blend between the best olives, the best varieties, from our best olive trees.',
+  producer: Producer.find_by(name: 'Casa Anadia Olive Oils')
+  )
+Product.create(
+  name: 'POD Ribatejo Olive Oil',
+  description: 'The most complex fusion between our Portuguese varieties, Galega and Cobrançosa.',
+  producer: Producer.find_by(name: 'Casa Anadia Olive Oils')
+  )
 
+Producer.create(
+  name: 'Hipólito - Tudo o Que a Terra Dá',
+  phone_number: 249106007,
+  address: 'Rua da Caniceira, nº105-A, 2140-416, Vale de Cavalos, Chamusca, Santarém',
+  email: 'tudoqueaterrada@sapo.pt'
+  description: 'A company that dedicates itself to the production and commercialisation of wild products with environmental sustainability natural.
+  Production and commercialisation of mushrooms and wild products; Since the production and commercialisations and the harvest of the best wild mushrooms, our company wants to acquire the status of wild company.
+  Meet our products and delight in your own home, a wonderful walk through the forest!!! ',
+  latitude: 39.283583726688704,
+  longitude: -8.510584821794609
+  )
+Product.create(
+  name: 'Exotic Mushrooms',
+  description: 'Mushrooms from all over the world can be found here.',
+  producer: Producer.find_by(name: 'Hipólito - Tudo o Que a Terra Dá')
+  )
 
+Producer.create(
+  name: 'Visionagro',
+  phone_number: 925377129,
+  address: 'Estr. Rural A7 nº 22, 2090-066 Alpiarça',
+  email: 'info@vivionagro.pt',
+  description: 'VISIONAGRO LDA, has been founded in 2017 by 2 agricultural enthusiasts. This region is the most intensive agricultural region in Portugal with abundance of high quality ground water, acid and sandy soils. Region is well developed to support farming companies and has abundance of human resources to support blueberry business.',
+  latitude: 39.252941,
+  longitude: -8.547074
+   )
+Product.create(
+  name: 'Blueberries',
+  description: 'Blueberries remain one of the most nutricious, antioxidant-rich types of fruit in the world and have been shown to do everything from enhance brain health to keep your heart strong.',
+  producer: Producer.find_by(name: 'Visionagro')
+  )
 
+Producer.create(
+  name: 'Pepe Aromas',
+  phone_number: 963453763,
+  address: 'Quinta de São Miguel, 7005-127 Azaruja - PORTUGAL',
+  email: 'nuno.mendes@pepearomas.com',
+  description: 'Pepe Aromas is a family agro-business set up in 2013 as a sustainable organic farming operation employing sound environmental farming practices.
+  We produce and market prickly pears - Opuntia ficus-indica, also known as the prickly pear, Indian fig or Barbary fig, among other names - and its by-products. Our growth strategy is based on the continuous improvement of production and harvesting processes as well as research and the quest for new uses and sources of potential for the fruit and by-products. Committed to diversification and sustainability, we aim to create a citrus orchard and harness the potential of our cork- and holm-oak montado/dehesa for the  production of acorns.',
+  latitude: 38.74000562683715,
+  longitude: -7.815030812780606
+  )
+Product.create(
+  name: 'Lime trees',
+  description: 'Limes are round with a thin peel and a green or yellowish hue. The pulp of fruit is translucent and the flavour acidic. They have similar culinary and medicinal uses.',
+  producer: Producer.find_by(name: 'Pepe Aromas')
+  )
+
+Producer.create(
+  name: 'Fumeiro da Gardunha',
+  phone_number: 217750680,
+  address: 'Zona Industrial do Fundão, lot 106-108',
+  email: 'loja@dagardunha.pt',
+  description: 'Founded in 1982, the company created by José and Isabel Carlos, has become a reference in the production and marketing of hams and sausages in the Beira Baixa region. The business expanded in the 1970s, in the Fundão market, giving rise to the growing demand for hams and sausages produced by the family. José Carlos and his wife Isabel Carlos with their knowledge acquired by both from previous generations, in the art of making sausages and hams, created the Salsicharia da Gardunha in 1982.
+  The factory is located in Beira Baixa, facing the Serra da Estrela, and maintains the tradition and familiar knowledge in making the regions sausages and hams. It uses current technologies for its production and an FSSC22000 certified management system.',
+  latitude: 40.175872,
+  longitude: -7.492009
+  )
+Product.create(
+  name: 'Ready to Cut Selction Ham',
+  description: '1 Whole Ham Curing 12 months',
+  producer: Producer.find_by(name: 'Fumeiro da Gardunha')
+  )
 
 
 
