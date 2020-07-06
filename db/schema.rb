@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_06_110220) do
+ActiveRecord::Schema.define(version: 2020_07_06_140212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,15 @@ ActiveRecord::Schema.define(version: 2020_07_06_110220) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
+  end
+
+  create_table "producer_news", force: :cascade do |t|
+    t.bigint "producer_id", null: false
+    t.string "title"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["producer_id"], name: "index_producer_news_on_producer_id"
   end
 
   create_table "producers", force: :cascade do |t|
@@ -118,6 +127,7 @@ ActiveRecord::Schema.define(version: 2020_07_06_110220) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "producer_news", "producers"
   add_foreign_key "product_tags", "products"
   add_foreign_key "product_tags", "tags"
 end
