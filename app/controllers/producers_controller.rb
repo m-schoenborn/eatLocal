@@ -3,6 +3,15 @@ class ProducersController < ApplicationController
 
     if params[:query].present?
       @producers = Producer.near([params[:lat], params[:lng]], 20)
+    elsif params[:query_product].present?
+      @producers = Producer.search_by_name(params[:query_product])
+      unless @producers.present?
+        @products = Product.search_by_tag(params[:query_product])
+        @producers = []
+        @products.each do |product|
+          @producers << product.producer
+        end
+      end
     else
       @producers = Producer.geocoded
     end
