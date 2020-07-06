@@ -1,6 +1,6 @@
 class ProducersController < ApplicationController
   def index
-
+    @producers = policy_scope(Producer)
     if params[:query].present?
       @producers = Producer.near([params[:lat], params[:lng]], 20)
     elsif params[:query_product].present?
@@ -13,7 +13,7 @@ class ProducersController < ApplicationController
         end
       end
     else
-      @producers = Producer.geocoded
+      @producers = @producers.geocoded
     end
     # @producers = Producer.where(status: 'accepted')
     # if params[:query].present?
@@ -35,44 +35,55 @@ class ProducersController < ApplicationController
 
   def show
     @producer = Producer.find(params[:id])
+    authorize @producer
   end
 
   def new
     @producer = Producer.new
-    current_user.role = 'admin'
-
-
+    authorize @producer
+    # current_user.role = 'admin'
   end
 
   def create
     @producer = Producer.new(producer_params)
+    @producer.user = current_user
+    authorize @producer
     if @producer.save
-    redirect_to root_path
-    flash[:notice] = 'Request successful. You will be contacted by eatLocal'
+      redirect_to root_path
+      flash[:notice] = 'Request successful. You will be contacted by eatLocal'
     else
       render :new
     end
   end
 
   def edit
-    current_user.role = 'admin'
+    @producer = Producer.find(params[:id])
+    authorize @producer
+    # current_user.role = 'admin'
   end
 
   def update
-    current_user.role = 'admin'
-    @producer.update(producer_params)
+    # current_user.role = 'admin'
+    @producer = Producer.find(params[:id])
+    authorize @producer
+    if @producer.update(producer_params)
+      redirect_to producer_path(@producer)
+    else
+      render :edit
+    end
   end
 
   def accept
     @producer = Producer.find(params[:id])
+    authorize @producer
     @producer.status = 'accepted'
     if @producer.save
-    ProducerMailer.with(producer: @producer).acceptance_email.deliver_now
-    redirect_to admin_dashboard_path
-    flash[:notice] = 'Mail sent successful'
+      ProducerMailer.with(producer: @producer).acceptance_email.deliver_now
+      redirect_to admin_dashboard_path
+      flash[:notice] = 'Mail sent successful'
     else
       redirect_to admin_dashboard_path
-    flash[:notice] = 'Mail not sent. Please try again'
+      flash[:notice] = 'Mail not sent. Please try again'
     end
     # ProducerMailer.acceptance_email(@producer).deliver_now
   end
