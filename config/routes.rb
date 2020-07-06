@@ -12,7 +12,9 @@ Rails.application.routes.draw do
 
   get "profile", to: "pages#profile", as: "profile"
 
-
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
 
 
 

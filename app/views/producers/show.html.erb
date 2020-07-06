@@ -14,7 +14,7 @@
             <li class="list-group-item"><i class="fas fa-envelope"></i> <%= @producer.email %></li>
             <li class="list-group-item"><i class="fas fa-map-marked-alt"></i> <%= @producer.address %></li>
           <br>
-          <a class="btn-main d-flex justify-content-around" href="#" class="btn-green">Contact</a>
+          <a class="btn-main d-flex justify-content-around" href="#" class="btn-green"><%= link_to 'Contact', chatroom_messages_path(chatroom_id)  %></a>
         </div>
       </div>
       <div>
