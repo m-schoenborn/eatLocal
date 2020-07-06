@@ -1,7 +1,10 @@
 class Producer < ApplicationRecord
   belongs_to :user
   has_many :products
+
   has_many :favorites
+  has_many :producer_news
+
   #has_many :tags, through: :products
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?

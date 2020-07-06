@@ -1,17 +1,14 @@
 class ProducersController < ApplicationController
+  # http://localhost:3000/producers?query=&lat=&lng=&commit=SEARCH
   def index
     @producers = policy_scope(Producer)
-    if params[:query].present?
-      @producers = Producer.near([params[:lat], params[:lng]], 20)
+    if params[:lat].present? && params[:lng].present?
+      @producers = @producers.near([params[:lat], params[:lng]], 20)
     elsif params[:query_product].present?
-      @producers = Producer.search_by_name(params[:query_product])
-      unless @producers.present?
-        @products = Product.search_by_tag(params[:query_product])
-        @producers = []
-        @products.each do |product|
-          @producers << product.producer
-        end
-      end
+      # @producers = @producers.search_by_name(params[:query_product])
+      @products = Product.search_by_tag(params[:query_product])
+      @producers = @products.map(&:producer).uniq
+      @producers = @producers.select { |producer| producer.status == 'accepted' }
     else
       @producers = @producers.geocoded
     end

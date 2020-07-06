@@ -8,11 +8,62 @@
 
 # Producer.destroy_all
 # Product.destroy_all
-Producer.destroy_all
+Tag.destroy_all
 Product.destroy_all
+Producer.destroy_all
 
 
-puts "creating products"
+puts "creating products and tags"
+
+Tag.create(
+  name: "vegetables"
+  )
+
+Tag.create(
+  name: "Fruit"
+  )
+
+Tag.create(
+  name: "Fish"
+  )
+
+Tag.create(
+  name: "Meat"
+  )
+
+Tag.create(
+  name: "Honey"
+  )
+
+Tag.create(
+  name: "Juice"
+  )
+
+Tag.create(
+  name: "cider"
+  )
+
+Tag.create(
+  name: "dairy product"
+  )
+
+Tag.create(
+  name: "wine"
+  )
+
+Tag.create(
+  name: "jam"
+  )
+
+Tag.create(
+  name: "oil"
+  )
+
+Tag.create(
+  name: "mushrooms"
+  )
+
+user = User.create( email: "bla@bla.com", password: "123456")
 
   Producer.create(
   name: 'Quinta da Bicuda',
@@ -21,12 +72,21 @@ puts "creating products"
   email: 'quinta@bicuda.com',
   description: 'Based in Cascais, Rob and Alec Mercer have established a high welfare free-range pork and poultry farm with a simple philosophy of what’s good for the animals and the land will naturally be good for all those that eat the meat. It’s this simple philosophy that has enabled Quinta da Bicuda to rear and produce the most succulent, richly flavoured meat. All of the meat from Quinta da Bicuda is free-range and RSPCA assured. It is also Red Tractor Farm Assured. Quinta da Bicuda are multi award winning. Just in the last few years they have scooped a Compassion In World Farming Good Pig award in 2012, multiple Great Taste Awards over the years including a star for their pork in 2014 and a LEAF (Linking Environment and Farming) award.',
   latitude: 38.72240025,
-  longitude: -9.39690917
+  longitude: -9.39690917,
+  user: user
   )
 Product.create(
   name: 'Award-winning free-range pork meat',
   producer: Producer.find_by(name: 'Quinta da Bicuda')
   )
+
+ProductTag.create(
+  product: Product.find_by(name: 'Award-winning free-range pork meat'),
+  tag: Tag.find_by(name: "Meat")
+  )
+
+user = User.create( email: "bla1@bla.com", password: "123456")
+
 Producer.create(
   name: 'dunleavy Vineyards',
   phone_number: 94589032,
@@ -35,12 +95,21 @@ Producer.create(
   description: 'Combining passion, sustainable agricultural practices and the latest grape growing techniques, Dunleavy Vineyards produce fantastic rosé wine using their Pinot noir and Seyval grapes. Located in the heart of a beautiful Vale just outside Loures, Dunleavy Vineyards were first planted in 2008 by owner and manager Ingrid Bates. One of the youngest vineyard owners in Portugal, Ingrid began her viticultural career over 10 years ago when she took up a job maintaining a local vineyard. Having found her true vocation she planned and saved for her own vineyard which was planted just a few weeks before the birth of her first child. A few years down the line, and after much hard work, Dunleavy Vineyards released its first wine in 2013. The wine sold out in three days. The subsequent Pinot noir releases have proved to be just as popular winning ‘Best Local Wine’ at the Bristol Good Food Awards two years in a row, a bronze at the International Wine Challenge and countless smaller awards to boot.',
   latitude: 38.8308741,
   longitude: -9.1684512,
+   user: user
   )
 Product.create(
   name: 'Dunleavy Pinot Noir Rose',
   description: 'Dunleavy pinot noir rose is a multi-award winning Portuguese wine produced in Loures close to Lisbon. It’s light and fruity with a mouthwatering finish.',
   producer: Producer.find_by(name: 'dunleavy Vineyards')
   )
+
+ProductTag.create(
+  product: Product.find_by(name: 'Dunleavy Pinot Noir Rose'),
+  tag: Tag.find_by(name: 'wine')
+  )
+
+user = User.create( email: "bla2@bla.com", password: "123456")
+
 Producer.create(
   name: 'Familia Castano',
   phone_number: 945904823,
@@ -48,13 +117,22 @@ Producer.create(
   email: 'castanofamily@gmail.com',
   description: 'Northern Portugal is known for its warm climate wines, and the Castaño family are keen promoters of one of Portugal’s native varieties – Monastrell. Their carefully nurtured Portugeuse vineyards look beautiful and well-looked after, as they practice integrated farming production techniques, together with organic agriculture to produce some of the finest wines. The balmy Portuguese climate is perfect for delivering complex flavours, and the sandy limestone soil nourishes the grape plants with minerals. Of the family’s 600 acres, 80 percent is dedicated to growing Monastrell. It’s every wine connoisseur’s dream to see gorgeous, decades-old Monastrell vines, twined across their Las Gruesas and Pozuelo vineyards, bearing juicy grapes.',
   latitude: 42.12267315,
-  longitude: -8.76571655
+  longitude: -8.76571655,
+  user: user
   )
 Product.create(
   name: 'Castano Ecologico Macabeo',
   description: 'One sip of this organic white and you’ll be taken to the warm, sunny climes of Portugal. Imagine drinking this crisp white, while looking over sun-drenched fields and rows of pretty vines – it’ll make you feel warm and fuzzy inside. A lovely feeling, that’s enhanced by the knowledge that this vineyard is forward-thinking in their practice, driven by quality but careful to follow organic agricultural methods. The wine itself is soft and juicy, with a gentle mineral note and a super clean, fresh finish, that makes it an easy drinking dry white.',
   producer: Producer.find_by(name: 'Familia Castano')
   )
+
+ProductTag.create(
+  product: Product.find_by(name: 'Castano Ecologico Macabeo'),
+  tag: Tag.find_by(name: 'wine')
+  )
+
+user = User.create( email: "bla3@bla.com", password: "123456")
+
 Producer.create(
   name: 'Cobrey Farm',
   phone_number: 93759923,
@@ -62,13 +140,21 @@ Producer.create(
   email: 'cobrey@family.com',
   description: 'Cobrey Farm is home to Wye Valley Produce. The farm is owned by the Chinn family, fourth-generation farmers that have been growing asparagus since 2003. The perfect conditions of the Wye Valley with the south-facing slopes and sandy soil, enables produce to grow early in the spring. They have invested strongly in research in order to develop new crops and new growing techniques. The harvest is picked by hand during two periods; March to July, and September to October. Within 30 minutes the asparagus are hydro-cooled down to 2°C for packing. The result is the freshest and sweetest asparagus possible unless you grow it yourself and pick straight from the plant. Fancy a visit? They host regular visits from school children and are members of the Open Farm Sunday Scheme.',
   latitude: 41.3406144,
-  longitude: -8.68709311
+  longitude: -8.68709311,
+  user: user,
   )
 Product.create(
   name: 'Asparagus',
   description: 'There are some fresh vegetables that are simply transformed in flavour and texture by fast, short light supply chains. Local, freshly picked asparagus like this is one such product. With its long green stems and purple tinged tips, asparagus has a unique and subtle intensity of flavour. A delicacy of the vegetable world, much of the time it is simply combined with similarly rich tasting ingredients, pairing particularly well with parmesan or hollandaise sauce.',
   producer: Producer.find_by(name: 'Cobrey Farm')
   )
+
+ProductTag.create(
+  product: Product.find_by(name: 'Asparagus'),
+  tag: Tag.find_by(name: 'vegetables')
+  )
+
+user = User.create( email: "bla4@bla.com", password: "123456")
 
 Producer.create(
   name: 'Miel la Molina',
@@ -77,13 +163,21 @@ Producer.create(
   email: 'miel@molina.pt',
   description: 'Using natural extraction methods Miel La Molina produce some really unusual honeys with bees living amongst fields full of thyme, orange blossom, rosemary and eucolyptus. The result? A range of honeys so beautifully aromatic quite unlike anything on the Portugal mass market. All of the bees for each honey are based in a single region of the beautiful region of Sesimbra a couple of hours north of Lisbon. We asked Salva to explain how such exceptional honeys can be produced and delivered to Portugal at such a competitive price. We ship the honey in the same shipment as our fresh produce each week so we can basically ship it without delivery cost. This means we can enjoy the honey here at pretty much the same price as it sells in the valley where it is produced.',
   latitude: 38.4436932,
-  longitude: -9.10766602
+  longitude: -9.10766602,
+  user: user,
   )
 Product.create(
   name: 'Raw Rosemary Honey',
   description: 'Miel La Molina produce and extract their honey naturally from fruit collecting bees, spread over the landscape of the Valle del Guadalhorce, Álora and surroundings. With its sticky texture, honey is a sweet flavoured ingredient widely used in cooking for marinades, dressings and sauces, as well as sweet dishes such as cakes and biscuits. It also makes a natural sweetener in place of sugar.',
   producer: Producer.find_by(name: 'Miel la Molina')
   )
+
+ProductTag.create(
+  product: Product.find_by(name: 'Raw Rosemary Honey'),
+  tag: Tag.find_by(name: 'Honey')
+  )
+
+user = User.create( email: "bla5@bla.com", password: "123456")
 
 Producer.create(
   name: 'Burrow Hill Cider',
@@ -92,13 +186,22 @@ Producer.create(
   email: 'burrow@hillcider.pt',
   description: 'Julian Temperley and Tim Stoddart have over 50 years cider-making experience between them. At Burrow Hill, it is obvious that apples are the principal starting point for their cider with more than 40 varieties being grown such as Brown Snout, Stoke Red, Harry Masters and the legendary Kingston Black. Visiting the farm (which is a must-do day out), you feel like you’ve stepped into a vintage world of cider. We asked Julian to tell us what makes Burrow Hill cider so special.‘Our policy of growing apples is to use the minimum of sprays possible, often not spraying at all. We use no artificial nitrogen and no insecticides. This means we produce smaller and tastier apples than those grown in orchards for industrial cider and we protect the bees at the same time. In fermenting and making cider we use traditional methods, fermenting juice in the autumn without first turning it into concentrate. We grow standard rather than intensive bush orchards and traditional, old varieties that produce unreliable crops and are therefore unviable for industrial cider production but known for their unique qualities and superior tastes.’',
   latitude: 40.3723735,
-  longitude: -8.2780296
+  longitude: -8.2780296,
+  user: user,
   )
+
 Product.create(
   name: 'Discovery Apple Juice',
   description: 'Pressed from a blend of fresh Discovery apples.',
   producer: Producer.find_by(name: 'Burrow Hill Cider')
   )
+
+ProductTag.create(
+  product: Product.find_by(name: 'Discovery Apple Juice'),
+  tag: Tag.find_by(name: 'Juice')
+  )
+
+user = User.create( email: "bla6@bla.com", password: "123456")
 
 Producer.create(
   name: 'Alquimia dos Sabores',
@@ -109,23 +212,40 @@ Producer.create(
   Combining the experience and craft method of the older with the knowledge of chemistry of the younger, new combinations of textures and flavors were born and finally led to the birth in 2011 of the brand Alquimia dos Sabores, totally dedicated to the production of jams and jellies combinated with different raw materials such as flowers and herbs, and also to the creation of unlikely combinations of fruits and vegetables.
   The project Alquimia dos Sabores is the result of a special relationship with nature and its motivation to always produce “products with love” is due to the fact that this project reflects the lifestyle of this Portuguese family and its traditions.',
   latitude: 38.718542,
-  longitude: -8.750787
+  longitude: -8.750787,
+  user: user
   )
 Product.create(
   name: 'Pumpkin & Spices Jam',
   description: 'Ingredients: Pumpkin, Brown Sugar, and various Spices. Prepared with 70.7g of pumpkin, 29g of sugar and 0.3g of spices per 100g.',
   producer: Producer.find_by(name: 'Alquimia dos Sabores')
   )
+
+ProductTag.create(
+  product: Product.find_by(name: 'Pumpkin & Spices Jam'),
+  tag: Tag.find_by(name: 'jam')
+  )
 Product.create(
   name: 'Rock Pear with Moscatel Wine Jam',
   description: 'Ingredients: Rock Pear, Sugar and “Moscatel” Wine. Prepared with 62g of pear, 34g of sugar and 4g of ‘’Moscatel’’ per 100g.',
   producer: Producer.find_by(name: 'Alquimia dos Sabores')
+  )
+ProductTag.create(
+  product: Product.find_by(name: 'Rock Pear with Moscatel Wine Jam'),
+  tag: Tag.find_by(name: 'jam')
   )
 Product.create(
   name: 'Marmalade With Coconut Sugar',
   description: 'Ingredients: Quince, Coconut Sugar, Lemon Zest and Cinnamon Stick. Prepared with 80 g of fruit and 20 g of sugar per 100g.',
   producer: Producer.find_by(name: 'Alquimia dos Sabores')
   )
+
+ProductTag.create(
+   product: Product.find_by(name: 'Marmalade With Coconut Sugar'),
+   tag: Tag.find_by(name: 'jam')
+  )
+
+user = User.create( email: "bla7@bla.com", password: "123456")
 
 Producer.create(
   name: 'Quinta do Olival da Murta',
@@ -135,13 +255,22 @@ Producer.create(
   description: 'Quinta do Olival da Murta is a traditional agricultural structure of family nature, developed over four generations. It is located 80 km from Lisbon, next to the Serra de Montejunto.
   As is typical of these rural areas, around the main grape and wine production, a wide variety of complementary activities have emerged over time that, in an organic way, integrate a diverse unit rich in traditional histories and knowledge. A story that teaches us again to respect nature and to value the use of environmentally sustainable production methods.',
   latitude: 39.2406945,
-  longitude: -9.0866073
+  longitude: -9.0866073,
+  user: user,
   )
 Product.create(
   name: 'Serra Oca Wines',
   description: 'Serra Oca wines are produced from Portuguese grape varieties, with a non-intensive viticulture and without the use of synthetic chemicals.',
   producer: Producer.find_by(name: 'Quinta do Olival da Murta')
   )
+
+ProductTag.create(
+   product: Product.find_by(name: 'Serra Oca Wines'),
+   tag: Tag.find_by(name: 'wine')
+  )
+
+user = User.create( email: "bla8@bla.com", password: "123456")
+
 
 Producer.create(
   name: 'Mestre Henriques',
@@ -150,23 +279,44 @@ Producer.create(
   email: 'comercial@henricarnes.com',
   description: 'Mestre Henriques is a family company established in 1978. Dedicated to the production of fine smoked sausages, manufactured according to the rich and authentic Portuguese traditions, strictly following the highest quality standards and satisfying the most demanding tastes.',
   latitude: 39.316331,
-  longitude: -8.917514
+  longitude: -8.917514,
+  user: user,
   )
 Product.create(
   name: 'Flour & Pork sausage',
   description: 'Pork Meat and Fat, Corn and Wheat Flour, Red Capsicum Paste, Salt, Spices (Paprika, Piri-piri Sauce, Cloves, Garlic).',
   producer: Producer.find_by(name: 'Mestre Henriques')
   )
+
+ProductTag.create(
+   product: Product.find_by(name: 'Flour & Pork sausage'),
+   tag: Tag.find_by(name: 'Meat')
+  )
+
 Product.create(
   name: 'Extra Spicy chouriço',
   description: 'Pork Meat, Red Capsicum Paste, Salt, Spices (Paprika, Piri-piri Sauce, Cloves, Garlic), Red Wine and White Pepper.',
   producer: Producer.find_by(name: 'Mestre Henriques')
   )
+
+ProductTag.create(
+   product: Product.find_by(name: 'Extra Spicy chouriço'),
+   tag: Tag.find_by(name: 'Meat')
+  )
+
 Product.create(
   name: 'Paiola',
   description: 'Pork Meat, Red Capsicum Paste, Salt, Spices (Paprika, White Pepper, Piri-piri Sauce, Cloves, Garlic) and Red Wine.',
   producer: Producer.find_by(name: 'Mestre Henriques')
   )
+
+ProductTag.create(
+   product: Product.find_by(name: 'Paiola'),
+   tag: Tag.find_by(name: 'Meat')
+  )
+
+user = User.create( email: "bla9@bla.com", password: "123456")
+
 
 Producer.create(
   name: 'Vumba Organic Farm',
@@ -176,18 +326,33 @@ Producer.create(
   description: 'Vumba produces genuinely local, high quality products and services, while at the same time preserving and improving the environment. We do so because we believe that this is the only way to contribute effectively to the
   sustained development of our neighborhood. Vumba’s products are manually processed and most of the raw materials are from our own farm. We take care of our land with much pride and a high respect for both flora and fauna. As result of these practices, Vumba’s farm has a license for organic farming attributed by Sativa.',
   latitude: 40.273371,
-  longitude: -8.151597
+  longitude: -8.151597,
+  user: user,
   )
+
 Product.create(
   name: 'Quinta do Carapinhal cheese - Traditional Maturation',
   description: 'Our cheese’s traditional maturation period is around 45 days. The cheese is normally sold cut into halves (estimated weight: 420 grams) and packed in vacuum. According to its tradition, we also sell the cheese whole and wrapped in a white band (weight between 800 and 900 grams).',
   producer: Producer.find_by(name: 'Vumba Organic Farm')
   )
+
+ProductTag.create(
+   product: Product.find_by(name: 'Quinta do Carapinhal cheese - Traditional Maturation'),
+   tag: Tag.find_by(name: 'dairy product')
+  )
+
 Product.create(
   name: 'Quinta do Carapinhal cheese - Long Maturation',
   description: 'For strong flavor cheese lovers we have the “Quinta do Carapinhal – Long maturation”. As a result of the long maturation period the cheese gains a drier texture and a more intense flavor.',
   producer: Producer.find_by(name: 'Vumba Organic Farm')
   )
+
+ProductTag.create(
+   product: Product.find_by(name: 'Quinta do Carapinhal cheese - Long Maturation'),
+   tag: Tag.find_by(name: 'dairy product')
+  )
+
+user = User.create( email: "bla10@bla.com", password: "123456")
 
 Producer.create(
   name: 'Queijaria Flor da Beira',
@@ -197,19 +362,33 @@ Producer.create(
   description: 'Este processo acontecia devido à enzima digestiva, extraída do estômago dos animais, denominada coalho, elemento de extrema importância no processo de fabricação do queijo.
   Durante séculos, a elaboração do queijo tem-se modiﬁcado e reﬁnado. A elaboração de queijos manteve-se uma actividade artesanal até à aplicação das bases cientíﬁcas, com início no começo de século XX, permitindo às fabricas produzi-los em grande escala.',
   latitude: 40.425709,
-  longitude: -8.022512
+  longitude: -8.022512,
+  user: user,
   )
 Product.create(
   name: 'Buttery Ripened cheese',
   description: 'Cheese with a sheep’s typical aroma, ripened in a controlled environment and slightly acidulous taste, presenting in its interior a soft paste with little or no eye, buttery kind with a white ivory colour and a thin straw yellow crust.',
   producer: Producer.find_by(name: 'Queijaria Flor da Beira')
   )
+
+ProductTag.create(
+   product: Product.find_by(name: 'Buttery Ripened cheese'),
+   tag: Tag.find_by(name: 'dairy product')
+  )
+
 Product.create(
   name: 'Flor da Beira Tradição',
   description: 'Our best milk and "know" comes Cheese Flower Border Traditional.
   This cheese is obtained by a very strict control on the selection of our best producers of sheep Bordaleira Serra da Estrela milk, meeting the expectations of our most discerning consumer and connoisseur of traditional products.',
   producer: Producer.find_by(name: 'Queijaria Flor da Beira')
   )
+
+ProductTag.create(
+   product: Product.find_by(name: 'Flor da Beira Tradição'),
+   tag: Tag.find_by(name: 'dairy product')
+  )
+
+user = User.create( email: "bla11@bla.com", password: "123456")
 
 Producer.create(
   name: 'Spiracol',
@@ -218,13 +397,21 @@ Producer.create(
   email: 'spiracol@gmail.com',
   description: 'Spiracol is a young and dynamic company in Arouca, Portugal. It has been actively working in the heliciculture sector since 2015. The companys activity is diverse, exploring all the stages of snails cycle, from breeding to commercialization.',
   latitude: 40.963127,
-  longitude: -8.421260
+  longitude: -8.421260,
+  user: user,
   )
 Product.create(
   name: 'Snails',
   description: 'We focus primarily in the production of snails for commercialization for food industry',
   producer: Producer.find_by(name: 'Spiracol')
   )
+
+ProductTag.create(
+   product: Product.find_by(name: 'Snails'),
+   tag: Tag.find_by(name: 'Meat'),
+  )
+
+user = User.create( email: "bla12@bla.com", password: "123456")
 
 Producer.create(
   name: 'Casa Anadia Olive Oils',
@@ -234,18 +421,33 @@ Producer.create(
   description: 'Casa Anadia olive oil, is heir to an ancient tradition that dates back to at least the 17th century, when the ancient Manor House with a chapel were built, nowadays part of the Bom Sucesso Estate in Alferrarede. The olive groves on the Estate occupy an area of 100ha, having traditional groves and also intense olive groves, with Galega and Cobrançosa as well as Picual, Arbequina among other International varieties, the estate produces quality Protected Designation of Origin (P.D.O.) Olive Oils. Also used in the production are olives from the Estate’s centuries-old olive trees.
   Casa Anadia olive oils are the result of three different terroirs in Alferrarede, with clay, chalky and shale soils to the north. The result is single olive oil lots, a perfect alchemy of varieties and the corresponding soil.',
   latitude: 39.483291,
-  longitude: -8.171802
+  longitude: -8.171802,
+  user: user,
   )
+
 Product.create(
   name: 'Private Collection Olive Oil',
   description: 'The most exquisite and balanced blend between the best olives, the best varieties, from our best olive trees.',
   producer: Producer.find_by(name: 'Casa Anadia Olive Oils')
   )
+
+ProductTag.create(
+   product: Product.find_by(name: 'Private Collection Olive Oil'),
+   tag: Tag.find_by(name: 'oil')
+  )
+
 Product.create(
   name: 'POD Ribatejo Olive Oil',
   description: 'The most complex fusion between our Portuguese varieties, Galega and Cobrançosa.',
   producer: Producer.find_by(name: 'Casa Anadia Olive Oils')
   )
+
+ProductTag.create(
+   product: Product.find_by(name: 'POD Ribatejo Olive Oil'),
+   tag: Tag.find_by(name: 'oil')
+  )
+
+user = User.create( email: "bla13@bla.com", password: "123456")
 
 Producer.create(
   name: 'Hipólito - Tudo o Que a Terra Dá',
@@ -256,13 +458,21 @@ Producer.create(
   Production and commercialisation of mushrooms and wild products; Since the production and commercialisations and the harvest of the best wild mushrooms, our company wants to acquire the status of wild company.
   Meet our products and delight in your own home, a wonderful walk through the forest!!! ',
   latitude: 39.283583726688704,
-  longitude: -8.510584821794609
+  longitude: -8.510584821794609,
+  user: user,
   )
 Product.create(
   name: 'Exotic Mushrooms',
   description: 'Mushrooms from all over the world can be found here.',
   producer: Producer.find_by(name: 'Hipólito - Tudo o Que a Terra Dá')
   )
+
+ProductTag.create(
+   product: Product.find_by(name: 'Exotic Mushrooms'),
+   tag: Tag.find_by(name: 'mushrooms')
+  )
+
+user = User.create( email: "bla13@bla.com", password: "123456")
 
 Producer.create(
   name: 'Visionagro',
@@ -271,13 +481,21 @@ Producer.create(
   email: 'info@vivionagro.pt',
   description: 'VISIONAGRO LDA, has been founded in 2017 by 2 agricultural enthusiasts. This region is the most intensive agricultural region in Portugal with abundance of high quality ground water, acid and sandy soils. Region is well developed to support farming companies and has abundance of human resources to support blueberry business.',
   latitude: 39.252941,
-  longitude: -8.547074
+  longitude: -8.547074,
+  user: user,
    )
 Product.create(
   name: 'Blueberries',
   description: 'Blueberries remain one of the most nutricious, antioxidant-rich types of fruit in the world and have been shown to do everything from enhance brain health to keep your heart strong.',
   producer: Producer.find_by(name: 'Visionagro')
   )
+
+ProductTag.create(
+   product: Product.find_by(name: 'Blueberries'),
+   tag: Tag.find_by(name: 'Fruit')
+  )
+
+user = User.create( email: "bla14@bla.com", password: "123456")
 
 Producer.create(
   name: 'Pepe Aromas',
@@ -287,13 +505,22 @@ Producer.create(
   description: 'Pepe Aromas is a family agro-business set up in 2013 as a sustainable organic farming operation employing sound environmental farming practices.
   We produce and market prickly pears - Opuntia ficus-indica, also known as the prickly pear, Indian fig or Barbary fig, among other names - and its by-products. Our growth strategy is based on the continuous improvement of production and harvesting processes as well as research and the quest for new uses and sources of potential for the fruit and by-products. Committed to diversification and sustainability, we aim to create a citrus orchard and harness the potential of our cork- and holm-oak montado/dehesa for the  production of acorns.',
   latitude: 38.74000562683715,
-  longitude: -7.815030812780606
+  longitude: -7.815030812780606,
+  user: user,
   )
+
 Product.create(
   name: 'Lime trees',
   description: 'Limes are round with a thin peel and a green or yellowish hue. The pulp of fruit is translucent and the flavour acidic. They have similar culinary and medicinal uses.',
   producer: Producer.find_by(name: 'Pepe Aromas')
   )
+
+ProductTag.create(
+   product: Product.find_by(name: 'Lime trees'),
+   tag: Tag.find_by(name: 'Fruit')
+  )
+
+user = User.create( email: "bla15@bla.com", password: "123456")
 
 Producer.create(
   name: 'Fumeiro da Gardunha',
@@ -303,7 +530,8 @@ Producer.create(
   description: 'Founded in 1982, the company created by José and Isabel Carlos, has become a reference in the production and marketing of hams and sausages in the Beira Baixa region. The business expanded in the 1970s, in the Fundão market, giving rise to the growing demand for hams and sausages produced by the family. José Carlos and his wife Isabel Carlos with their knowledge acquired by both from previous generations, in the art of making sausages and hams, created the Salsicharia da Gardunha in 1982.
   The factory is located in Beira Baixa, facing the Serra da Estrela, and maintains the tradition and familiar knowledge in making the regions sausages and hams. It uses current technologies for its production and an FSSC22000 certified management system.',
   latitude: 40.175872,
-  longitude: -7.492009
+  longitude: -7.492009,
+  user: user
   )
 Product.create(
   name: 'Ready to Cut Selction Ham',
@@ -311,10 +539,12 @@ Product.create(
   producer: Producer.find_by(name: 'Fumeiro da Gardunha')
   )
 
-
-
-
-
+ProductTag.create(
+   product: Product.find_by(name: 'Ready to Cut Selction Ham'),
+   tag: Tag.find_by(name: 'Meat')
+  )
 
 puts 'finish creating products seeds'
+
+
 
