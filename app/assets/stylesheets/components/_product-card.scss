@@ -4,10 +4,10 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.card-product > img {
-  height: 200px;
-  width: 100px;
-  // object-fit: cover;
+.product-image > img {
+  height: 100%;
+  width: 270px;
+  object-fit: cover;
 }
 
 .card-product h4 {
@@ -27,5 +27,4 @@
   padding: 16px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
 }
