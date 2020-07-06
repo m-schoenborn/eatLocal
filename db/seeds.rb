@@ -12,7 +12,55 @@ Producer.destroy_all
 Product.destroy_all
 
 
-puts "creating products"
+puts "creating products and tags"
+
+Tag.create(
+  name: "vegetables"
+  )
+
+Tag.create(
+  name: "Fruit"
+  )
+
+Tag.create(
+  name: "Fish"
+  )
+
+Tag.create(
+  name: "Meat"
+  )
+
+Tag.create(
+  name: "Honey"
+  )
+
+Tag.create(
+  name: "Juice"
+  )
+
+Tag.create(
+  name: "cider"
+  )
+
+Tag.create(
+  name: "dairy product"
+  )
+
+Tag.create(
+  name: "wine"
+  )
+
+Tag.create(
+  name: "jam"
+  )
+
+Tag.create(
+  name: "oil"
+  )
+
+Tag.create(
+  name: "mushrooms"
+  )
 
   Producer.create(
   name: 'Quinta da Bicuda',
@@ -27,6 +75,13 @@ Product.create(
   name: 'Award-winning free-range pork meat',
   producer: Producer.find_by(name: 'Quinta da Bicuda')
   )
+
+ProductTag.create(
+  product: Product.find_by(name: 'Award-winning free-range pork meat'),
+  tag: Tag.find_by(name: "Meat")
+  )
+
+
 Producer.create(
   name: 'dunleavy Vineyards',
   phone_number: 94589032,
@@ -41,6 +96,12 @@ Product.create(
   description: 'Dunleavy pinot noir rose is a multi-award winning Portuguese wine produced in Loures close to Lisbon. It’s light and fruity with a mouthwatering finish.',
   producer: Producer.find_by(name: 'dunleavy Vineyards')
   )
+
+ProductTag.create(
+  product: Product.find_by(name: 'Dunleavy Pinot Noir Rose'),
+  tag: Tag.find_by(name: 'wine')
+  )
+
 Producer.create(
   name: 'Familia Castano',
   phone_number: 945904823,
@@ -55,6 +116,12 @@ Product.create(
   description: 'One sip of this organic white and you’ll be taken to the warm, sunny climes of Portugal. Imagine drinking this crisp white, while looking over sun-drenched fields and rows of pretty vines – it’ll make you feel warm and fuzzy inside. A lovely feeling, that’s enhanced by the knowledge that this vineyard is forward-thinking in their practice, driven by quality but careful to follow organic agricultural methods. The wine itself is soft and juicy, with a gentle mineral note and a super clean, fresh finish, that makes it an easy drinking dry white.',
   producer: Producer.find_by(name: 'Familia Castano')
   )
+
+ProductTag.create(
+  product: Product.find_by(name: 'Castano Ecologico Macabeo'),
+  tag: Tag.find_by(name: 'wine')
+  )
+
 Producer.create(
   name: 'Cobrey Farm',
   phone_number: 93759923,
@@ -68,6 +135,11 @@ Product.create(
   name: 'Asparagus',
   description: 'There are some fresh vegetables that are simply transformed in flavour and texture by fast, short light supply chains. Local, freshly picked asparagus like this is one such product. With its long green stems and purple tinged tips, asparagus has a unique and subtle intensity of flavour. A delicacy of the vegetable world, much of the time it is simply combined with similarly rich tasting ingredients, pairing particularly well with parmesan or hollandaise sauce.',
   producer: Producer.find_by(name: 'Cobrey Farm')
+  )
+
+ProductTag.create(
+  product: Product.find_by(name: 'Asparagus'),
+  tag: Tag.find_by(name: 'vegetables')
   )
 
 Producer.create(
@@ -85,6 +157,11 @@ Product.create(
   producer: Producer.find_by(name: 'Miel la Molina')
   )
 
+ProductTag.create(
+  product: Product.find_by(name: 'Raw Rosemary Honey'),
+  tag: Tag.find_by(name: 'Honey')
+  )
+
 Producer.create(
   name: 'Burrow Hill Cider',
   phone_number: 5739402,
@@ -98,6 +175,11 @@ Product.create(
   name: 'Discovery Apple Juice',
   description: 'Pressed from a blend of fresh Discovery apples.',
   producer: Producer.find_by(name: 'Burrow Hill Cider')
+  )
+
+ProductTag.create(
+  product: Product.find_by(name: 'Discovery Apple Juice'),
+  tag: Tag.find_by(name: 'Juice')
   )
 
 Producer.create(
@@ -116,15 +198,29 @@ Product.create(
   description: 'Ingredients: Pumpkin, Brown Sugar, and various Spices. Prepared with 70.7g of pumpkin, 29g of sugar and 0.3g of spices per 100g.',
   producer: Producer.find_by(name: 'Alquimia dos Sabores')
   )
+
+ProductTag.create(
+  product: Product.find_by(name: 'Pumpkin & Spices Jam'),
+  tag: Tag.find_by(name: 'jam')
+  )
 Product.create(
   name: 'Rock Pear with Moscatel Wine Jam',
   description: 'Ingredients: Rock Pear, Sugar and “Moscatel” Wine. Prepared with 62g of pear, 34g of sugar and 4g of ‘’Moscatel’’ per 100g.',
   producer: Producer.find_by(name: 'Alquimia dos Sabores')
   )
+ProductTag.create(
+  product: Product.find_by(name: 'Rock Pear with Moscatel Wine Jam'),
+  tag: Tag.find_by(name: 'jam')
+  )
 Product.create(
   name: 'Marmalade With Coconut Sugar',
   description: 'Ingredients: Quince, Coconut Sugar, Lemon Zest and Cinnamon Stick. Prepared with 80 g of fruit and 20 g of sugar per 100g.',
   producer: Producer.find_by(name: 'Alquimia dos Sabores')
+  )
+
+ProductTag.create(
+   product: Product.find_by(name: 'Marmalade With Coconut Sugar'),
+   tag: Tag.find_by(name: 'jam')
   )
 
 Producer.create(
@@ -143,6 +239,11 @@ Product.create(
   producer: Producer.find_by(name: 'Quinta do Olival da Murta')
   )
 
+ProductTag.create(
+   product: Product.find_by(name: 'Serra Oca Wines'),
+   tag: Tag.find_by(name: 'wine')
+  )
+
 Producer.create(
   name: 'Mestre Henriques',
   phone_number: 243992404,
@@ -157,15 +258,32 @@ Product.create(
   description: 'Pork Meat and Fat, Corn and Wheat Flour, Red Capsicum Paste, Salt, Spices (Paprika, Piri-piri Sauce, Cloves, Garlic).',
   producer: Producer.find_by(name: 'Mestre Henriques')
   )
+
+ProductTag.create(
+   product: Product.find_by(name: 'Flour & Pork sausage'),
+   tag: Tag.find_by(name: 'Meat')
+  )
+
 Product.create(
   name: 'Extra Spicy chouriço',
   description: 'Pork Meat, Red Capsicum Paste, Salt, Spices (Paprika, Piri-piri Sauce, Cloves, Garlic), Red Wine and White Pepper.',
   producer: Producer.find_by(name: 'Mestre Henriques')
   )
+
+ProductTag.create(
+   product: Product.find_by(name: 'Extra Spicy chouriço'),
+   tag: Tag.find_by(name: 'Meat')
+  )
+
 Product.create(
   name: 'Paiola',
   description: 'Pork Meat, Red Capsicum Paste, Salt, Spices (Paprika, White Pepper, Piri-piri Sauce, Cloves, Garlic) and Red Wine.',
   producer: Producer.find_by(name: 'Mestre Henriques')
+  )
+
+ProductTag.create(
+   product: Product.find_by(name: 'Paiola'),
+   tag: Tag.find_by(name: 'Meat')
   )
 
 Producer.create(
@@ -178,15 +296,27 @@ Producer.create(
   latitude: 40.273371,
   longitude: -8.151597
   )
+
 Product.create(
   name: 'Quinta do Carapinhal cheese - Traditional Maturation',
   description: 'Our cheese’s traditional maturation period is around 45 days. The cheese is normally sold cut into halves (estimated weight: 420 grams) and packed in vacuum. According to its tradition, we also sell the cheese whole and wrapped in a white band (weight between 800 and 900 grams).',
   producer: Producer.find_by(name: 'Vumba Organic Farm')
   )
+
+ProductTag.create(
+   product: Product.find_by(name: 'Quinta do Carapinhal cheese - Traditional Maturation'),
+   tag: Tag.find_by(name: 'dairy product')
+  )
+
 Product.create(
   name: 'Quinta do Carapinhal cheese - Long Maturation',
   description: 'For strong flavor cheese lovers we have the “Quinta do Carapinhal – Long maturation”. As a result of the long maturation period the cheese gains a drier texture and a more intense flavor.',
   producer: Producer.find_by(name: 'Vumba Organic Farm')
+  )
+
+ProductTag.create(
+   product: Product.find_by(name: 'Quinta do Carapinhal cheese - Long Maturation'),
+   tag: Tag.find_by(name: 'dairy product')
   )
 
 Producer.create(
@@ -204,11 +334,22 @@ Product.create(
   description: 'Cheese with a sheep’s typical aroma, ripened in a controlled environment and slightly acidulous taste, presenting in its interior a soft paste with little or no eye, buttery kind with a white ivory colour and a thin straw yellow crust.',
   producer: Producer.find_by(name: 'Queijaria Flor da Beira')
   )
+
+ProductTag.create(
+   product: Product.find_by(name: 'Buttery Ripened cheese'),
+   tag: Tag.find_by(name: 'dairy product')
+  )
+
 Product.create(
   name: 'Flor da Beira Tradição',
   description: 'Our best milk and "know" comes Cheese Flower Border Traditional.
   This cheese is obtained by a very strict control on the selection of our best producers of sheep Bordaleira Serra da Estrela milk, meeting the expectations of our most discerning consumer and connoisseur of traditional products.',
   producer: Producer.find_by(name: 'Queijaria Flor da Beira')
+  )
+
+ProductTag.create(
+   product: Product.find_by(name: 'Flor da Beira Tradição'),
+   tag: Tag.find_by(name: 'dairy product')
   )
 
 Producer.create(
@@ -226,6 +367,11 @@ Product.create(
   producer: Producer.find_by(name: 'Spiracol')
   )
 
+ProductTag.create(
+   product: Product.find_by(name: 'Snails'),
+   tag: Tag.find_by(name: 'Meat'),
+  )
+
 Producer.create(
   name: 'Casa Anadia Olive Oils',
   phone_number: 932951119,
@@ -236,15 +382,27 @@ Producer.create(
   latitude: 39.483291,
   longitude: -8.171802
   )
+
 Product.create(
   name: 'Private Collection Olive Oil',
   description: 'The most exquisite and balanced blend between the best olives, the best varieties, from our best olive trees.',
   producer: Producer.find_by(name: 'Casa Anadia Olive Oils')
   )
+
+ProductTag.create(
+   product: Product.find_by(name: 'Private Collection Olive Oil'),
+   tag: Tag.find_by(name: 'oil')
+  )
+
 Product.create(
   name: 'POD Ribatejo Olive Oil',
   description: 'The most complex fusion between our Portuguese varieties, Galega and Cobrançosa.',
   producer: Producer.find_by(name: 'Casa Anadia Olive Oils')
+  )
+
+ProductTag.create(
+   product: Product.find_by(name: 'POD Ribatejo Olive Oil'),
+   tag: Tag.find_by(name: 'oil')
   )
 
 Producer.create(
@@ -264,6 +422,11 @@ Product.create(
   producer: Producer.find_by(name: 'Hipólito - Tudo o Que a Terra Dá')
   )
 
+ProductTag.create(
+   product: Product.find_by(name: 'Exotic Mushrooms'),
+   tag: Tag.find_by(name: 'mushrooms')
+  )
+
 Producer.create(
   name: 'Visionagro',
   phone_number: 925377129,
@@ -279,6 +442,11 @@ Product.create(
   producer: Producer.find_by(name: 'Visionagro')
   )
 
+ProductTag.create(
+   product: Product.find_by(name: 'Blueberries'),
+   tag: Tag.find_by(name: 'Fruit')
+  )
+
 Producer.create(
   name: 'Pepe Aromas',
   phone_number: 963453763,
@@ -289,10 +457,16 @@ Producer.create(
   latitude: 38.74000562683715,
   longitude: -7.815030812780606
   )
+
 Product.create(
   name: 'Lime trees',
   description: 'Limes are round with a thin peel and a green or yellowish hue. The pulp of fruit is translucent and the flavour acidic. They have similar culinary and medicinal uses.',
   producer: Producer.find_by(name: 'Pepe Aromas')
+  )
+
+ProductTag.create(
+   product: Product.find_by(name: 'Lime trees'),
+   tag: Tag.find_by(name: 'Fruit')
   )
 
 Producer.create(
@@ -311,10 +485,12 @@ Product.create(
   producer: Producer.find_by(name: 'Fumeiro da Gardunha')
   )
 
-
-
-
-
+ProductTag.create(
+   product: Product.find_by(name: 'Ready to Cut Selction Ham'),
+   tag: Tag.find_by(name: 'Meat')
+  )
 
 puts 'finish creating products seeds'
+
+
 
