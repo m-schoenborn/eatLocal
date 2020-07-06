@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   def update
-    current_user.update(user_params)
+    skip_authorization
+    @user = current_user
+    @user.update(user_params)
     redirect_to profile_path
   end
 
