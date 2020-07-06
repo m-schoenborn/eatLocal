@@ -2,7 +2,13 @@
   <div class="welcome">
 <div class="container d-flex flex-column">
   <div class="welcome mb-3 mt-3">
-    <h3><%= "WELCOME BACK #{current_user.first_name} #{current_user.last_name} !" %>
+    <% if user_signed_in? %>
+      <% if current_user.first_name.present? %>
+        <h3><%= "WELCOME BACK #{current_user.first_name.upcase} #{current_user.last_name.upcase} !" %></h3>
+      <% else %>
+        <h3><%= "WELCOME BACK #{current_user.first_name} #{current_user.last_name} !" %></h3>
+      <% end %>
+    <% end %>
   </div>
   <div class="body-container d-flex p-0">
     <div class="info-container align-items-start">
@@ -15,7 +21,13 @@
       </div>
     </div>
     <div class="saved-container flex-wrap border border-dark w-100 p-5">
-      <p>You have no favourites yet</p>
+      <% if current_user.favorites.empty? %>
+        <p>You have no favourites yet</p>
+      <% else %>
+        <% current_user.favorites.each do |favorite| %>
+        <%= favorite.producer.name %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
@@ -23,7 +35,7 @@
 
 <!-- MODAL -->
 
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal fade mt-5" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -43,7 +55,7 @@
         </div>
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+          <button type="button" class="btn-main m-0" data-dismiss="modal">CLOSE</button>
           <%= f.button :submit, 'SAVE CHANGES', class: "btn-green" %>
         </div>
       <% end %>

@@ -43,6 +43,13 @@
 //  text-shadow: 1px 1px 1px rgba(221, 219, 219, 0.8);
 //}
 
+@media only screen and (min-width: 1222px) {
+  .navbar-menu {
+    display:none;
+  }
+}
+
+
 @media (max-width: 1222px) {
   .navbar-nav {
     text-align: right;
@@ -58,7 +65,10 @@
     .nav-link {
       color: black;
 
-    }
+   }
   }
-}
+ }
+ .navbar-avatar {
+  display: none;
+ }
 }

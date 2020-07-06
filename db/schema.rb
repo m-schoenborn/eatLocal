@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_07_06_122027) do
+=======
+ActiveRecord::Schema.define(version: 2020_07_06_153038) do
+>>>>>>> 75ecd81bc3b16eeaa8ea95e13a87c2644817cc00
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +54,7 @@ ActiveRecord::Schema.define(version: 2020_07_06_122027) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+<<<<<<< HEAD
   create_table "chatrooms", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -64,6 +69,15 @@ ActiveRecord::Schema.define(version: 2020_07_06_122027) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+=======
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "producer_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["producer_id"], name: "index_favorites_on_producer_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+>>>>>>> 75ecd81bc3b16eeaa8ea95e13a87c2644817cc00
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
@@ -73,6 +87,15 @@ ActiveRecord::Schema.define(version: 2020_07_06_122027) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
+  end
+
+  create_table "producer_news", force: :cascade do |t|
+    t.bigint "producer_id", null: false
+    t.string "title"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["producer_id"], name: "index_producer_news_on_producer_id"
   end
 
   create_table "producers", force: :cascade do |t|
@@ -87,6 +110,8 @@ ActiveRecord::Schema.define(version: 2020_07_06_122027) do
     t.float "latitude"
     t.float "longitude"
     t.boolean "is_favourite?"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_producers_on_user_id"
   end
 
   create_table "product_tags", force: :cascade do |t|
@@ -132,8 +157,14 @@ ActiveRecord::Schema.define(version: 2020_07_06_122027) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+<<<<<<< HEAD
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
+=======
+  add_foreign_key "favorites", "producers"
+  add_foreign_key "favorites", "users"
+  add_foreign_key "producer_news", "producers"
+>>>>>>> 75ecd81bc3b16eeaa8ea95e13a87c2644817cc00
   add_foreign_key "product_tags", "products"
   add_foreign_key "product_tags", "tags"
 end

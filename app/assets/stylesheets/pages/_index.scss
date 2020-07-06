@@ -1,7 +1,20 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "profile";
+@import "show";
 
 .producers.index {
+  margin-top: 80px;
+}
+
+.pages.about {
+  margin-top: 80px;
+}
+
+.pages.whatisinseason {
+  margin-top: 80px;
+}
+
+.pages.articles {
   margin-top: 80px;
 }
