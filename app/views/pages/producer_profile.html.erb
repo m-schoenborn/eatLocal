@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="welcome d-flex justify-content-start mb-3 mt-4">
+    <div class="avatar-info">
+      <%= user_image(current_user) %>
+    </div>
+    <div class="welcome-user d-flex align-items-center">
+      <% if user_signed_in? %>
+        <% if current_user.first_name.present? %>
+          <h3><%= "WELCOME BACK #{current_user.first_name.upcase} #{current_user.last_name.upcase} !" %></h3>
+        <% else %>
+          <h3><%= "WELCOME BACK #{current_user.first_name} #{current_user.last_name} !" %></h3>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="update-info-links border-top pt-3">
+  <p><%= link_to "UPDATE PASSWORD", edit_user_registration_path, class: "text-secondary" %> </p>
+  <a href="#" class="text-secondary" data-toggle="modal" data-target="#exampleModalLong">UPDATE PERSONAL INFO</a>
+</div>
+
+
