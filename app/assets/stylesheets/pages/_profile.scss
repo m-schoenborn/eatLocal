@@ -9,7 +9,8 @@
 .info-container {
   letter-spacing: 3px;
   border: 1px solid $gray;
-  width: 430px;
+  width: 500px;
+  max-height: 400px;
   padding: 20px;
   margin-right: 20px;
   .avatar-info {
@@ -24,8 +25,7 @@
   .body-container {
     flex-direction: column;
     .info-container {
-      width: 100%;
-      margin-bottom: 15px;
+      margin: 10vh 15vw;
     }
   }
 }
