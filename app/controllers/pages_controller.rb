@@ -9,6 +9,9 @@ class PagesController < ApplicationController
   def profile
   end
 
+  def producer_profile
+  end
+
   def about
   end
 
