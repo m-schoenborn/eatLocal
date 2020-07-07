@@ -26,11 +26,13 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 import "bootstrap";
 // External imports
 import { initUpdateNavbarOnScroll } from '../components/navbar';
+import { rotateBannerImages } from '../components/banner'
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   initAutocomplete();
   initUpdateNavbarOnScroll();
+  setInterval(rotateBannerImages, 3000);
 });
 
 

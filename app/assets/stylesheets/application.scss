@@ -16,3 +16,10 @@
 @import "producer/index";
 @import "producer/banner";
 @import "producer/producer_grid_pics";
+
+
+html,body{
+   // width:auto;
+  height:100%;
+  min-width: fit-content;
+}
