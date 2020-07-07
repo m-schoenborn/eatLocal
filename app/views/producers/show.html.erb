@@ -6,23 +6,34 @@
   </div>
 </div>
 
- <div class="avatar">
-    <svg width="5em" height="5em" viewBox="0 0 16 16" class="bi bi-person-circle" fill="white" xmlns="http://www.w3.org/2000/svg">
-      <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
-      <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-      <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
-    </svg>
-  </div>
+<div class="avatar-container">
+   <div class="avatar">
+      <img src="https://images.unsplash.com/photo-1509506489701-dfe23b067808?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1368&q=80" alt="">
+    </div>
+</div>
 
 
 <div class="container flex-column mt-0">
 <!--   <div class="row"> -->
-
   <div class="second-row d-flex justify-content-around mb-3">
-    <div class="card">
+    <div class="card mt-0">
       <div class="card-body">
         <!-- <h5 class="card-title">Production</h5> -->
         <p class="card-text producer-description"><%= @producer.description %></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="carouselExampleSlidesOnly" class="carousel slide mb-3" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="https://images.unsplash.com/photo-1535419342184-f4bd555a3c73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="https://images.unsplash.com/photo-1423483641154-5411ec9c0ddf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="https://images.unsplash.com/photo-1535419342184-f4bd555a3c73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" alt="Third slide">
       </div>
     </div>
   </div>
@@ -32,10 +43,10 @@
       <div class="product-header d-flex justify-content-center mb-3 mt-3">
         <h4>PRODUCTS</h4>
       </div>
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div id="carouselExampleControls" class="carousel slide" data-interval="false">
         <div class="carousel-inner d-flex justify-content-center ">
         <% @producer.products.each_with_index do |product, i| %>
-          <div class="carousel-item<%= 'active' if i == 0 %>">
+          <div class="carousel-item mr-0 <%= 'active' if i == 0 %>">
             <div class="card-product">
               <div class="product-image d-flex justify-content-center mt-3">
                 <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
@@ -48,6 +59,7 @@
               </div>
             </div>
           </div>
+          <% end %>
           <% if @producer.products.count > 1 %>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -58,7 +70,7 @@
               <span class="sr-only">Next</span>
             </a>
           <% end %>
-        <% end %>
+
         </div>
       </div>
     </div>
@@ -70,12 +82,13 @@
       </div>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner d-flex justify-content-center">
-          <% @producer.producer_news.each do |news, i| %>
-            <div class="carousel-item active<%= 'active' if i == 0 %>">
-              <div class="card-product p-2 mr-0">
-                <div class="card-product-infos flex-column">
+          <% @producer.producer_news.each_with_index do |news, i| %>
+            <div class="carousel-item mr-0 <%= 'active' if i == 0 %>">
+              <div class="card-product p-2 mr-1" style="width: 18rem;">
+                <div class="news card-product-infos flex-column">
                   <h6><%= news.title %></h6>
-                  <p><%= news.description %></p>
+                  <img src="https://images.unsplash.com/photo-1543528176-61b239494933?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80" class="card-img-top mb-1" alt="">
+                  <p class="mb-0"><%= news.description %></p>
                 </div>
               </div>
             </div>
@@ -95,14 +108,14 @@
       </div>
   <% end %>
 
-    <div class="card info">
-      <div class="card-body">
+    <div class="card info border-0 bg-transparent">
+      <div class="card-body ml-3 mr-3">
         <h5 class="card-title d-flex justify-content-center">Contact</h5>
           <li class="list-group-item border-0"><i class="fas fa-phone-alt"></i> <%= @producer.phone_number %></li>
           <li class="list-group-item border-0"><i class="fas fa-envelope"></i> <%= @producer.email %></li>
           <li class="list-group-item border-0"><i class="fas fa-map-marked-alt"></i> <%= @producer.address %></li>
         <br>
-        <a class="btn-main d-flex justify-content-around mt-0" href="#" class="btn-green">Contact</a>
+        <a class="btn-main d-flex justify-content-around mt-0" href="#" class="btn-green">Message here</a>
       </div>
     </div>
 
