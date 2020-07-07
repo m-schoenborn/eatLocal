@@ -9,6 +9,7 @@ const initChatroomCable = () => {
       received(data) {
         // called when data is broadcast in the cable
         messagesContainer.insertAdjacentHTML('beforeend', data);
+        messagesContainer.scrollTo(0, messagesContainer.scrollHeight);
       },
     });
   }
@@ -16,8 +17,3 @@ const initChatroomCable = () => {
 
 export { initChatroomCable };
 
-consumer.subscriptions.create({ channel: "ChatroomChannel", id: id }, {
-  received(data) {
-    messagesContainer.insertAdjacentHTML('beforeend', data);
-  }
-});
