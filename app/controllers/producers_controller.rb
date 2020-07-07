@@ -33,6 +33,10 @@ class ProducersController < ApplicationController
   def show
     @producer = Producer.find(params[:id])
     authorize @producer
+    @markers = [{
+      lat: @producer.latitude,
+      lng: @producer.longitude
+    }]
   end
 
   def new
