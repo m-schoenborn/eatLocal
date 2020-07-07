@@ -1,10 +1,50 @@
-// .producer-banner {
-//   position: absolute;
-// }
+.producer-banner {
+  position: relative;
+}
 
-// .avatar {
-//   position: relative;
-//   left: 30px;
-//   bottom: -30px;
-// }
+.producer-banner h2 {
+  text-align: center;
+}
 
+.avatar img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 2px solid;
+  position: relative;
+  left: 40px;
+  bottom: 50px;
+
+}
+
+h2, h4 {
+  letter-spacing: 3px;
+}
+
+.news-header, .product-name, .producer-description, .location-header {
+  text-align: center;
+}
+
+.card-product-infos p {
+  text-align: center;
+}
+
+.producer-banner h2 {
+  font-weight: lighter;
+}
+
+.news img {
+  height: 180px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.news h6, p {
+  text-align: left;
+}
+
+.avatar-container {
+  height: 100px;
+}

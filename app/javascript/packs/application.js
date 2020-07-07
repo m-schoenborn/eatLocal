@@ -26,13 +26,21 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 import "bootstrap";
 // External imports
 import { initUpdateNavbarOnScroll } from '../components/navbar';
+
 import { rotateBannerImages } from '../components/banner'
+
+import { initChatroomCable } from '../channels/chatroom_channel';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   initAutocomplete();
   initUpdateNavbarOnScroll();
+
   setInterval(rotateBannerImages, 3000);
+
+  initChatroomCable();
+
 });
 
 
@@ -40,10 +48,6 @@ document.addEventListener('turbolinks:load', () => {
 // import { initSelect2 } from '../components/init_select2';
 
 
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-});
 
 document.addEventListener("DOMContentLoaded", () => {
   initMapbox();

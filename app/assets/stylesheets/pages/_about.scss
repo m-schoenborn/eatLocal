@@ -1,0 +1,15 @@
+.about-message {
+    text-align: center;
+    margin: 24px;
+    h4 {
+        padding: 16px 0;
+    }
+}
+
+.go-to-homepage {
+    color: #838B55;
+    &:hover {
+        text-decoration: none;
+        color: rgba(131, 139, 85, 0.5);
+    }
+}

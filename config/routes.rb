@@ -12,10 +12,16 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   get 'whatisinseason', to: 'pages#whatisinseason'
   get 'articles', to: 'pages#articles'
+  get 'producer_profile', to: 'pages#producer_profile'
 
   get "profile", to: "pages#profile", as: "profile"
 
-
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+    collection do
+      get 'create_chat'
+    end
+  end
 
 resources :producers do
   resources :comments, only: [:new, :create, :destroy]

@@ -1,6 +1,6 @@
 <div class="big-container ml-0 mr-0 mt-2 d-flex justify-content-between">
   <div class="map-container col-12 col-lg-6 d-none d-sm-block">
-    <%=render "map" %>
+     <%= render "map" %>
   </div>
 
   <div class="producer-container col-12 col-lg-6">
@@ -15,6 +15,7 @@
         <%= submit_tag "Search", class: "btn-green" %>
     <% end %>
     </div>
+
     <div id="search-results">
       <%= render "search_results", producers: @producers %>
     </div>
@@ -32,7 +33,7 @@
 <div id="mapModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-     <%= render "map" %>
+      <%= render "map" %>
       <div id="modal-close-button">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-x-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -43,3 +44,5 @@
     </div>
   </div>
 </div>
+
+
