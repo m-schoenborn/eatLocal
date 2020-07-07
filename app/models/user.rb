@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_one_attached :photo
   has_one :producer
+  has_many :favorites
 
   validates :role, inclusion: { in: %w(customer producer admin) }
 end

@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   get 'users/update'
   ActiveAdmin.routes(self)
   devise_for :users
-  resources :users, only: [:update]
+  resources :users, only: [:update] do
+    resources :favorites, only: [:create, :destroy]
+  end
+
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   #Accessible to everyone
@@ -11,8 +14,6 @@ Rails.application.routes.draw do
   get 'articles', to: 'pages#articles'
 
   get "profile", to: "pages#profile", as: "profile"
-
-
 
 
 
