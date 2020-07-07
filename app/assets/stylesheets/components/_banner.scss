@@ -1,13 +1,13 @@
-.banner {
-  background-size: cover;
-  background-position: center;
-  padding: 150px 0;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+// .banner {
+//   // background-size: cover;
+//   // background-position: center;
+//   // padding: 150px 0;
+//   height: 100vh;
+//   // width: 100vw;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
 
 .banner-container {
   // text-align: center;
@@ -15,6 +15,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 100000;
   .search-bar {
     text-align: center;
   }
@@ -30,3 +31,34 @@
   color: white;
 }
 
+.banner {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner .banner-image-gradient {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+}
+.banner img {
+  z-index: -1;
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.banner img.transparent {
+  opacity: 0;
+}

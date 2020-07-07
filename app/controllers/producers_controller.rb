@@ -3,7 +3,7 @@ class ProducersController < ApplicationController
   def index
     @producers = policy_scope(Producer)
     if params[:lat].present? && params[:lng].present?
-      @producers = @producers.near([params[:lat], params[:lng]], 20)
+      @producers = Producer.near([params[:lat], params[:lng]], 40)
     elsif params[:query_product].present?
       # @producers = @producers.search_by_name(params[:query_product])
       @products = Product.search_by_tag(params[:query_product])

@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
+gem 'turbolinks_render'
+
 gem 'pundit'
 
 gem 'geocoder'
@@ -78,6 +80,5 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'geocoder'
 
 gem 'pg_search', '~> 2.3.0'
