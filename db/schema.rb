@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_07_07_135335) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -109,6 +111,7 @@ ActiveRecord::Schema.define(version: 2020_07_07_135335) do
     t.float "longitude"
     t.boolean "is_favourite?"
     t.bigint "user_id"
+    t.string "selling_location"
     t.index ["user_id"], name: "index_producers_on_user_id"
   end
 
