@@ -70,25 +70,39 @@
               <span class="sr-only">Next</span>
             </a>
           <% end %>
-
         </div>
       </div>
     </div>
 
+  <div class="location mb-3 mt-2">
+    <div class="location-header mb-2">
+      <h4>WHERE TO FIND THEIR PRODUCTS</h4>
+    </div>
+    <div class="card-container d-flex justify-content-center">
+      <div class="card-product p-2" style="width: 18rem;">
+        <div class="news card-product-infos flex-column">
+          <p class="text-left"><%=@producer.selling_location %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <% unless @producer.producer_news.count == 0 %>
     <div class="d-flex flex-column justify-content-center mb-3 mt-2">
-      <div class="news-header justify-content-center">
+      <div class="news-header justify-content-center mb-2">
         <h4>WHAT'S NEW AT <%=@producer.name.upcase%>? </h4>
       </div>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner d-flex justify-content-center">
           <% @producer.producer_news.each_with_index do |news, i| %>
             <div class="carousel-item mr-0 <%= 'active' if i == 0 %>">
-              <div class="card-product p-2 mr-1" style="width: 18rem;">
-                <div class="news card-product-infos flex-column">
-                  <h6><%= news.title %></h6>
-                  <img src="https://images.unsplash.com/photo-1543528176-61b239494933?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80" class="card-img-top mb-1" alt="">
-                  <p class="mb-0"><%= news.description %></p>
+              <div class="card-container d-flex justify-content-center">
+                <div class="card-product p-1 mr-1" style="width: 18rem;">
+                  <div class="news card-product-infos flex-column text-center">
+                    <h6 class="d-flex justify-content-center"><%= news.title %></h6>
+                    <div class="news-image d-flex justify-content-center"><img src="https://images.unsplash.com/photo-1543528176-61b239494933?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80" class="card-img-top mb-1" alt=""></div>
+                    <p class="mb-0"><%= news.description %></p>
+                  </div>
                 </div>
               </div>
             </div>
