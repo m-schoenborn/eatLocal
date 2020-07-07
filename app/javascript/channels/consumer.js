@@ -4,3 +4,7 @@
 import { createConsumer } from "@rails/actioncable"
 
 export default createConsumer()
+
+ //function getWebSocketURL {
+ //eturn `https://ws.example.com/cable?token=${token}`
+//}
