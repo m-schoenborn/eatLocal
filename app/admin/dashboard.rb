@@ -19,28 +19,28 @@ ActiveAdmin.register_page "Dashboard" do
       end
     end
 
-    columns do
-      column do
-         panel "PRODUCERS PENDING REQUESTS" do
-          table_for Producer.where(status: 'unconfirmed') do |producer|
-            column("Name") { |producer| (producer.name) }
-            column("Address") { |producer| (producer.address) }
-            column("Phone number") { |producer| (producer.phone_number) }
-            column("E-mail") { |producer| (producer.email) }
-            column span: 2 do |producer|
-              span link_to("Accept", accept_producer_path(producer))
-           end.join(', ').html_safe
-            column do
-              span link_to("Decline", decline_producer_path(producer))
-            end.join(', ').html_safe
+   # columns do
+    #  column do
+     #    panel "PRODUCERS PENDING REQUESTS" do
+      #    table_for Producer.where(status: 'unconfirmed') do |producer|
+       #     column("Name") { |producer| (producer.name) }
+        #    column("Address") { |producer| (producer.address) }
+         #   column("Phone number") { |producer| (producer.phone_number) }
+          #  column("E-mail") { |producer| (producer.email) }
+           # column span: 2 do |producer|
+            #  span link_to("Accept", accept_producer_path(producer))
+          # end.join(', ').html_safe
+           # column do
+             # span link_to("Decline", decline_producer_path(producer))
+           # end.join(', ').html_safe
            # { (span ) (span ) }
 
              # accept_producer_path(producer)
              # decline_producer_path(producer)
-          end
-        end
-      end
-    end
+         # end
+       # end
+     # end
+   # end
 
 
 
