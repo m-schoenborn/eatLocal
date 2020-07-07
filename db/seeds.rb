@@ -73,7 +73,8 @@ user = User.create( email: "bla@bla.com", password: "123456")
   description: 'Based in Cascais, Rob and Alec Mercer have established a high welfare free-range pork and poultry farm with a simple philosophy of what’s good for the animals and the land will naturally be good for all those that eat the meat. It’s this simple philosophy that has enabled Quinta da Bicuda to rear and produce the most succulent, richly flavoured meat. All of the meat from Quinta da Bicuda is free-range and RSPCA assured. It is also Red Tractor Farm Assured. Quinta da Bicuda are multi award winning. Just in the last few years they have scooped a Compassion In World Farming Good Pig award in 2012, multiple Great Taste Awards over the years including a star for their pork in 2014 and a LEAF (Linking Environment and Farming) award.',
   latitude: 38.72240025,
   longitude: -9.39690917,
-  user: user
+  user: user,
+  status: 'accepted'
   )
 Product.create(
   name: 'Award-winning free-range pork meat',
@@ -95,7 +96,8 @@ Producer.create(
   description: 'Combining passion, sustainable agricultural practices and the latest grape growing techniques, Dunleavy Vineyards produce fantastic rosé wine using their Pinot noir and Seyval grapes. Located in the heart of a beautiful Vale just outside Loures, Dunleavy Vineyards were first planted in 2008 by owner and manager Ingrid Bates. One of the youngest vineyard owners in Portugal, Ingrid began her viticultural career over 10 years ago when she took up a job maintaining a local vineyard. Having found her true vocation she planned and saved for her own vineyard which was planted just a few weeks before the birth of her first child. A few years down the line, and after much hard work, Dunleavy Vineyards released its first wine in 2013. The wine sold out in three days. The subsequent Pinot noir releases have proved to be just as popular winning ‘Best Local Wine’ at the Bristol Good Food Awards two years in a row, a bronze at the International Wine Challenge and countless smaller awards to boot.',
   latitude: 38.8308741,
   longitude: -9.1684512,
-   user: user
+   user: user,
+   status: 'accepted'
   )
 Product.create(
   name: 'Dunleavy Pinot Noir Rose',
@@ -118,7 +120,8 @@ Producer.create(
   description: 'Northern Portugal is known for its warm climate wines, and the Castaño family are keen promoters of one of Portugal’s native varieties – Monastrell. Their carefully nurtured Portugeuse vineyards look beautiful and well-looked after, as they practice integrated farming production techniques, together with organic agriculture to produce some of the finest wines. The balmy Portuguese climate is perfect for delivering complex flavours, and the sandy limestone soil nourishes the grape plants with minerals. Of the family’s 600 acres, 80 percent is dedicated to growing Monastrell. It’s every wine connoisseur’s dream to see gorgeous, decades-old Monastrell vines, twined across their Las Gruesas and Pozuelo vineyards, bearing juicy grapes.',
   latitude: 42.12267315,
   longitude: -8.76571655,
-  user: user
+  user: user,
+  status: 'accepted'
   )
 Product.create(
   name: 'Castano Ecologico Macabeo',
@@ -142,6 +145,7 @@ Producer.create(
   latitude: 41.3406144,
   longitude: -8.68709311,
   user: user,
+  status: 'accepted'
   )
 Product.create(
   name: 'Asparagus',
@@ -165,6 +169,7 @@ Producer.create(
   latitude: 38.4436932,
   longitude: -9.10766602,
   user: user,
+  status: 'accepted'
   )
 Product.create(
   name: 'Raw Rosemary Honey',
@@ -188,6 +193,7 @@ Producer.create(
   latitude: 40.3723735,
   longitude: -8.2780296,
   user: user,
+  status: 'accepted'
   )
 
 Product.create(
@@ -213,7 +219,8 @@ Producer.create(
   The project Alquimia dos Sabores is the result of a special relationship with nature and its motivation to always produce “products with love” is due to the fact that this project reflects the lifestyle of this Portuguese family and its traditions.',
   latitude: 38.718542,
   longitude: -8.750787,
-  user: user
+  user: user,
+  status: 'accepted'
   )
 Product.create(
   name: 'Pumpkin & Spices Jam',
@@ -257,6 +264,7 @@ Producer.create(
   latitude: 39.2406945,
   longitude: -9.0866073,
   user: user,
+  status: 'accepted'
   )
 Product.create(
   name: 'Serra Oca Wines',
@@ -281,6 +289,7 @@ Producer.create(
   latitude: 39.316331,
   longitude: -8.917514,
   user: user,
+  status: 'accepted'
   )
 Product.create(
   name: 'Flour & Pork sausage',
@@ -328,6 +337,7 @@ Producer.create(
   latitude: 40.273371,
   longitude: -8.151597,
   user: user,
+  status: 'accepted'
   )
 
 Product.create(
@@ -364,6 +374,7 @@ Producer.create(
   latitude: 40.425709,
   longitude: -8.022512,
   user: user,
+  status: 'accepted'
   )
 Product.create(
   name: 'Buttery Ripened cheese',
@@ -399,6 +410,7 @@ Producer.create(
   latitude: 40.963127,
   longitude: -8.421260,
   user: user,
+  status: 'accepted'
   )
 Product.create(
   name: 'Snails',
@@ -423,6 +435,7 @@ Producer.create(
   latitude: 39.483291,
   longitude: -8.171802,
   user: user,
+  status: 'accepted'
   )
 
 Product.create(
@@ -460,6 +473,7 @@ Producer.create(
   latitude: 39.283583726688704,
   longitude: -8.510584821794609,
   user: user,
+  status: 'accepted'
   )
 Product.create(
   name: 'Exotic Mushrooms',
@@ -483,6 +497,7 @@ Producer.create(
   latitude: 39.252941,
   longitude: -8.547074,
   user: user,
+  status: 'accepted'
    )
 Product.create(
   name: 'Blueberries',
@@ -507,6 +522,7 @@ Producer.create(
   latitude: 38.74000562683715,
   longitude: -7.815030812780606,
   user: user,
+  status: 'accepted'
   )
 
 Product.create(
@@ -531,7 +547,8 @@ Producer.create(
   The factory is located in Beira Baixa, facing the Serra da Estrela, and maintains the tradition and familiar knowledge in making the regions sausages and hams. It uses current technologies for its production and an FSSC22000 certified management system.',
   latitude: 40.175872,
   longitude: -7.492009,
-  user: user
+  user: user,
+  status: 'accepted'
   )
 Product.create(
   name: 'Ready to Cut Selction Ham',
