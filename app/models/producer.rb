@@ -1,9 +1,9 @@
 class Producer < ApplicationRecord
   belongs_to :user
-  has_many :products
+  has_many :products, dependent: :destroy
 
-  has_many :favorites
-  has_many :producer_news
+  has_many :favorites, dependent: :destroy
+  has_many :producer_news, dependent: :destroy
 
   #has_many :tags, through: :products
   geocoded_by :address
