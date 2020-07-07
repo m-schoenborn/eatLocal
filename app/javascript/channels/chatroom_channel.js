@@ -10,6 +10,9 @@ const initChatroomCable = () => {
         // called when data is broadcast in the cable
         messagesContainer.insertAdjacentHTML('beforeend', data);
         messagesContainer.scrollTo(0, messagesContainer.scrollHeight);
+
+        const input = document.getElementById('message_content');
+        input.value = '';
       },
     });
   }

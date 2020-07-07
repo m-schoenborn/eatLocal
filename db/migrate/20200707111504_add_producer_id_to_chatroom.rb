@@ -1,5 +1,5 @@
 class AddProducerIdToChatroom < ActiveRecord::Migration[6.0]
   def change
-    add_column :chatrooms, :producer_id, :bigint
+    add_reference :chatrooms, :producer, index: true
   end
 end
