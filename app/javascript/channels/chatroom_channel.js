@@ -8,11 +8,15 @@ const initChatroomCable = () => {
     consumer.subscriptions.create({ channel: "ChatroomChannel", id: id }, {
       received(data) {
         // called when data is broadcast in the cable
-        messagesContainer.insertAdjacentHTML('beforeend', data);
+        messagesContainer.insertAdjacentHTML('beforeend', data.content);
         messagesContainer.scrollTo(0, messagesContainer.scrollHeight);
+        console.log(data);
 
-        const input = document.getElementById('message_content');
-        input.value = '';
+      // const userID = messagesContainer.dataset.userID;
+      // if (data.user_id == userID) {
+       const input = document.getElementById('message_content');
+       input.value = '';
+     // }
       },
     });
   }
