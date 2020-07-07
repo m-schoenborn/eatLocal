@@ -60,6 +60,10 @@ const initMap = (mapElement) => {
 
   map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
                                       mapboxgl: mapboxgl }));
+
+  $("#mapModal").on('shown.bs.modal', function () {
+   map.resize();
+  })
 }
 
 export { initMapbox };
