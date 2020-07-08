@@ -86,7 +86,7 @@ ProductTag.create(
   tag: Tag.find_by(name: "Meat")
   )
 
-user = User.create( email: "bla1@bla.com", password: "123456")
+user = User.create( email: "bla25@bla.com", password: "123456")
 
 Producer.create(
   name: 'dunleavy Vineyards',
@@ -146,6 +146,7 @@ Producer.create(
   longitude: -8.68709311,
   user: user,
   status: 'accepted'
+
   )
 Product.create(
   name: 'Asparagus',
@@ -553,7 +554,8 @@ Producer.create(
 Product.create(
   name: 'Ready to Cut Selction Ham',
   description: '1 Whole Ham Curing 12 months',
-  producer: Producer.find_by(name: 'Fumeiro da Gardunha')
+  producer: Producer.find_by(name: 'Fumeiro da Gardunha'),
+  status: "confirmed"
   )
 
 ProductTag.create(

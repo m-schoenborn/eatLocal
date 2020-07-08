@@ -4,12 +4,13 @@ class FavoritesController < ApplicationController
     authorize @favorite
     @favorite.user = current_user
     @favorite.producer = Producer.find(params[:producer_id])
+    @producer = @favorite.producer
     @favorite.save
   end
 
   def destroy
-    producer = Producer.find(params[:producer_id])
-    @favorite = Favorite.where("user_id = ? and producer_id = ?", current_user.id, producer.id).first
+    @producer = Producer.find(params[:producer_id])
+    @favorite = Favorite.where("user_id = ? and producer_id = ?", current_user.id, @producer.id).first
     authorize @favorite
     # @favorite.user = current_user
     @favorite.destroy

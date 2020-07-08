@@ -7,11 +7,17 @@
 }
 
 .info-container {
-  letter-spacing: 3px;
-  border: 1px solid $gray;
-  width: 430px;
-  padding: 20px;
-  margin-right: 20px;
+  // letter-spacing: 3px;
+  // border: 1px solid $gray;
+  // width: 500px;
+  // max-height: 400px;
+  // padding: 20px;
+  // margin-right: 20px;
+    letter-spacing: 3px;
+    border: 1px solid #394648;
+    width: 100%;
+    max-height: 420px;
+    padding: 20px;
   .avatar-info {
     text-align: center;
     margin-bottom: 30px;
@@ -24,8 +30,7 @@
   .body-container {
     flex-direction: column;
     .info-container {
-      width: 100%;
-      margin-bottom: 15px;
+      margin: 10vh 15vw;
     }
   }
 }

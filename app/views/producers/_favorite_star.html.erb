@@ -1,0 +1,13 @@
+<div class="star">
+  <% if user_signed_in? %>
+    <% unless producer.check_favorite?(current_user) %>
+      <%= link_to user_favorites_path(current_user, producer_id: producer), method: :post, remote: true do %>
+        <%= icon('far', 'star') %>
+      <% end %>
+    <% else %>
+       <%= link_to user_favorite_path(current_user, Favorite.where("user_id = ? and producer_id = ?", current_user.id, producer.id).first, producer_id: producer), remote: true, method: :delete do %>
+         <%= icon('fas', 'star') %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

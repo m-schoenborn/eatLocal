@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2020_07_07_135335) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "producer_id"
     t.bigint "user_id"
+    t.index ["producer_id"], name: "index_chatrooms_on_producer_id"
     t.index ["user_id"], name: "index_chatrooms_on_user_id"
   end
 
@@ -109,6 +110,7 @@ ActiveRecord::Schema.define(version: 2020_07_07_135335) do
     t.float "longitude"
     t.boolean "is_favourite?"
     t.bigint "user_id"
+    t.string "selling_location"
     t.index ["user_id"], name: "index_producers_on_user_id"
   end
 
