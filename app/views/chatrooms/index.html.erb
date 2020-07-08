@@ -1,4 +1,21 @@
-<% @chatrooms.each do |chatroom| %>
-<% raise %>
-<%=  %>
-<% end %>
+<br>
+<br>
+<br>
+
+<h3><u>My chats</u></h3>
+
+
+    <% @chatrooms.each do |chatroom| %>
+    <% if current_user == 'customer'  %>
+      <%= chatroom.producer.name %>
+    <% else %>
+      <%= chatroom.user.email %>
+    <% end  %>
+      <%= chatroom.messages.count %>
+      <%= link_to 'See conversation', chatroom_path(chatroom) %>
+
+      <% end  %>
+
+
+
+
