@@ -1,31 +1,59 @@
-  <div class="container flex-column d-block h-100">
-    <div class="welcome mb-3 mt-3">
-      <% if user_signed_in? %>
-        <% if current_user.first_name.present? %>
-          <h3 class="text-center"><%= "WELCOME BACK #{current_user.first_name.upcase} #{current_user.last_name.upcase}!" %></h3>
-        <% else %>
-          <h3 class="text-center"><%= "WELCOME BACK #{current_user.first_name} #{current_user.last_name}!" %></h3>
-        <% end %>
-      <% end %>
-    </div>
+  <div class="container flex-column d-block">
     <div class="body-container d-flex p-0">
-      <div class="info-container align-items-start m-0 m-md-2">
-        <div class="avatar-info">
-          <%= user_image(current_user) %>
-        </div>
-        <div class="update-info-links border-top pt-3">
-          <p><%= link_to "UPDATE PASSWORD", edit_user_registration_path, class: "text-secondary" %> </p>
-          <a href="#" class="text-secondary" data-toggle="modal" data-target="#exampleModalLong">UPDATE PERSONAL INFO</a>
+      <div class="card info-container border-0 m-0 m-md-2">
+         <div class="welcome mb-3 mt-1">
+          <% if user_signed_in? %>
+            <% if current_user.first_name.present? %>
+              <h4 class="text-center"><%= "WELCOME BACK #{current_user.first_name.upcase} #{current_user.last_name.upcase}!" %></h4>
+            <% else %>
+              <h4 class="text-center"><%= "WELCOME BACK #{current_user.first_name} #{current_user.last_name}!" %></h4>
+            <% end %>
+          <% end %>
+         </div>
+          <div class="avatar-info">
+            <%= user_image(current_user) %>
+          </div>
+
+        <div class="update-info-links pt-1">
+          <div class="card mr-2 ml-2 mb-2">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <%= link_to "UPDATE PASSWORD", edit_user_registration_path, class: "text-secondary" %>
+              </li>
+              <li class="list-group-item">
+                <a href="#" class="text-secondary" data-toggle="modal" data-target="#exampleModalLong">UPDATE PERSONAL INFO</a>
+              </li>
+              <li class="list-group-item">
+                <% if current_user.producer.blank? %>
+                  <%= link_to "BECOME A PRODUCER", new_producer_path %>
+                <% else %>
+                <%= link_to "GO TO MY PRODUCER PROFILE", producer_profile_path, class: "text-secondary" %>
+                <% end %>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="saved-container flex-wrap border w-100 p-5 m-0 mt-2 m-md-2">
+
+
+
+      <div class="card saved-container flex-wrap border w-100 p-5 m-0 mt-2 m-md-2">
         <% if current_user.favorites.empty? %>
           <p>You have no favourites yet</p>
         <% else %>
 
-        <!-- Favorites Cards -->
 
+        <h5 class="text-center border-bottom border-dark pb-2">CHECK OUT WHAT'S NEW FROM YOUR FAVOURITE PRODUCERS</h5>
+         <div class="card p-1">
           <% current_user.favorites.each do |favorite| %>
+            <p><%= favorite.producer.name %></p>
+            <% favorite.producer.producer_news.each do |news| %>
+              <p><%= news.title %></p>
+              <p><%= news.description %></p>
+            <% end %>
+          </div>
+
+      <!-- Favorites Cards -->
             <%= link_to producer_path(favorite.producer.id) do %>
               <div class="producer-card mb-2">
                 <div id="carouselExampleControls<%= favorite.producer.id %>" class="carousel slide" data-interval="false">
