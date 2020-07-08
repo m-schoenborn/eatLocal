@@ -1,5 +1,6 @@
 <h1>#<%= @chatroom.name %></h1>
-<%= link_to 'Home', root_path %>
+<p><%= link_to 'Home', root_path %></p>
+<p><%= link_to 'Back to messages', chatrooms_path %></p>
 <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
   <% @chatroom.messages.each do |message| %>
     <%= render 'messages/message', message: message %>
