@@ -6,6 +6,9 @@ class Producer < ApplicationRecord
   has_many :producer_news, dependent: :destroy
   has_many :tags, through: :products
 
+  has_many :chatrooms
+  has_many :messsages, through: :chatrooms
+
   #has_many :tags, through: :products
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?

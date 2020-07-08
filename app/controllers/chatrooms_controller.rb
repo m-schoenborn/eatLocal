@@ -1,6 +1,7 @@
 class ChatroomsController < ApplicationController
   def index
     @chatrooms = policy_scope(Chatroom)
+    @chatrooms = current_user.chatrooms
   end
 
   def show
@@ -12,7 +13,8 @@ class ChatroomsController < ApplicationController
   def create_chat
     chatroom = Chatroom.find_by(producer_id: params[:producer_id], user_id: current_user.id)
     unless chatroom
-      chatroom = Chatroom.create(producer_id: params[:producer_id], user_id: current_user.id)
+      producer = Producer.find(params[:producer_id])
+      chatroom = Chatroom.create(producer: producer, user_id: current_user.id)
     end
     authorize chatroom
     redirect_to chatroom_path(chatroom)
