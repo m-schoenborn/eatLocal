@@ -1,12 +1,24 @@
-<h1>#<%= @chatroom.name %></h1>
-<p><%= link_to 'Home', root_path %></p>
-<p><%= link_to 'Back to messages', chatrooms_path %></p>
-<div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-  <% @chatroom.messages.each do |message| %>
-    <%= render 'messages/message', message: message %>
-  <% end %>
+<br>
+
+<h1 class="d-flex justify-content-center" style="margin-top: 10%">CHATROOM</h1>
+
+<div class="chatroomBtn" style="margin-top: 5%">
+  <p><%= link_to 'Home', root_path, class:"btn-main" %></p>
+  <p><%= link_to 'Back to messages', chatrooms_path, class:"btn-main" %></p>
 </div>
 
-<%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-  <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}", input_html: { autocomplete: 'off' } %>
-<% end %>
+<div class="d-flex justify-content-center" style="margin-top: 5%">
+  <div class="card" style="width: 70%">
+    <div class="card-body">
+    <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+      <% @chatroom.messages.each do |message| %>
+        <%= render 'messages/message', message: message %>
+      <% end %>
+    </div>
+
+    <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+      <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}", input_html: { autocomplete: 'off' } %>
+    <% end %>
+    </div>
+  </div>
+</div>

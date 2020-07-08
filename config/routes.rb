@@ -29,11 +29,14 @@ Rails.application.routes.draw do
 
 resources :producers do
   resources :comments, only: [:new, :create, :destroy]
+  resources :products, only: [:new, :create]
+  resources :producer_news, only: [:new, :create]
   member do
     get :accept
     get :decline
   end
 end
+
 
  #TO ADD ADMIN GEM
 end
