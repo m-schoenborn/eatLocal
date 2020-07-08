@@ -37,7 +37,7 @@ document.addEventListener('turbolinks:load', () => {
   initAutocomplete();
   initUpdateNavbarOnScroll();
 
-  setInterval(rotateBannerImages, 3000);
+  setInterval(rotateBannerImages, 6000);
 
   initChatroomCable();
 

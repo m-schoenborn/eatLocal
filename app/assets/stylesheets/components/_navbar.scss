@@ -18,7 +18,7 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 250px;
 }
 
 .pages.home {
@@ -55,20 +55,25 @@
     text-align: right;
     background-color: white;
     padding-right: 10px;
-    ul {
-      width: 300px;
-    }
   }
   .pages.home {
-  .navbar-lewagon {
-    background-color: transparent;
-    .nav-link {
-      color: black;
-    }
-   }
+    .navbar-lewagon {
+      background-color: transparent;
+      .nav-link {
+        color: black;
+      }
+     }
   }
-  
+
  .navbar-avatar {
   display: none;
  }
 }
+
+@media (max-width: 600px) {
+  .navbar-lewagon .navbar-brand img {
+    width: 200px;
+  }
+}
+
+
