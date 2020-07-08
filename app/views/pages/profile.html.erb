@@ -2,9 +2,9 @@
     <div class="welcome mb-3 mt-3">
       <% if user_signed_in? %>
         <% if current_user.first_name.present? %>
-          <h3><%= "WELCOME BACK #{current_user.first_name.upcase} #{current_user.last_name.upcase} !" %></h3>
+          <h3 class="text-center"><%= "WELCOME BACK #{current_user.first_name.upcase} #{current_user.last_name.upcase}!" %></h3>
         <% else %>
-          <h3><%= "WELCOME BACK #{current_user.first_name} #{current_user.last_name} !" %></h3>
+          <h3 class="text-center"><%= "WELCOME BACK #{current_user.first_name} #{current_user.last_name}!" %></h3>
         <% end %>
       <% end %>
     </div>
@@ -18,7 +18,7 @@
           <a href="#" class="text-secondary" data-toggle="modal" data-target="#exampleModalLong">UPDATE PERSONAL INFO</a>
         </div>
       </div>
-      <div class="saved-container flex-wrap border border-dark w-100 p-5 m-0 mt-2 m-md-2">
+      <div class="saved-container flex-wrap border w-100 p-5 m-0 mt-2 m-md-2">
         <% if current_user.favorites.empty? %>
           <p>You have no favourites yet</p>
         <% else %>
