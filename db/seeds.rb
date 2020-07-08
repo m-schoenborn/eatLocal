@@ -20,7 +20,7 @@ User.destroy_all
 puts "creating products and tags"
 
 Tag.create(
-  name: "vegetables"
+  name: "Vegetables"
   )
 
 Tag.create(
@@ -44,27 +44,27 @@ Tag.create(
   )
 
 Tag.create(
-  name: "cider"
+  name: "Cider"
   )
 
 Tag.create(
-  name: "dairy product"
+  name: "Dairy product"
   )
 
 Tag.create(
-  name: "wine"
+  name: "Wine"
   )
 
 Tag.create(
-  name: "jam"
+  name: "Jam"
   )
 
 Tag.create(
-  name: "oil"
+  name: "Oil"
   )
 
 Tag.create(
-  name: "mushrooms"
+  name: "Mushrooms"
   )
 
 user = User.create( email: "bla@bla.com", password: "123456")
@@ -117,7 +117,7 @@ Product.create(
 
 ProductTag.create(
   product: Product.find_by(name: 'Dunleavy Pinot Noir Rose'),
-  tag: Tag.find_by(name: 'wine')
+  tag: Tag.find_by(name: 'Wine')
   )
 
 ProducerNews.create(
@@ -147,7 +147,7 @@ Product.create(
 
 ProductTag.create(
   product: Product.find_by(name: 'Castano Ecologico Macabeo'),
-  tag: Tag.find_by(name: 'wine')
+  tag: Tag.find_by(name: 'Wine')
   )
 
 ProducerNews.create(
@@ -184,7 +184,7 @@ Product.create(
 
 ProductTag.create(
   product: Product.find_by(name: 'Asparagus'),
-  tag: Tag.find_by(name: 'vegetables')
+  tag: Tag.find_by(name: 'Vegetables')
   )
 
 ProducerNews.create(
@@ -265,7 +265,7 @@ Product.create(
 
 ProductTag.create(
   product: Product.find_by(name: 'Pumpkin & Spices Jam'),
-  tag: Tag.find_by(name: 'jam')
+  tag: Tag.find_by(name: 'Jam')
   )
 Product.create(
   name: 'Rock Pear with Moscatel Wine Jam',
@@ -274,7 +274,7 @@ Product.create(
   )
 ProductTag.create(
   product: Product.find_by(name: 'Rock Pear with Moscatel Wine Jam'),
-  tag: Tag.find_by(name: 'jam')
+  tag: Tag.find_by(name: 'Jam')
   )
 Product.create(
   name: 'Marmalade With Coconut Sugar',
@@ -284,7 +284,7 @@ Product.create(
 
 ProductTag.create(
    product: Product.find_by(name: 'Marmalade With Coconut Sugar'),
-   tag: Tag.find_by(name: 'jam')
+   tag: Tag.find_by(name: 'Jam')
   )
 
 user = User.create( email: "bla7@bla.com", password: "123456")
@@ -309,7 +309,7 @@ Product.create(
 
 ProductTag.create(
    product: Product.find_by(name: 'Serra Oca Wines'),
-   tag: Tag.find_by(name: 'wine')
+   tag: Tag.find_by(name: 'Wine')
   )
 
 user = User.create( email: "bla8@bla.com", password: "123456")
@@ -383,7 +383,7 @@ Product.create(
 
 ProductTag.create(
    product: Product.find_by(name: 'Quinta do Carapinhal cheese - Traditional Maturation'),
-   tag: Tag.find_by(name: 'dairy product')
+   tag: Tag.find_by(name: 'Dairy product')
   )
 
 Product.create(
@@ -394,7 +394,7 @@ Product.create(
 
 ProductTag.create(
    product: Product.find_by(name: 'Quinta do Carapinhal cheese - Long Maturation'),
-   tag: Tag.find_by(name: 'dairy product')
+   tag: Tag.find_by(name: 'Dairy product')
   )
 
 user = User.create( email: "bla10@bla.com", password: "123456")
@@ -419,7 +419,7 @@ Product.create(
 
 ProductTag.create(
    product: Product.find_by(name: 'Buttery Ripened cheese'),
-   tag: Tag.find_by(name: 'dairy product')
+   tag: Tag.find_by(name: 'Dairy product')
   )
 
 Product.create(
@@ -431,7 +431,7 @@ Product.create(
 
 ProductTag.create(
    product: Product.find_by(name: 'Flor da Beira Tradição'),
-   tag: Tag.find_by(name: 'dairy product')
+   tag: Tag.find_by(name: 'Dairy product')
   )
 
 user = User.create( email: "bla11@bla.com", password: "123456")
@@ -481,7 +481,7 @@ Product.create(
 
 ProductTag.create(
    product: Product.find_by(name: 'Private Collection Olive Oil'),
-   tag: Tag.find_by(name: 'oil')
+   tag: Tag.find_by(name: 'Oil')
   )
 
 Product.create(
@@ -492,7 +492,7 @@ Product.create(
 
 ProductTag.create(
    product: Product.find_by(name: 'POD Ribatejo Olive Oil'),
-   tag: Tag.find_by(name: 'oil')
+   tag: Tag.find_by(name: 'Oil')
   )
 
 user = User.create( email: "bla20@bla.com", password: "123456")
@@ -518,7 +518,7 @@ Product.create(
 
 ProductTag.create(
    product: Product.find_by(name: 'Exotic Mushrooms'),
-   tag: Tag.find_by(name: 'mushrooms')
+   tag: Tag.find_by(name: 'Mushrooms')
   )
 
 user = User.create( email: "bla13@bla.com", password: "123456")

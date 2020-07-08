@@ -4,6 +4,7 @@ class Producer < ApplicationRecord
 
   has_many :favorites, dependent: :destroy
   has_many :producer_news, dependent: :destroy
+  has_many :tags, through: :products
 
   #has_many :tags, through: :products
   geocoded_by :address
