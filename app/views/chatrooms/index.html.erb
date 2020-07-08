@@ -16,7 +16,9 @@
         <h5><%= chatroom.user.email %></h5>
       <% end  %>
        <h6>Messages: <%= chatroom.messages.count %> </h6>
-        <p><%= link_to 'See conversation', chatroom_path(chatroom) %></p>
+       <div class="d-flex justify-content-center" style="margin-top: 7%">
+        <p><%= link_to 'See conversation', chatroom_path(chatroom), class:"btn-green" %></p>
+       </div>
       <% end %>
     </div>
    </div>
