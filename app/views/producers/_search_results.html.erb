@@ -15,7 +15,7 @@
           </div>
           <div class="category-badge">
             <span class="badge badge-light">
-              <%producer.tags.distinct.each do |tag| %>
+              <% producer.tags.distinct.each do |tag| %>
                 <%= tag.name %>
             <% end %>
             </span>
@@ -28,10 +28,10 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
-      </div>
+        </div>
         <div class="card-infos d-flex justify-content-between">
           <div class="info flex-column">
-            <div class="specific-info-name"><h4><%= link_to producer.name.upcase, producer_path(producer.id) %></h4></div>
+            <div class="specific-info-name"><h4><%= producer.name.upcase %></h4></div>
             <% producer.products.each do |product| %>
                <div class="specific info"><p><%= product.name %></p></div>
             <% end %>
@@ -41,5 +41,5 @@
           </div>
         </div>
       </div>
-      <% end %>
     <% end %>
+<% end %>

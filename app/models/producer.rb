@@ -1,7 +1,7 @@
 class Producer < ApplicationRecord
   belongs_to :user
   has_many :products, dependent: :destroy
-
+  has_one_attached :banner
   has_many_attached :photos
 
   has_many :favorites, dependent: :destroy
