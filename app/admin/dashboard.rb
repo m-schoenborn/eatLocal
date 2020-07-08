@@ -19,6 +19,8 @@ ActiveAdmin.register_page "Dashboard" do
       end
     end
 
+     span link_to("Home", root_path)
+
    # columns do
     #  column do
      #    panel "PRODUCERS PENDING REQUESTS" do

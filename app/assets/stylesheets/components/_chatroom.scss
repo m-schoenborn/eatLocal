@@ -10,6 +10,7 @@
     padding: 0.5rem 1rem;
     border-bottom: 1px solid $gray-200;
     margin-bottom: 0;
+    letter-spacing: 3px;
   }
 }
 
@@ -28,3 +29,11 @@
     margin-bottom: 0;
   }
 }
+
+.chatroomBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+

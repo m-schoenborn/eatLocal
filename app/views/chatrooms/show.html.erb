@@ -1,6 +1,10 @@
-<h1>#<%= @chatroom.name %></h1>
-<p><%= link_to 'Home', root_path %></p>
-<p><%= link_to 'Back to messages', chatrooms_path %></p>
+<h1 class="d-flex justify-content-center" style="margin-top: 10%">CHATROOM</h1>
+
+<div class="chatroomBtn" style="margin-top: 5%">
+  <p><%= link_to 'Home', root_path, class:"btn-main" %></p>
+  <br>
+  <p><%= link_to 'Back to messages', chatrooms_path, class:"btn-main" %></p>
+</div>
 <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
   <% @chatroom.messages.each do |message| %>
     <%= render 'messages/message', message: message %>
