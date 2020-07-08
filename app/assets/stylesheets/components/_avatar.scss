@@ -3,6 +3,11 @@
   border-radius: 50%;
 }
 
+.avatar-medium {
+  width: 120px;
+  border-radius: 50%;
+}
+
 .avatar-large {
   width: 150px;
   border-radius: 50%;
@@ -20,4 +25,18 @@
   border-radius: 0px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
+}
+
+.producer-avatar-container {
+  margin-top: -75px;
+  height: 150px;
+  z-index: 9999;
+  margin-left: 8vw;
+
+}
+
+.product-avatar-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

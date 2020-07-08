@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+require "open-uri"
 # Producer.destroy_all
 # Product.destroy_all
 Tag.destroy_all
@@ -69,7 +69,7 @@ Tag.create(
 
 user = User.create( email: "bla@bla.com", password: "123456")
 
-  Producer.create(
+  producer = Producer.create(
   name: 'Quinta da Bicuda',
   phone_number: 913689290,
   address: 'Rua da Bicuda Cascais, 2750-682 Cascais, Portugal',
@@ -80,6 +80,11 @@ user = User.create( email: "bla@bla.com", password: "123456")
   user: user,
   status: 'accepted'
   )
+  # file = URI.open(PASTE_URL_CLOUDINARY)
+  # producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  # banner_file = URI.open(PASTE_URL_CLOUDINARY)
+  # producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
+
 Product.create(
   name: 'Award-winning free-range pork meat',
   producer: Producer.find_by(name: 'Quinta da Bicuda')
@@ -362,7 +367,7 @@ ProductTag.create(
 user = User.create( email: "bla9@bla.com", password: "123456")
 
 
-Producer.create(
+producer = Producer.create(
   name: 'Vumba Organic Farm',
   phone_number: 914093739,
   address: 'Rua da Teixugueira, 3300-367 São Martinho da Cortiça',
@@ -374,6 +379,10 @@ Producer.create(
   user: user,
   status: 'accepted'
   )
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218264/Producers%20Photos%20for%20EatLocal/Vumba%20Organic%20Farm/c71b00_d16c265e4e66410693c4c774414801ac_mv2_d_1600_1200_s_2_vblj5w.webp")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218265/Producers%20Photos%20for%20EatLocal/Vumba%20Organic%20Farm/c71b00_fd03b82c73a84ef898721ed2cb866cec_mv2_d_1536_2308_s_2_s3hzjv.webp")
+  producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
 
 Product.create(
   name: 'Quinta do Carapinhal cheese - Traditional Maturation',

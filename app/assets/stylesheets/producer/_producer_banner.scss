@@ -1,8 +1,37 @@
+.producer-banner-container {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  width: 100%;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  margin-top: 56px;
+}
+
+.producer-banner-container-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100000;
+  h2 {
+  color: white;
+  letter-spacing: 15px;
+  text-align: center;
+  text-indent: 15px;
+  }
+}
+
+
 .card-category {
   margin-top:60px;
   background-size: cover;
   background-position: center;
-  height: 280px;
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -3,28 +3,30 @@
 
 
 
- <div class="avatar">
+<!--  <div class="avatar">
     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-circle" fill="white" xmlns="http://www.w3.org/2000/svg">
       <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
       <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
       <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
     </svg>
- </div>
-<div class="parent">
-  <div class="card-category producer-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1507598641400-ec3536ba81bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
-    <div class="producer-name m-2">
+ </div> -->
+
+
+  <div class="producer-banner-container" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= producer_banner(@producer) %>)">
+    <div class="producer-banner-container-text">
       <h2><%= @producer.name.upcase %></h2>
     </div>
   </div>
-</div>
 
-<div class="avatar-container mb-3">
-   <div class="avatar-picture">
-    <%=  cl_image_tag("https://images.unsplash.com/photo-1509506489701-dfe23b067808?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1368&q=80", transformation: [
-        { width: 800, height: 800, gravity: 'face', radius: 'max', crop: 'fill' }
-      ], class: "avatar-large")%>
-      <!-- <img src="https://images.unsplash.com/photo-1509506489701-dfe23b067808?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1368&q=80" alt=""> -->
-    </div>
+
+<div class="producer-avatar-container">
+  <% if @producer.user.photo.attached? %>
+    <%=  cl_image_tag(@producer.user.photo.key, transformation: [
+          { width: 150, height: 150, gravity: 'face', radius: 'max', crop: 'fill' }
+        ], class: "avatar-medium")%>
+    <% else %>
+      <%= image_tag'default_avatar.png', class: "avatar-medium" %>
+    <% end %>
 </div>
 
 
