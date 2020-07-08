@@ -10,7 +10,7 @@ class ProducersController < ApplicationController
       @producers = @products.map(&:producer).uniq
       @producers = @producers.select { |producer| producer.status == 'accepted' }
     else
-      @producers = @producers.geocoded
+      @producers = Producer.where(status: "accepted")
     end
     # @producers = Producer.where(status: 'accepted')
     # if params[:query].present?

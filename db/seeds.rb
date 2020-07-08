@@ -11,12 +11,16 @@
 Tag.destroy_all
 Product.destroy_all
 Producer.destroy_all
+Message.destroy_all
+Chatroom.destroy_all
+User.destroy_all
+
 
 
 puts "creating products and tags"
 
 Tag.create(
-  name: "vegetables"
+  name: "Vegetables"
   )
 
 Tag.create(
@@ -40,27 +44,27 @@ Tag.create(
   )
 
 Tag.create(
-  name: "cider"
+  name: "Cider"
   )
 
 Tag.create(
-  name: "dairy product"
+  name: "Dairy product"
   )
 
 Tag.create(
-  name: "wine"
+  name: "Wine"
   )
 
 Tag.create(
-  name: "jam"
+  name: "Jam"
   )
 
 Tag.create(
-  name: "oil"
+  name: "Oil"
   )
 
 Tag.create(
-  name: "mushrooms"
+  name: "Mushrooms"
   )
 
 user = User.create( email: "bla@bla.com", password: "123456")
@@ -86,10 +90,16 @@ ProductTag.create(
   tag: Tag.find_by(name: "Meat")
   )
 
+ProducerNews.create(
+  producer: Producer.find_by(name: 'Quinta da Bicuda'),
+  title: "New kind of ham",
+  description: "We are excited to announce that Quinta da Bicuda has started to produce a new kind of ham. Get in touch with us for more information."
+  )
+
 user = User.create( email: "bla25@bla.com", password: "123456")
 
 Producer.create(
-  name: 'dunleavy Vineyards',
+  name: 'Dunleavy Vineyards',
   phone_number: 94589032,
   address: 'Rua Primeiro de Maio, 2660-186 Loures, Portugal',
   email: 'dunleavy@vineyards.com',
@@ -102,12 +112,18 @@ Producer.create(
 Product.create(
   name: 'Dunleavy Pinot Noir Rose',
   description: 'Dunleavy pinot noir rose is a multi-award winning Portuguese wine produced in Loures close to Lisbon. It’s light and fruity with a mouthwatering finish.',
-  producer: Producer.find_by(name: 'dunleavy Vineyards')
+  producer: Producer.find_by(name: 'Dunleavy Vineyards')
   )
 
 ProductTag.create(
   product: Product.find_by(name: 'Dunleavy Pinot Noir Rose'),
-  tag: Tag.find_by(name: 'wine')
+  tag: Tag.find_by(name: 'Wine')
+  )
+
+ProducerNews.create(
+  producer: Producer.find_by(name: "Dunleavy Vineyards"),
+  title: "Harvest",
+  description: "We are happy that the harvest was successful and are excited to start producing this year's wine."
   )
 
 user = User.create( email: "bla2@bla.com", password: "123456")
@@ -131,7 +147,19 @@ Product.create(
 
 ProductTag.create(
   product: Product.find_by(name: 'Castano Ecologico Macabeo'),
-  tag: Tag.find_by(name: 'wine')
+  tag: Tag.find_by(name: 'Wine')
+  )
+
+ProducerNews.create(
+  producer: Producer.find_by(name: "Familia Castano"),
+  title: "Harvest",
+  description: "We are happy that the harvest was successful and are excited to start producing this year's wine."
+  )
+
+ProducerNews.create(
+  producer: Producer.find_by(name: "Familia Castano"),
+  title: "Introduction of new watering system",
+  description: "We have introduced a new way of watering our wine plants. Have a look, and feel free to take some inspiration from it."
   )
 
 user = User.create( email: "bla3@bla.com", password: "123456")
@@ -156,7 +184,13 @@ Product.create(
 
 ProductTag.create(
   product: Product.find_by(name: 'Asparagus'),
-  tag: Tag.find_by(name: 'vegetables')
+  tag: Tag.find_by(name: 'Vegetables')
+  )
+
+ProducerNews.create(
+  producer: Producer.find_by(name: "Cobrey Farm"),
+  title: "Artichokes production",
+  description: "We are happy to announce that we will be producing Artichokes from next season on. Find us on the Farmers Market in Porto to hear more about it."
   )
 
 user = User.create( email: "bla4@bla.com", password: "123456")
@@ -231,7 +265,7 @@ Product.create(
 
 ProductTag.create(
   product: Product.find_by(name: 'Pumpkin & Spices Jam'),
-  tag: Tag.find_by(name: 'jam')
+  tag: Tag.find_by(name: 'Jam')
   )
 Product.create(
   name: 'Rock Pear with Moscatel Wine Jam',
@@ -240,7 +274,7 @@ Product.create(
   )
 ProductTag.create(
   product: Product.find_by(name: 'Rock Pear with Moscatel Wine Jam'),
-  tag: Tag.find_by(name: 'jam')
+  tag: Tag.find_by(name: 'Jam')
   )
 Product.create(
   name: 'Marmalade With Coconut Sugar',
@@ -250,7 +284,7 @@ Product.create(
 
 ProductTag.create(
    product: Product.find_by(name: 'Marmalade With Coconut Sugar'),
-   tag: Tag.find_by(name: 'jam')
+   tag: Tag.find_by(name: 'Jam')
   )
 
 user = User.create( email: "bla7@bla.com", password: "123456")
@@ -275,7 +309,7 @@ Product.create(
 
 ProductTag.create(
    product: Product.find_by(name: 'Serra Oca Wines'),
-   tag: Tag.find_by(name: 'wine')
+   tag: Tag.find_by(name: 'Wine')
   )
 
 user = User.create( email: "bla8@bla.com", password: "123456")
@@ -349,7 +383,7 @@ Product.create(
 
 ProductTag.create(
    product: Product.find_by(name: 'Quinta do Carapinhal cheese - Traditional Maturation'),
-   tag: Tag.find_by(name: 'dairy product')
+   tag: Tag.find_by(name: 'Dairy product')
   )
 
 Product.create(
@@ -360,7 +394,7 @@ Product.create(
 
 ProductTag.create(
    product: Product.find_by(name: 'Quinta do Carapinhal cheese - Long Maturation'),
-   tag: Tag.find_by(name: 'dairy product')
+   tag: Tag.find_by(name: 'Dairy product')
   )
 
 user = User.create( email: "bla10@bla.com", password: "123456")
@@ -385,7 +419,7 @@ Product.create(
 
 ProductTag.create(
    product: Product.find_by(name: 'Buttery Ripened cheese'),
-   tag: Tag.find_by(name: 'dairy product')
+   tag: Tag.find_by(name: 'Dairy product')
   )
 
 Product.create(
@@ -397,7 +431,7 @@ Product.create(
 
 ProductTag.create(
    product: Product.find_by(name: 'Flor da Beira Tradição'),
-   tag: Tag.find_by(name: 'dairy product')
+   tag: Tag.find_by(name: 'Dairy product')
   )
 
 user = User.create( email: "bla11@bla.com", password: "123456")
@@ -447,7 +481,7 @@ Product.create(
 
 ProductTag.create(
    product: Product.find_by(name: 'Private Collection Olive Oil'),
-   tag: Tag.find_by(name: 'oil')
+   tag: Tag.find_by(name: 'Oil')
   )
 
 Product.create(
@@ -458,10 +492,10 @@ Product.create(
 
 ProductTag.create(
    product: Product.find_by(name: 'POD Ribatejo Olive Oil'),
-   tag: Tag.find_by(name: 'oil')
+   tag: Tag.find_by(name: 'Oil')
   )
 
-user = User.create( email: "bla13@bla.com", password: "123456")
+user = User.create( email: "bla20@bla.com", password: "123456")
 
 Producer.create(
   name: 'Hipólito - Tudo o Que a Terra Dá',
@@ -484,7 +518,7 @@ Product.create(
 
 ProductTag.create(
    product: Product.find_by(name: 'Exotic Mushrooms'),
-   tag: Tag.find_by(name: 'mushrooms')
+   tag: Tag.find_by(name: 'Mushrooms')
   )
 
 user = User.create( email: "bla13@bla.com", password: "123456")
@@ -554,8 +588,7 @@ Producer.create(
 Product.create(
   name: 'Ready to Cut Selction Ham',
   description: '1 Whole Ham Curing 12 months',
-  producer: Producer.find_by(name: 'Fumeiro da Gardunha'),
-  status: "confirmed"
+  producer: Producer.find_by(name: 'Fumeiro da Gardunha')
   )
 
 ProductTag.create(
