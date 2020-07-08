@@ -15,6 +15,8 @@ module EatLocal
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
+    config.exceptions_app = self.routes
+
 
     config.action_view.embed_authenticity_token_in_remote_forms = true
 

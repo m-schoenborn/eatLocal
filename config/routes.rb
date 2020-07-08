@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   get 'articles', to: 'pages#articles'
   get 'producer_profile', to: 'pages#producer_profile'
 
+  get '/404', to: "errors#not_found"
+  get '/422', to: "errors#unacceptable"
+  get '/500', to: "errors#internal_error"
+
   get "profile", to: "pages#profile", as: "profile"
 
   resources :chatrooms, only: :show do

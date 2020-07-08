@@ -78,7 +78,7 @@ user = User.create( email: "bla@bla.com", password: "123456")
   latitude: 38.72240025,
   longitude: -9.39690917,
   user: user,
-  status: "confirmed",
+  status: 'accepted'
   )
 Product.create(
   name: 'Award-winning free-range pork meat',
@@ -107,7 +107,7 @@ Producer.create(
   latitude: 38.8308741,
   longitude: -9.1684512,
    user: user,
-   status: "confirmed"
+   status: 'accepted'
   )
 Product.create(
   name: 'Dunleavy Pinot Noir Rose',
@@ -137,7 +137,7 @@ Producer.create(
   latitude: 42.12267315,
   longitude: -8.76571655,
   user: user,
-  status: "confirmed"
+  status: 'accepted'
   )
 Product.create(
   name: 'Castano Ecologico Macabeo',
@@ -173,7 +173,8 @@ Producer.create(
   latitude: 41.3406144,
   longitude: -8.68709311,
   user: user,
-  status: "confirmed",
+  status: 'accepted'
+
   )
 Product.create(
   name: 'Asparagus',
@@ -203,7 +204,7 @@ Producer.create(
   latitude: 38.4436932,
   longitude: -9.10766602,
   user: user,
-  status: "confirmed"
+  status: 'accepted'
   )
 Product.create(
   name: 'Raw Rosemary Honey',
@@ -227,7 +228,7 @@ Producer.create(
   latitude: 40.3723735,
   longitude: -8.2780296,
   user: user,
-  status: "confirmed",
+  status: 'accepted'
   )
 
 Product.create(
@@ -254,7 +255,7 @@ Producer.create(
   latitude: 38.718542,
   longitude: -8.750787,
   user: user,
-  status: "confirmed",
+  status: 'accepted'
   )
 Product.create(
   name: 'Pumpkin & Spices Jam',
@@ -298,7 +299,7 @@ Producer.create(
   latitude: 39.2406945,
   longitude: -9.0866073,
   user: user,
-  status: "confirmed"
+  status: 'accepted'
   )
 Product.create(
   name: 'Serra Oca Wines',
@@ -323,7 +324,7 @@ Producer.create(
   latitude: 39.316331,
   longitude: -8.917514,
   user: user,
-  status: "confirmed"
+  status: 'accepted'
   )
 Product.create(
   name: 'Flour & Pork sausage',
@@ -371,7 +372,7 @@ Producer.create(
   latitude: 40.273371,
   longitude: -8.151597,
   user: user,
-  status: "confirmed"
+  status: 'accepted'
   )
 
 Product.create(
@@ -408,7 +409,7 @@ Producer.create(
   latitude: 40.425709,
   longitude: -8.022512,
   user: user,
-  status: "confirmed"
+  status: 'accepted'
   )
 Product.create(
   name: 'Buttery Ripened cheese',
@@ -444,7 +445,7 @@ Producer.create(
   latitude: 40.963127,
   longitude: -8.421260,
   user: user,
-  status: "confirmed"
+  status: 'accepted'
   )
 Product.create(
   name: 'Snails',
@@ -469,7 +470,7 @@ Producer.create(
   latitude: 39.483291,
   longitude: -8.171802,
   user: user,
-  status: "confirmed"
+  status: 'accepted'
   )
 
 Product.create(
@@ -507,7 +508,7 @@ Producer.create(
   latitude: 39.283583726688704,
   longitude: -8.510584821794609,
   user: user,
-  status: "confirmed"
+  status: 'accepted'
   )
 Product.create(
   name: 'Exotic Mushrooms',
@@ -531,7 +532,7 @@ Producer.create(
   latitude: 39.252941,
   longitude: -8.547074,
   user: user,
-  status: "confirmed"
+  status: 'accepted'
    )
 Product.create(
   name: 'Blueberries',
@@ -556,7 +557,7 @@ Producer.create(
   latitude: 38.74000562683715,
   longitude: -7.815030812780606,
   user: user,
-  status: "confirmed"
+  status: 'accepted'
   )
 
 Product.create(
@@ -582,13 +583,12 @@ Producer.create(
   latitude: 40.175872,
   longitude: -7.492009,
   user: user,
-  status: "confirmed"
+  status: 'accepted'
   )
 Product.create(
   name: 'Ready to Cut Selction Ham',
   description: '1 Whole Ham Curing 12 months',
-  producer: Producer.find_by(name: 'Fumeiro da Gardunha'),
-  status: "confirmed"
+  producer: Producer.find_by(name: 'Fumeiro da Gardunha')
   )
 
 ProductTag.create(
