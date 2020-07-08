@@ -18,7 +18,6 @@ class ErrorsController < ApplicationController
   end
 
   def internal_error
-    authorize @errors
     respond_to do |format|
       format.html { render status: 500 }
     end
