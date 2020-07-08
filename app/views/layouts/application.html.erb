@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>EatLocal - Find local producers nearb</title>
+  <title>EatLocal - Find local producers nearby</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   
@@ -11,6 +11,12 @@
   <!-- Logo configuration part -->
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:url" content="http://www.eatlocal.live"/>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Find local producers nearby!" />
+  <meta property="og:description" content= "Your entertaining and descriptive copy here, if your meta description is good, use it."/>
+  <meta property="og:image" content="http://www.eatlocal.live/wine.png" />
+
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
