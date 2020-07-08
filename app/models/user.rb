@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_one :producer
   has_many :favorites
+  has_many :chatrooms
+  has_many :messsages, through: :chatrooms
 
   validates :role, inclusion: { in: %w(customer producer admin) }
 end

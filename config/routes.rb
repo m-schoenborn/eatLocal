@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   get "profile", to: "pages#profile", as: "profile"
 
-  resources :chatrooms, only: :show do
+  resources :chatrooms, only: [:index, :show] do
     resources :messages, only: :create
     collection do
       get 'create_chat'
