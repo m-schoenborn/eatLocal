@@ -98,6 +98,6 @@ class ProducersController < ApplicationController
   private
 
   def producer_params
-    params.require(:producer).permit(:name, :phone_number, :address, :email, :description, :favorite)
+    params.require(:producer).permit(:name, :phone_number, :address, :email, :description, :favorite, photos: [])
   end
 end
