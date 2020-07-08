@@ -2,26 +2,27 @@
 <br>
 <br>
 
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-center" style="margin-top: 10%">
   <h3><u>MY CHATS FORUM</u></h3>
 </div>
 
 <div class="d-flex justify-content-center" style="margin-top: 5%">
   <div class="card" style="width: 25rem;">
-    <div class="card-body">
+
       <% @chatrooms.each do |chatroom| %>
-      <% if current_user.role == 'customer'  %>
-        <h5><%= chatroom.producer.name %></h5>
-      <% else %>
-        <h5><%= chatroom.user.email %></h5>
-      <% end  %>
-       <h6>Messages: <%= chatroom.messages.count %> </h6>
-       <div class="d-flex justify-content-center" style="margin-top: 7%">
-        <p><%= link_to 'See conversation', chatroom_path(chatroom), class:"btn-green" %></p>
+      <div class="card-body" style="margin-bottom: 2%">
+          <% if current_user.role == 'customer'  %>
+            <h5><%= chatroom.producer.name %></h5>
+          <% else %>
+            <h5><%= chatroom.user.email %></h5>
+          <% end  %>
+            <h6>Messages: <%= chatroom.messages.count %> </h6>
+           <div class="d-flex justify-content-center" style="margin-top: 7%">
+            <p><%= link_to 'See conversation', chatroom_path(chatroom), class:"btn-green" %></p>
+           </div>
        </div>
       <% end %>
     </div>
-   </div>
   </div>
 
   <div class="d-flex justify-content-center" style="margin-top: 5%">
