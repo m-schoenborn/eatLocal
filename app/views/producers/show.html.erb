@@ -94,10 +94,14 @@
       <h4>WHERE TO FIND THEIR PRODUCTS</h4>
     </div>
     <div class="card-container d-flex justify-content-center">
-      <div class="locationcard card p-2">
+
+      <div class="card p-2" style="width: 21rem;">
+
         <div class="news card-product-infos p-2 flex-column">
-          <div class="text-center"> <%#= @producer.selling_location %></div>
-        </div>
+          <div class="text-center">
+            <p><%= @producer.selling_location %></p>
+            </div>
+          </div>
         <!-- <div class="map-selling-location">
 
         </div> -->
@@ -115,7 +119,9 @@
           <% @producer.producer_news.each_with_index do |news, i| %>
             <div class="carousel-item mr-0 <%= 'active' if i == 0 %>">
               <div class="card-container d-flex justify-content-center mb-3">
-                <div class="newscard card-product p-1 mr-1">
+
+                <div class="card-product p-1 mr-1" style="width: 21rem;">
+
                   <div class="news card-product-infos flex-column text-center">
                     <h6 class="d-flex justify-content-center"><%= news.title %></h6>
                     <div class="news-image d-flex justify-content-center"><img src="https://images.unsplash.com/photo-1543528176-61b239494933?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80" class="card-img-top mb-1" alt=""></div>
