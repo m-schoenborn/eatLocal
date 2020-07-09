@@ -41,13 +41,20 @@
         <% if current_user.favorites.empty? %>
           <p>You have no favourites yet</p>
         <% else %>
-
+       %>
 
         <h5 class="text-center border-bottom border-dark pb-2">CHECK OUT WHAT'S NEW FROM YOUR FAVOURITE PRODUCERS</h5>
           <% current_user.favorites.each do |favorite| %>
           <div class="card p-2 m-1 mt-2">
+             <% if favorite.producer.user.photo.attached? %>
+            <%=  cl_image_tag(favorite.producer.user.photo.key, transformation: [
+                  { width: 150, height: 150, gravity: 'face', radius: 'max', crop: 'fill' }
+                ], class: "avatar-medium")%>
+            <% else %>
+              <%= image_tag 'default_avatar.png', class: "avatar-medium" %>
+            <% end %>
 
-            <p><b><%= link_to favorite.producer.name %></b></p>
+            <p><b><%= link_to favorite.producer.name, producer_path(favorite.producer) %></b></p>
             <% favorite.producer.producer_news.each do |news| %>
               <p><%= news.title %></p>
               <p><%= news.description %></p>
