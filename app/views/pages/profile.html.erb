@@ -51,7 +51,7 @@
                   <div class="photo mr-2">
                    <% if favorite.producer.user.photo.attached? %>
                   <%=  cl_image_tag(favorite.producer.user.photo.key, transformation: [
-                        { width: 40, height: 40, gravity: 'face', radius: 'max', crop: 'fill' }
+                        { width: 130, height: 130, radius: 'max', crop: 'fill' }
                       ], class: "avatar-medium")%>
                   <% else %>
                     <%= image_tag 'default_avatar.png', class: "avatar-medium", id: "avatar-photo" %>
@@ -64,7 +64,7 @@
                     <div class="news">
                       <% favorite.producer.producer_news.each do |news| %>
                         <p><%= news.title %></p>
-                        <i><%= news.description %></i>
+                        <p><i><%= news.description %></i></p>
                       <% end %>
                     </div>
                   </div>
