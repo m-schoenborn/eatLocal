@@ -120,7 +120,7 @@ file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594311507/Prod
 
 ProductTag.create(
   product: Product.find_by(name: 'Award-winning free-range pork meat'),
-  tag: Tag.find_by(name: "Meat")
+  tag: Tag.find_by(name: "Meat"),
   )
 
 ProducerNews.create(
@@ -430,6 +430,7 @@ product = Product.create(
 
 file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594312243/Producers%20Photos%20for%20EatLocal/Alquimia%20dos%20Sabores/Products/yulia-khlebnikova-o_O75f28GiA-unsplash_tm9wtr.jpg")
 product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
 
 ProductTag.create(
   product: Product.find_by(name: 'Rock Pear with Moscatel Wine Jam'),
