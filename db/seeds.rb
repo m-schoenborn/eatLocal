@@ -81,12 +81,6 @@ Tag.create(
 
 
 
-
-
-
-
-
-
 user = User.create( email: "bla@bla.com", password: "123456")
 
   producer = Producer.create(
