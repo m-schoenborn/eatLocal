@@ -67,6 +67,12 @@ Tag.create(
   name: "Mushrooms"
   )
 
+
+
+
+
+
+
  # file = URI.open("")
  #  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
  #  file = URI.open("")
@@ -78,6 +84,7 @@ Tag.create(
 
  #  banner_file = URI.open("")
  #  producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
+
 
 
 
