@@ -7,7 +7,6 @@ class Producer < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :producer_news, dependent: :destroy
   has_many :tags, through: :products
-  has_many :comments, dependent: :destroy
 
   has_many :chatrooms
   has_many :messsages, through: :chatrooms
