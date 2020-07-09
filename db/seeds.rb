@@ -110,10 +110,13 @@ user.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
   banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594230981/Producers%20Photos%20for%20EatLocal/Quinta%20da%20Bicuda/poultry2_sdmya6.jpg")
   producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
 
-Product.create(
+product = Product.create(
   name: 'Award-winning free-range pork meat',
-  producer: Producer.find_by(name: 'Quinta da Bicuda',
+  producer: Producer.find_by(name: 'Quinta da Bicuda'),
   )
+
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594311507/Producers%20Photos%20for%20EatLocal/Quinta%20da%20Bicuda/Products/photo-1560781290-7dc94c0f8f4f_gxybge.jpg")
+ product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
 
 ProductTag.create(
   product: Product.find_by(name: 'Award-winning free-range pork meat'),
@@ -155,11 +158,15 @@ producer = Producer.create(
   banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594231389/Producers%20Photos%20for%20EatLocal/Dunleavy%20Vineyards/vineyard4_jz0k6j.jpg")
   producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
 
-Product.create(
+product = Product.create(
   name: 'Dunleavy Pinot Noir Rose',
   description: 'Dunleavy pinot noir rose is a multi-award winning Portuguese wine produced in Loures close to Lisbon. It’s light and fruity with a mouthwatering finish.',
   producer: Producer.find_by(name: 'Dunleavy Vineyards')
   )
+
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594311782/Producers%20Photos%20for%20EatLocal/Dunleavy%20Vineyards/Products/chen-mizrach-GLOZKBTJiaM-unsplash_iqavzj.jpg")
+product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
 
 ProductTag.create(
   product: Product.find_by(name: 'Dunleavy Pinot Noir Rose'),
@@ -202,11 +209,15 @@ producer = Producer.create(
   producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
 
 
-Product.create(
+product = Product.create(
   name: 'Castano Ecologico Macabeo',
   description: 'One sip of this organic white and you’ll be taken to the warm, sunny climes of Portugal. Imagine drinking this crisp white, while looking over sun-drenched fields and rows of pretty vines – it’ll make you feel warm and fuzzy inside. A lovely feeling, that’s enhanced by the knowledge that this vineyard is forward-thinking in their practice, driven by quality but careful to follow organic agricultural methods. The wine itself is soft and juicy, with a gentle mineral note and a super clean, fresh finish, that makes it an easy drinking dry white.',
   producer: Producer.find_by(name: 'Familia Castano')
   )
+
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594311924/Producers%20Photos%20for%20EatLocal/Familia%20Castano/Products/brett-jordan-RBZJ7LBbrcA-unsplash_svqnrk.jpg")
+product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
 
 ProductTag.create(
   product: Product.find_by(name: 'Castano Ecologico Macabeo'),
@@ -255,11 +266,15 @@ producer = Producer.create(
   producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
 
 
-Product.create(
+product = Product.create(
   name: 'Asparagus',
   description: 'There are some fresh vegetables that are simply transformed in flavour and texture by fast, short light supply chains. Local, freshly picked asparagus like this is one such product. With its long green stems and purple tinged tips, asparagus has a unique and subtle intensity of flavour. A delicacy of the vegetable world, much of the time it is simply combined with similarly rich tasting ingredients, pairing particularly well with parmesan or hollandaise sauce.',
   producer: Producer.find_by(name: 'Cobrey Farm')
   )
+
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594311999/Producers%20Photos%20for%20EatLocal/Cobrey%20Farm/Products/stephanie-studer-ReXxkS1m1H0-unsplash_hiapbr.jpg")
+product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
 
 ProductTag.create(
   product: Product.find_by(name: 'Asparagus'),
@@ -301,11 +316,15 @@ producer = Producer.create(
   banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594230370/Producers%20Photos%20for%20EatLocal/Miel%20La%20Molina/bee2_evg7ig.jpg")
   producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
 
-Product.create(
+product = Product.create(
   name: 'Raw Rosemary Honey',
   description: 'Miel La Molina produce and extract their honey naturally from fruit collecting bees, spread over the landscape of the Valle del Guadalhorce, Álora and surroundings. With its sticky texture, honey is a sweet flavoured ingredient widely used in cooking for marinades, dressings and sauces, as well as sweet dishes such as cakes and biscuits. It also makes a natural sweetener in place of sugar.',
   producer: Producer.find_by(name: 'Miel la Molina')
   )
+
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594312070/Producers%20Photos%20for%20EatLocal/Miel%20La%20Molina/Products/danika-perkinson-ZhA9vZQPTeE-unsplash_omafep.jpg")
+product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
 
 ProductTag.create(
   product: Product.find_by(name: 'Raw Rosemary Honey'),
@@ -341,11 +360,15 @@ producer = Producer.create(
   banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594246164/Producers%20Photos%20for%20EatLocal/Burrow%20Hill%20Cider/bur3_p3no6y.jpg")
   producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
 
-Product.create(
+product = Product.create(
   name: 'Discovery Apple Juice',
   description: 'Pressed from a blend of fresh Discovery apples.',
   producer: Producer.find_by(name: 'Burrow Hill Cider')
   )
+
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594312168/Producers%20Photos%20for%20EatLocal/Burrow%20Hill%20Cider/Products/alexander-mils-U6dWj2nhPEA-unsplash_sstgvg.jpg")
+product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
 
 ProductTag.create(
   product: Product.find_by(name: 'Discovery Apple Juice'),
@@ -383,30 +406,44 @@ producer = Producer.create(
   banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594303268/Producers%20Photos%20for%20EatLocal/Alquimia%20dos%20Sabores/alq1_pofzre.jpg")
   producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
 
-Product.create(
+product = Product.create(
   name: 'Pumpkin & Spices Jam',
   description: 'Ingredients: Pumpkin, Brown Sugar, and various Spices. Prepared with 70.7g of pumpkin, 29g of sugar and 0.3g of spices per 100g.',
   producer: Producer.find_by(name: 'Alquimia dos Sabores')
   )
 
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594312336/Producers%20Photos%20for%20EatLocal/Alquimia%20dos%20Sabores/Products/markus-avila-8KJxdwQ0m0k-unsplash_vumgwc.jpg")
+product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+
+
 ProductTag.create(
   product: Product.find_by(name: 'Pumpkin & Spices Jam'),
   tag: Tag.find_by(name: 'Jam')
   )
-Product.create(
+
+product = Product.create(
   name: 'Rock Pear with Moscatel Wine Jam',
   description: 'Ingredients: Rock Pear, Sugar and “Moscatel” Wine. Prepared with 62g of pear, 34g of sugar and 4g of ‘’Moscatel’’ per 100g.',
   producer: Producer.find_by(name: 'Alquimia dos Sabores')
+
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594312243/Producers%20Photos%20for%20EatLocal/Alquimia%20dos%20Sabores/Products/yulia-khlebnikova-o_O75f28GiA-unsplash_tm9wtr.jpg")
+product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
   )
 ProductTag.create(
   product: Product.find_by(name: 'Rock Pear with Moscatel Wine Jam'),
   tag: Tag.find_by(name: 'Jam')
   )
-Product.create(
+product = Product.create(
   name: 'Marmalade With Coconut Sugar',
   description: 'Ingredients: Quince, Coconut Sugar, Lemon Zest and Cinnamon Stick. Prepared with 80 g of fruit and 20 g of sugar per 100g.',
   producer: Producer.find_by(name: 'Alquimia dos Sabores')
   )
+
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594312302/Producers%20Photos%20for%20EatLocal/Alquimia%20dos%20Sabores/Products/monika-grabkowska-Bn4FIs250dY-unsplash_gs7hrx.jpg")
+product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
 
 ProductTag.create(
    product: Product.find_by(name: 'Marmalade With Coconut Sugar'),
@@ -447,11 +484,15 @@ producer = Producer.create(
 
 
 
-Product.create(
+product = Product.create(
   name: 'Serra Oca Wines',
   description: 'Serra Oca wines are produced from Portuguese grape varieties, with a non-intensive viticulture and without the use of synthetic chemicals.',
   producer: Producer.find_by(name: 'Quinta do Olival da Murta')
   )
+
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594312401/Producers%20Photos%20for%20EatLocal/Quinta%20do%20Olival%20da%20Murta/Products/roberta-sorge-IywM7AQTZcM-unsplash_fjmp35.jpg")
+product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
 
 ProductTag.create(
    product: Product.find_by(name: 'Serra Oca Wines'),
@@ -486,33 +527,45 @@ producer = Producer.create(
   banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594305328/Producers%20Photos%20for%20EatLocal/Mestre%20Henriques/mes1_s40cbx.jpg")
   producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
 
-Product.create(
+product = Product.create(
   name: 'Flour & Pork sausage',
   description: 'Pork Meat and Fat, Corn and Wheat Flour, Red Capsicum Paste, Salt, Spices (Paprika, Piri-piri Sauce, Cloves, Garlic).',
   producer: Producer.find_by(name: 'Mestre Henriques')
   )
+
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594312470/Producers%20Photos%20for%20EatLocal/Mestre%20Henriques/Products/likemeat-cSxpCQrRlo8-unsplash_r60lvs.jpg")
+product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
 
 ProductTag.create(
    product: Product.find_by(name: 'Flour & Pork sausage'),
    tag: Tag.find_by(name: 'Meat')
   )
 
-Product.create(
+product = Product.create(
   name: 'Extra Spicy chouriço',
   description: 'Pork Meat, Red Capsicum Paste, Salt, Spices (Paprika, Piri-piri Sauce, Cloves, Garlic), Red Wine and White Pepper.',
   producer: Producer.find_by(name: 'Mestre Henriques')
   )
+
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594312588/Producers%20Photos%20for%20EatLocal/Mestre%20Henriques/Products/jonathan-van-den-broek-3dzLUYv3xd0-unsplash_ujnw7v.jpg")
+product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
 
 ProductTag.create(
    product: Product.find_by(name: 'Extra Spicy chouriço'),
    tag: Tag.find_by(name: 'Meat')
   )
 
-Product.create(
+product = Product.create(
   name: 'Paiola',
   description: 'Pork Meat, Red Capsicum Paste, Salt, Spices (Paprika, White Pepper, Piri-piri Sauce, Cloves, Garlic) and Red Wine.',
   producer: Producer.find_by(name: 'Mestre Henriques')
   )
+
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594312631/Producers%20Photos%20for%20EatLocal/Mestre%20Henriques/Products/photo-1563797369989-c3b33d80f0cc_nyhw6t.jpg")
+product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
 
 ProductTag.create(
    product: Product.find_by(name: 'Paiola'),
@@ -524,7 +577,7 @@ file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594306447/Prod
 user.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
 
 
-producer = producer = Producer.create(
+producer = Producer.create(
   name: 'Vumba Organic Farm',
   phone_number: 914093739,
   address: 'Rua da Teixugueira, 3300-367 São Martinho da Cortiça',
@@ -548,22 +601,30 @@ producer = producer = Producer.create(
   banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594305998/Producers%20Photos%20for%20EatLocal/Vumba%20Organic%20Farm/vum1_pap5we.jpg")
   producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
 
-Product.create(
+product = Product.create(
   name: 'Quinta do Carapinhal cheese - Traditional Maturation',
   description: 'Our cheese’s traditional maturation period is around 45 days. The cheese is normally sold cut into halves (estimated weight: 420 grams) and packed in vacuum. According to its tradition, we also sell the cheese whole and wrapped in a white band (weight between 800 and 900 grams).',
   producer: Producer.find_by(name: 'Vumba Organic Farm')
   )
+
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594312694/Producers%20Photos%20for%20EatLocal/Vumba%20Organic%20Farm/Products/aliona-gumeniuk-jeAjT87nbjM-unsplash_nermpi.jpg")
+product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
 
 ProductTag.create(
    product: Product.find_by(name: 'Quinta do Carapinhal cheese - Traditional Maturation'),
    tag: Tag.find_by(name: 'Dairy product')
   )
 
-Product.create(
+product = Product.create(
   name: 'Quinta do Carapinhal cheese - Long Maturation',
   description: 'For strong flavor cheese lovers we have the “Quinta do Carapinhal – Long maturation”. As a result of the long maturation period the cheese gains a drier texture and a more intense flavor.',
   producer: Producer.find_by(name: 'Vumba Organic Farm')
   )
+
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594312707/Producers%20Photos%20for%20EatLocal/Vumba%20Organic%20Farm/Products/rebecca-orlov-orlov-design-co-rfI4MmZXZOk-unsplash_qvdrij.jpg")
+product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
 
 ProductTag.create(
    product: Product.find_by(name: 'Quinta do Carapinhal cheese - Long Maturation'),
@@ -601,23 +662,31 @@ producer = Producer.create(
   producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
 
 
-Product.create(
+product = Product.create(
   name: 'Buttery Ripened cheese',
   description: 'Cheese with a sheep’s typical aroma, ripened in a controlled environment and slightly acidulous taste, presenting in its interior a soft paste with little or no eye, buttery kind with a white ivory colour and a thin straw yellow crust.',
   producer: Producer.find_by(name: 'Queijaria Flor da Beira')
   )
+
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594312792/Producers%20Photos%20for%20EatLocal/Queijaria%20Flor%20da%20Beira/Products/aliona-gumeniuk-7sJMQ_amtiQ-unsplash_nruho7.jpg")
+product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
 
 ProductTag.create(
    product: Product.find_by(name: 'Buttery Ripened cheese'),
    tag: Tag.find_by(name: 'Dairy product')
   )
 
-Product.create(
+product = Product.create(
   name: 'Flor da Beira Tradição',
   description: 'Our best milk and "know" comes Cheese Flower Border Traditional.
   This cheese is obtained by a very strict control on the selection of our best producers of sheep Bordaleira Serra da Estrela milk, meeting the expectations of our most discerning consumer and connoisseur of traditional products.',
   producer: Producer.find_by(name: 'Queijaria Flor da Beira')
   )
+
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594312817/Producers%20Photos%20for%20EatLocal/Queijaria%20Flor%20da%20Beira/Products/lindsay-moe-n-QvF3vyf5M-unsplash_ldlb9i.jpg")
+product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
 
 ProductTag.create(
    product: Product.find_by(name: 'Flor da Beira Tradição'),
@@ -654,11 +723,15 @@ producer = Producer.create(
   producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
 
 
-Product.create(
+product = Product.create(
   name: 'Snails',
   description: 'We focus primarily in the production of snails for commercialization for food industry',
   producer: Producer.find_by(name: 'Spiracol')
   )
+
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594312917/Producers%20Photos%20for%20EatLocal/Spiracol/Products/ali-robins-upxdFPFXFXY-unsplash_unpt0o.jpg")
+product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
 
 ProductTag.create(
    product: Product.find_by(name: 'Snails'),
@@ -695,22 +768,30 @@ producer = Producer.create(
   banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218258/Producers%20Photos%20for%20EatLocal/Casa%20Anadia%20Olive%20Oils/foto3_epktoh.jpg")
   producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
 
-Product.create(
+product = Product.create(
   name: 'Private Collection Olive Oil',
   description: 'The most exquisite and balanced blend between the best olives, the best varieties, from our best olive trees.',
   producer: Producer.find_by(name: 'Casa Anadia Olive Oils')
   )
+
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594312963/Producers%20Photos%20for%20EatLocal/Casa%20Anadia%20Olive%20Oils/Products/roberta-sorge-uOBApnN_K7w-unsplash_t206c7.jpg")
+product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
 
 ProductTag.create(
    product: Product.find_by(name: 'Private Collection Olive Oil'),
    tag: Tag.find_by(name: 'Oil')
   )
 
-Product.create(
+product = Product.create(
   name: 'POD Ribatejo Olive Oil',
   description: 'The most complex fusion between our Portuguese varieties, Galega and Cobrançosa.',
   producer: Producer.find_by(name: 'Casa Anadia Olive Oils')
   )
+
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594312981/Producers%20Photos%20for%20EatLocal/Casa%20Anadia%20Olive%20Oils/Products/jonathan-ocampo-iCgfwfqgdzo-unsplash_qmigay.jpg")
+product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
 
 ProductTag.create(
    product: Product.find_by(name: 'POD Ribatejo Olive Oil'),
@@ -749,11 +830,15 @@ producer = Producer.create(
   producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
 
 
-Product.create(
+product = Product.create(
   name: 'Exotic Mushrooms',
   description: 'Mushrooms from all over the world can be found here.',
   producer: Producer.find_by(name: 'Hipólito - Tudo o Que a Terra Dá')
   )
+
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594313034/Producers%20Photos%20for%20EatLocal/Hip%C3%B3lito/Products/annie-spratt-eF4zd09O4b8-unsplash_ndazu7.jpg")
+product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
 
 ProductTag.create(
    product: Product.find_by(name: 'Exotic Mushrooms'),
@@ -788,11 +873,16 @@ producer = Producer.create(
   producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
 
 
-Product.create(
+product = Product.create(
   name: 'Blueberries',
   description: 'Blueberries remain one of the most nutricious, antioxidant-rich types of fruit in the world and have been shown to do everything from enhance brain health to keep your heart strong.',
   producer: Producer.find_by(name: 'Visionagro')
   )
+
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594313090/Producers%20Photos%20for%20EatLocal/Visionagro/Products/erol-ahmed-KG8ofkGRl1k-unsplash_lzxpvl.jpg")
+product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+
 
 ProductTag.create(
    product: Product.find_by(name: 'Blueberries'),
@@ -827,11 +917,15 @@ producer = Producer.create(
   banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594297108/Producers%20Photos%20for%20EatLocal/Pepe%20Aromas/pepe1_wosslj.jpg")
   producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
 
-Product.create(
+product = Product.create(
   name: 'Prickly Pears',
   description: 'Cactus and their fruits are a large part of Mexican cuisine. The wide, flat cactus pads ("nopales") are used in many Mexican main dishes such as salads, eggs and as a filling for other dishes. The cactus fruit, sometimes called a "Prickly Pears" are very sweet and can be eaten raw, right off of the plant. Depending on the level of ripeness, they can range from slightly sweet to syrupy sweet.',
   producer: Producer.find_by(name: 'Pepe Aromas')
   )
+
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594313204/Producers%20Photos%20for%20EatLocal/Pepe%20Aromas/Products/tina-vanhove-luQDeUiLNbM-unsplash_d3k2lc.jpg")
+product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
 
 ProductTag.create(
    product: Product.find_by(name: 'Prickly Pears'),
@@ -866,11 +960,15 @@ producer = Producer.create(
   banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594247686/Producers%20Photos%20for%20EatLocal/Fumeiro%20da%20Gardunha/fum1_y0wz8u.jpg")
   producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
 
- product = Product.create(
+product = Product.create(
   name: 'Ready to Cut Selction Ham',
   description: '1 Whole Ham Curing 12 months',
   producer: Producer.find_by(name: 'Fumeiro da Gardunha')
   )
+
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594313264/Producers%20Photos%20for%20EatLocal/Fumeiro%20da%20Gardunha/Products/matt-seymour-HUXLEvx__CI-unsplash_h90nfh.jpg")
+product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
  # file = URI.open("")
  # product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
 
