@@ -15,15 +15,15 @@
           </div>
 
         <div class="update-info-links pt-1">
-          <div class="card mr-2 ml-2 mb-2">
+          <div class="card mr-2 ml-2 mb-2 border-0">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">
+              <li class="list-group-item text-center">
                 <%= link_to "UPDATE PASSWORD", edit_user_registration_path, class: "text-secondary" %>
               </li>
-              <li class="list-group-item">
+              <li class="list-group-item text-center">
                 <a href="#" class="text-secondary" data-toggle="modal" data-target="#exampleModalLong">UPDATE PERSONAL INFO</a>
               </li>
-              <li class="list-group-item">
+              <li class="list-group-item text-center">
                 <% if current_user.producer.blank? %>
                   <%= link_to "BECOME A PRODUCER", new_producer_path %>
                 <% else %>
@@ -43,10 +43,10 @@
         <% else %>
 
 
-        <h5 class="text-center border-bottom border-dark pb-2">CHECK OUT WHAT'S NEW FROM YOUR FAVOURITE PRODUCERS</h5>
+        <h5 class="text-center border-bottom pb-2">CHECK OUT WHAT'S NEW FROM YOUR FAVOURITE PRODUCERS</h5>
           <% current_user.favorites.each do |favorite| %>
           <% if favorite.producer.producer_news.present? %>
-              <div class="card p-2 m-1 mt-2">
+              <div class="card p-2 m-1 mt-2 border-light">
                 <div class="d-flex justify-content-between">
                   <div class="photo mr-2">
                    <% if favorite.producer.user.photo.attached? %>
