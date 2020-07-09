@@ -45,8 +45,9 @@
 
         <h5 class="text-center border-bottom border-dark pb-2">CHECK OUT WHAT'S NEW FROM YOUR FAVOURITE PRODUCERS</h5>
           <% current_user.favorites.each do |favorite| %>
-          <div class="card p-2 m-1">
-            <p><b><%= favorite.producer.name %></b></p>
+          <div class="card p-2 m-1 mt-2">
+
+            <p><b><%= link_to favorite.producer.name %></b></p>
             <% favorite.producer.producer_news.each do |news| %>
               <p><%= news.title %></p>
               <p><%= news.description %></p>
@@ -54,7 +55,7 @@
           </div>
 
       <!-- Favorites Cards -->
-            <%= link_to producer_path(favorite.producer.id) do %>
+         <!--    <%= link_to producer_path(favorite.producer.id) do %> -->
          <!--      <div class="producer-card mb-2">
                 <div id="carouselExampleControls<%= favorite.producer.id %>" class="carousel slide" data-interval="false">
                   <div class="carousel-inner">
