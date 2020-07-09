@@ -67,6 +67,26 @@ Tag.create(
   name: "Mushrooms"
   )
 
+ file = URI.open("")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+  banner_file = URI.open("")
+  producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+
+
+
+
+
+
+
+
 user = User.create( email: "bla@bla.com", password: "123456")
 
   producer = Producer.create(
@@ -81,10 +101,17 @@ user = User.create( email: "bla@bla.com", password: "123456")
   status: 'accepted',
   selling_location: "Mercado Biologico do Principe Real"
   )
-  # file = URI.open(PASTE_URL_CLOUDINARY)
-  # producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
-  # banner_file = URI.open(PASTE_URL_CLOUDINARY)
-  # producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594231044/Producers%20Photos%20for%20EatLocal/Quinta%20da%20Bicuda/poultry_3_knttlh.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594230981/Producers%20Photos%20for%20EatLocal/Quinta%20da%20Bicuda/poultry1_almiyj.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594230981/Producers%20Photos%20for%20EatLocal/Quinta%20da%20Bicuda/pig1_dw2ewm.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594230981/Producers%20Photos%20for%20EatLocal/Quinta%20da%20Bicuda/pig2_zboqhk.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+  banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594230981/Producers%20Photos%20for%20EatLocal/Quinta%20da%20Bicuda/poultry2_sdmya6.jpg")
+  producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
 
 Product.create(
   name: 'Award-winning free-range pork meat',
@@ -116,6 +143,19 @@ Producer.create(
    status: 'accepted',
    selling_location: "Mercado Biologico do Principe Real"
   )
+
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594231390/Producers%20Photos%20for%20EatLocal/Dunleavy%20Vineyards/vineyard1_b6yh5a.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594231390/Producers%20Photos%20for%20EatLocal/Dunleavy%20Vineyards/vineyard2_bhm115.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594231380/Producers%20Photos%20for%20EatLocal/Dunleavy%20Vineyards/vineyard5_quwgjm.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594231390/Producers%20Photos%20for%20EatLocal/Dunleavy%20Vineyards/vineyard3_tauyvz.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+  banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594231389/Producers%20Photos%20for%20EatLocal/Dunleavy%20Vineyards/vineyard4_jz0k6j.jpg")
+  producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
+
 Product.create(
   name: 'Dunleavy Pinot Noir Rose',
   description: 'Dunleavy pinot noir rose is a multi-award winning Portuguese wine produced in Loures close to Lisbon. It’s light and fruity with a mouthwatering finish.',
@@ -140,13 +180,27 @@ Producer.create(
   phone_number: 945904823,
   address: 'Ponte de Lima, Viana do Castelo, Alto Minho, Nord, 4990-999, Portugal',
   email: 'castanofamily@gmail.com',
-  description: 'Northern Portugal is known for its warm climate wines, and the Castaño family are keen promoters of one of Portugal’s native varieties – Monastrell. Their carefully nurtured Portugeuse vineyards look beautiful and well-looked after, as they practice integrated farming production techniques, together with organic agriculture to produce some of the finest wines. The balmy Portuguese climate is perfect for delivering complex flavours, and the sandy limestone soil nourishes the grape plants with minerals. Of the family’s 600 acres, 80 percent is dedicated to growing Monastrell. It’s every wine connoisseur’s dream to see gorgeous, decades-old Monastrell vines, twined across their Las Gruesas and Pozuelo vineyards, bearing juicy grapes.',
+  description: 'Northern Portugal is known for its warm climate wines, and the Castaño family are keen promoters of one of Portugal’s native varieties – Monastrell. Their carefully nurtured Portuguese vineyards look beautiful and well-looked after, as they practice integrated farming production techniques, together with organic agriculture to produce some of the finest wines. The balmy Portuguese climate is perfect for delivering complex flavours, and the sandy limestone soil nourishes the grape plants with minerals. Of the family’s 600 acres, 80 percent is dedicated to growing Monastrell. It’s every wine connoisseur’s dream to see gorgeous, decades-old Monastrell vines, twined across their Las Gruesas and Pozuelo vineyards, bearing juicy grapes.',
   latitude: 42.12267315,
   longitude: -8.76571655,
   user: user,
   status: 'accepted',
   selling_location: "Mercado Beira-Rio, Mercado do Livramento"
   )
+
+ file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594245398/Producers%20Photos%20for%20EatLocal/Familia%20Castano/cast5_wvjbvj.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594245401/Producers%20Photos%20for%20EatLocal/Familia%20Castano/cast4_grbpiu.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594245400/Producers%20Photos%20for%20EatLocal/Familia%20Castano/cast3_pga6uw.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594245389/Producers%20Photos%20for%20EatLocal/Familia%20Castano/cast1_gtnzt5.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+  banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594245399/Producers%20Photos%20for%20EatLocal/Familia%20Castano/cast2_xynmyj.jpg")
+  producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+
 Product.create(
   name: 'Castano Ecologico Macabeo',
   description: 'One sip of this organic white and you’ll be taken to the warm, sunny climes of Portugal. Imagine drinking this crisp white, while looking over sun-drenched fields and rows of pretty vines – it’ll make you feel warm and fuzzy inside. A lovely feeling, that’s enhanced by the knowledge that this vineyard is forward-thinking in their practice, driven by quality but careful to follow organic agricultural methods. The wine itself is soft and juicy, with a gentle mineral note and a super clean, fresh finish, that makes it an easy drinking dry white.',
@@ -183,7 +237,21 @@ Producer.create(
   user: user,
   status: 'accepted',
   selling_location: "Mercado Biologico do Principe Real"
+
   )
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594245855/Producers%20Photos%20for%20EatLocal/Cobrey%20Farm/cob5_cp3chu.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594245858/Producers%20Photos%20for%20EatLocal/Cobrey%20Farm/cob1_fyuf1x.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594245855/Producers%20Photos%20for%20EatLocal/Cobrey%20Farm/cob3_rphpww.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594245855/Producers%20Photos%20for%20EatLocal/Cobrey%20Farm/cob4_uz0yqv.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+  banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594245855/Producers%20Photos%20for%20EatLocal/Cobrey%20Farm/cob2_bhbxmn.jpg")
+  producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+
 Product.create(
   name: 'Asparagus',
   description: 'There are some fresh vegetables that are simply transformed in flavour and texture by fast, short light supply chains. Local, freshly picked asparagus like this is one such product. With its long green stems and purple tinged tips, asparagus has a unique and subtle intensity of flavour. A delicacy of the vegetable world, much of the time it is simply combined with similarly rich tasting ingredients, pairing particularly well with parmesan or hollandaise sauce.',
@@ -215,6 +283,19 @@ Producer.create(
   status: 'accepted',
   selling_location: "Mercado Biologico do Principe Real"
   )
+
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594230593/Producers%20Photos%20for%20EatLocal/Miel%20La%20Molina/bee5_gityrk.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594230370/Producers%20Photos%20for%20EatLocal/Miel%20La%20Molina/bee3_nfwmwj.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594230370/Producers%20Photos%20for%20EatLocal/Miel%20La%20Molina/bee1_rnpz1k.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594230370/Producers%20Photos%20for%20EatLocal/Miel%20La%20Molina/bee4_yxfxhc.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+  banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594230370/Producers%20Photos%20for%20EatLocal/Miel%20La%20Molina/bee2_evg7ig.jpg")
+  producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
+
 Product.create(
   name: 'Raw Rosemary Honey',
   description: 'Miel La Molina produce and extract their honey naturally from fruit collecting bees, spread over the landscape of the Valle del Guadalhorce, Álora and surroundings. With its sticky texture, honey is a sweet flavoured ingredient widely used in cooking for marinades, dressings and sauces, as well as sweet dishes such as cakes and biscuits. It also makes a natural sweetener in place of sugar.',
@@ -240,6 +321,18 @@ Producer.create(
   status: 'accepted',
   selling_location: "Mercado Biologico do Arroios"
   )
+
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594246163/Producers%20Photos%20for%20EatLocal/Burrow%20Hill%20Cider/bur1_mnmekq.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594246164/Producers%20Photos%20for%20EatLocal/Burrow%20Hill%20Cider/bur2_gowdzf.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594246164/Producers%20Photos%20for%20EatLocal/Burrow%20Hill%20Cider/bur4_aqs0ig.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594246214/Producers%20Photos%20for%20EatLocal/Burrow%20Hill%20Cider/bur5_jfrogh.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+  banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594246164/Producers%20Photos%20for%20EatLocal/Burrow%20Hill%20Cider/bur3_p3no6y.jpg")
+  producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
 
 Product.create(
   name: 'Discovery Apple Juice',
@@ -268,6 +361,7 @@ Producer.create(
   status: 'accepted',
   selling_location: "Mercado Biologico do Arroios"
   )
+
 Product.create(
   name: 'Pumpkin & Spices Jam',
   description: 'Ingredients: Pumpkin, Brown Sugar, and various Spices. Prepared with 70.7g of pumpkin, 29g of sugar and 0.3g of spices per 100g.',
@@ -313,6 +407,8 @@ Producer.create(
   status: 'accepted',
   selling_location: "Mercado Biologico do Arroios"
   )
+
+
 Product.create(
   name: 'Serra Oca Wines',
   description: 'Serra Oca wines are produced from Portuguese grape varieties, with a non-intensive viticulture and without the use of synthetic chemicals.',
@@ -430,6 +526,20 @@ Producer.create(
   status: 'accepted',
   selling_location: "Mercado Biologico do Arroios"
   )
+
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218261/Producers%20Photos%20for%20EatLocal/Queijaria%20Flor%20da%20Beira/amanteigado5a_zpn3sj.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218262/Producers%20Photos%20for%20EatLocal/Queijaria%20Flor%20da%20Beira/pastor_i9fzyp.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218261/Producers%20Photos%20for%20EatLocal/Queijaria%20Flor%20da%20Beira/amanteigado2_cqzxhw.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218261/Producers%20Photos%20for%20EatLocal/Queijaria%20Flor%20da%20Beira/amanteigado5_dmnxsp.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+  banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218261/Producers%20Photos%20for%20EatLocal/Queijaria%20Flor%20da%20Beira/amanteigado1_uj3bes.jpg")
+  producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+
 Product.create(
   name: 'Buttery Ripened cheese',
   description: 'Cheese with a sheep’s typical aroma, ripened in a controlled environment and slightly acidulous taste, presenting in its interior a soft paste with little or no eye, buttery kind with a white ivory colour and a thin straw yellow crust.',
@@ -467,6 +577,20 @@ Producer.create(
   status: 'accepted',
   selling_location: "Mercado Biologico do Arroios"
   )
+
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218262/Producers%20Photos%20for%20EatLocal/Spiracol/s2_lzelvj.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218263/Producers%20Photos%20for%20EatLocal/Spiracol/p5_bu8fs7.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218263/Producers%20Photos%20for%20EatLocal/Spiracol/p7_zacin0.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218262/Producers%20Photos%20for%20EatLocal/Spiracol/p2_f0vaej.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+  banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218262/Producers%20Photos%20for%20EatLocal/Spiracol/s3_hhd664.jpg")
+  producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+
 Product.create(
   name: 'Snails',
   description: 'We focus primarily in the production of snails for commercialization for food industry',
@@ -493,6 +617,18 @@ Producer.create(
   status: 'accepted',
   selling_location: "Mercado Biologico do Arroios"
   )
+
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218259/Producers%20Photos%20for%20EatLocal/Casa%20Anadia%20Olive%20Oils/img-2599_relx4d.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218259/Producers%20Photos%20for%20EatLocal/Casa%20Anadia%20Olive%20Oils/olivais-casa-anadia_l0yqet.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218259/Producers%20Photos%20for%20EatLocal/Casa%20Anadia%20Olive%20Oils/dsc-0340_aodbsd.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218258/Producers%20Photos%20for%20EatLocal/Casa%20Anadia%20Olive%20Oils/azeitonas_aulsps.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+  banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218258/Producers%20Photos%20for%20EatLocal/Casa%20Anadia%20Olive%20Oils/foto3_epktoh.jpg")
+  producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
 
 Product.create(
   name: 'Private Collection Olive Oil',
