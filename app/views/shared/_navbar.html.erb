@@ -46,7 +46,7 @@
         <%= user_avatar_image(current_user) %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <%= link_to "MY PROFILE", profile_path , class: "dropdown-item" %>
-          <%= link_to "MESSAGES", profile_path , class: "dropdown-item" %>
+          <%= link_to "MESSAGES", chatrooms_path , class: "dropdown-item" %>
           <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         </div>
       </li>

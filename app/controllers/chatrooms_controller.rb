@@ -1,7 +1,11 @@
 class ChatroomsController < ApplicationController
   def index
-    @chatrooms = policy_scope(Chatroom)
-    @chatrooms = current_user.chatrooms
+    #@chatrooms = policy_scope(Chatroom)
+    if current_user.producer.present?
+      @chatrooms = policy_scope(Chatroom.where(producer: current_user.producer))
+    else
+      @chatrooms = policy_scope(current_user.chatrooms)
+    end
   end
 
   def show
