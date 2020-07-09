@@ -4,7 +4,7 @@ ActiveAdmin.register Producer do
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
   # Uncomment all parameters which should be permitted for assignment
-  #
+  filter :created_at
   permit_params :name, :phone_number, :address, :email, :description, :status
   #
   # or
