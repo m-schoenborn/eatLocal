@@ -1,7 +1,9 @@
 function refreshStar() {
   let starConstant = '<%= j render partial: "/producers/favorite_star", locals: { producer: @producer } %>';
-  document.getElementById("favorite-star-<%= @producer.id %>").innerHTML = starConstant;
-  console.log(starConstant)
+  const star = document.getElementById("favorite-star-<%= @producer.id %>")
+  const mapStar = document.getElementById("favorite-star-map-<%= @producer.id %>")
+  star.innerHTML = starConstant;
+  mapStar.innerHTML = starConstant;
 }
 
 refreshStar()

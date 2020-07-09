@@ -40,7 +40,14 @@
 
 
 .card_chatroom {
-  background-image: url(https://images.unsplash.com/photo-1560959394-da415281f433?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80)
+  background-image: url(https://images.unsplash.com/photo-1560959394-da415281f433?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80);
+  opacity: 0.7;
+  min-height: 200px;
+
+}
+
+#general_chatroom {
+   min-height: 500px;
 }
 
 
