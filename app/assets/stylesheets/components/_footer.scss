@@ -1,28 +1,43 @@
 .footer {
-    position:fixed;
+    // position:fixed;
     bottom:0;
     flex-shrink: 0;
     width: 100%;
-    padding: 0;
-    background-color: rgba(242,242,240,0.7);
+    padding-top: 10px;
+    background-color: #F1F7EE;
     margin-top: 10px;
     font-size: 10px;
-    height: 100px;
+    height: 85px;
 
 
     a {
       color: $green;
       padding: 0 10px;
-      font-size: 14px;
+      font-size: 18px;
       &:hover {
         color: $green-hover;
         text-decoration: none;
       }
     }
+}
 
-  .social-media {
-    display: flex;
-    justify-content: center;
-    align-content: center;
+.footer-section-contact {
+  .contact-header {
+    letter-spacing: 3px;
+    text-align: center;
+  }
+  p {
+    margin-bottom: 6px;
+  }
+}
+
+.footer-section-social-media {
+  .social-media-header {
+  letter-spacing: 3px;
+  text-align: center;
+  padding-top: 10px
+  }
+  .social-media-links {
+    padding-top: 13px;
   }
 }

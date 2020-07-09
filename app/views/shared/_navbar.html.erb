@@ -22,15 +22,15 @@
       <li class="nav-item">
         <%= link_to "ARTICLES", articles_path, class: "nav-link nav-topic" %>
       </li>
-      <% if user_signed_in? %>
-      <% if current_user.producer.blank? %>
-      <li class="nav-item">
-        <%= link_to "BECOME A PRODUCER", new_producer_path, class: "nav-link nav-topic" %>
-      </li>
+      <% unless user_signed_in? && current_user.producer.present? %>
+        <li class="nav-item">
+          <%= link_to "BECOME A PRODUCER", new_producer_path, class: "nav-link nav-topic" %>
+        </li>
       <% end %>
-      <li class="nav-item navbar-menu"><%= link_to "MY PROFILE", profile_path , class: "nav-link nav-topic" %></li>
-      <li class="nav-item navbar-menu"><%= link_to "MESSAGES", chatrooms_path , class: "nav-link nav-topic" %></li>
-      <li class="nav-item navbar-menu"><%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "nav-link nav-topic" %></li>
+      <% if user_signed_in? %>
+        <li class="nav-item navbar-menu"><%= link_to "MY PROFILE", profile_path , class: "nav-link nav-topic" %></li>
+        <li class="nav-item navbar-menu"><%= link_to "MESSAGES", chatrooms_path , class: "nav-link nav-topic" %></li>
+        <li class="nav-item navbar-menu"><%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "nav-link nav-topic" %></li>
       <% if current_user.role == 'admin' %>
       <li class="nav-item">
         <%= link_to "Admin", admin_dashboard_path, class: "nav-link nav-topic" %>
