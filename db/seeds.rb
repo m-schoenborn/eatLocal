@@ -98,7 +98,8 @@ user = User.create( email: "bla@bla.com", password: "123456")
   latitude: 38.72240025,
   longitude: -9.39690917,
   user: user,
-  status: 'accepted'
+  status: 'accepted',
+  selling_location: "Mercado Biologico do Principe Real"
   )
   file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594231044/Producers%20Photos%20for%20EatLocal/Quinta%20da%20Bicuda/poultry_3_knttlh.jpg")
   producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
@@ -139,7 +140,8 @@ Producer.create(
   latitude: 38.8308741,
   longitude: -9.1684512,
    user: user,
-   status: 'accepted'
+   status: 'accepted',
+   selling_location: "Mercado Biologico do Principe Real"
   )
 
   file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594231390/Producers%20Photos%20for%20EatLocal/Dunleavy%20Vineyards/vineyard1_b6yh5a.jpg")
@@ -182,7 +184,8 @@ Producer.create(
   latitude: 42.12267315,
   longitude: -8.76571655,
   user: user,
-  status: 'accepted'
+  status: 'accepted',
+  selling_location: "Mercado Beira-Rio, Mercado do Livramento"
   )
 
  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594245398/Producers%20Photos%20for%20EatLocal/Familia%20Castano/cast5_wvjbvj.jpg")
@@ -232,7 +235,9 @@ Producer.create(
   latitude: 41.3406144,
   longitude: -8.68709311,
   user: user,
-  status: 'accepted'
+  status: 'accepted',
+  selling_location: "Mercado Biologico do Principe Real"
+
   )
   file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594245855/Producers%20Photos%20for%20EatLocal/Cobrey%20Farm/cob5_cp3chu.jpg")
   producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
@@ -275,7 +280,8 @@ Producer.create(
   latitude: 38.4436932,
   longitude: -9.10766602,
   user: user,
-  status: 'accepted'
+  status: 'accepted',
+  selling_location: "Mercado Biologico do Principe Real"
   )
 
   file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594230593/Producers%20Photos%20for%20EatLocal/Miel%20La%20Molina/bee5_gityrk.jpg")
@@ -312,7 +318,8 @@ Producer.create(
   latitude: 40.3723735,
   longitude: -8.2780296,
   user: user,
-  status: 'accepted'
+  status: 'accepted',
+  selling_location: "Mercado Biologico do Arroios"
   )
 
   file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594246163/Producers%20Photos%20for%20EatLocal/Burrow%20Hill%20Cider/bur1_mnmekq.jpg")
@@ -351,7 +358,8 @@ Producer.create(
   latitude: 38.718542,
   longitude: -8.750787,
   user: user,
-  status: 'accepted'
+  status: 'accepted',
+  selling_location: "Mercado Biologico do Arroios"
   )
 
 Product.create(
@@ -396,7 +404,8 @@ Producer.create(
   latitude: 39.2406945,
   longitude: -9.0866073,
   user: user,
-  status: 'accepted'
+  status: 'accepted',
+  selling_location: "Mercado Biologico do Arroios"
   )
 
 
@@ -423,7 +432,8 @@ Producer.create(
   latitude: 39.316331,
   longitude: -8.917514,
   user: user,
-  status: 'accepted'
+  status: 'accepted',
+  selling_location: "Mercado Biologico do Arroios"
   )
 Product.create(
   name: 'Flour & Pork sausage',
@@ -471,7 +481,8 @@ producer = Producer.create(
   latitude: 40.273371,
   longitude: -8.151597,
   user: user,
-  status: 'accepted'
+  status: 'accepted',
+  selling_location: "Mercado Biologico do Arroios"
   )
   file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218264/Producers%20Photos%20for%20EatLocal/Vumba%20Organic%20Farm/c71b00_d16c265e4e66410693c4c774414801ac_mv2_d_1600_1200_s_2_vblj5w.webp")
   producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
@@ -512,7 +523,8 @@ Producer.create(
   latitude: 40.425709,
   longitude: -8.022512,
   user: user,
-  status: 'accepted'
+  status: 'accepted',
+  selling_location: "Mercado Biologico do Arroios"
   )
 
   file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218261/Producers%20Photos%20for%20EatLocal/Queijaria%20Flor%20da%20Beira/amanteigado5a_zpn3sj.jpg")
@@ -562,7 +574,8 @@ Producer.create(
   latitude: 40.963127,
   longitude: -8.421260,
   user: user,
-  status: 'accepted'
+  status: 'accepted',
+  selling_location: "Mercado Biologico do Arroios"
   )
 
   file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218262/Producers%20Photos%20for%20EatLocal/Spiracol/s2_lzelvj.jpg")
@@ -601,7 +614,8 @@ Producer.create(
   latitude: 39.483291,
   longitude: -8.171802,
   user: user,
-  status: 'accepted'
+  status: 'accepted',
+  selling_location: "Mercado Biologico do Arroios"
   )
 
   file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218259/Producers%20Photos%20for%20EatLocal/Casa%20Anadia%20Olive%20Oils/img-2599_relx4d.jpg")
@@ -651,7 +665,8 @@ Producer.create(
   latitude: 39.283583726688704,
   longitude: -8.510584821794609,
   user: user,
-  status: 'accepted'
+  status: 'accepted',
+  selling_location: "Mercado Biologico do Arroios"
   )
 Product.create(
   name: 'Exotic Mushrooms',
@@ -675,7 +690,8 @@ Producer.create(
   latitude: 39.252941,
   longitude: -8.547074,
   user: user,
-  status: 'accepted'
+  status: 'accepted',
+  selling_location: "Mercado Biologico do Arroios"
    )
 Product.create(
   name: 'Blueberries',
@@ -700,7 +716,8 @@ Producer.create(
   latitude: 38.74000562683715,
   longitude: -7.815030812780606,
   user: user,
-  status: 'accepted'
+  status: 'accepted',
+  selling_location: "Mercado Biologico do Arroios"
   )
 
 Product.create(
@@ -726,7 +743,8 @@ Producer.create(
   latitude: 40.175872,
   longitude: -7.492009,
   user: user,
-  status: 'accepted'
+  status: 'accepted',
+  selling_location: "Mercado Biologico do Arroios"
   )
 Product.create(
   name: 'Ready to Cut Selction Ham',

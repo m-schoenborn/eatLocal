@@ -66,17 +66,29 @@
         </li>
       </ul>
     </div>
-        <p class="card-text border-0 mb-1 ml-2"><small class="text-muted">My customers</small></p>
-        <div class="card mr-2 ml-2 mb-2">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">GO TO MY MESSAGES
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
-              </svg>
-            </li>
-          </ul>
-        </div>
-  </div>
+      <p class="card-text border-0 mb-1 ml-2"><small class="text-muted">My customers</small></p>
+      <div class="card mr-2 ml-2 mb-2">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><%= link_to "GO TO MY MESSAGES", chatrooms_path %>
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+            </svg>
+          </li>
+        </ul>
+      </div>
+      <p class="card-text border-0 mb-1 ml-2"><small class="text-muted">My user profile</small></p>
+      <div class="card mr-2 ml-2 mb-2">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><%= link_to "GO BACK TO USER PROFILE", profile_path %>
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+              <path fill-rule="evenodd" d="M8.354 11.354a.5.5 0 0 0 0-.708L5.707 8l2.647-2.646a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708 0z"/>
+              <path fill-rule="evenodd" d="M11.5 8a.5.5 0 0 0-.5-.5H6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5z"/>
+            </svg>
+          </li>
+        </ul>
+      </div>
+    </div>
 </div>
 
 

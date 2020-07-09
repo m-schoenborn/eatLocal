@@ -6,14 +6,20 @@
   <div class="producer-container col-12 col-lg-6">
     <div class="searchbar mb-3">
       <h6>LOOKING FOR A SPECIFIC PRODUCT?</h6>
-      <%= form_tag producers_path, method: :get, class: "search-bar" do %>
-       <%= text_field_tag :query_product,
-        params[:query_product],
-        class: "form-control",
-        placeholder: "Find a specific product"
-        %>
-        <%= submit_tag "Search", class: "btn-green" %>
-    <% end %>
+      <div class="d-flex justify-content-between">
+      <div class="search">
+        <%= form_tag producers_path, method: :get, class: "search-bar" do %>
+         <%= text_field_tag :query_product,
+          params[:query_product],
+          class: "form-control",
+          placeholder: "Find a specific product"
+          %>
+        </div>
+        <div class="submit">
+          <%= submit_tag "Search", class: "btn-green", id: "product-search" %>
+        </div>
+      <% end %>
+     </div>
     </div>
 
     <div id="search-results">
