@@ -5,6 +5,7 @@ ActiveAdmin.register Producer do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
+  filter :created_at
   permit_params :name, :phone_number, :address, :email, :description, :status
   #
   # or

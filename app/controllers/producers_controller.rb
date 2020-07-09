@@ -81,9 +81,9 @@ class ProducersController < ApplicationController
     @producer.user.role = "producer"
     @producer.user.save
     if @producer.save
-      ProducerMailer.with(producer: @producer).acceptance_email.deliver_now
+      # ProducerMailer.with(producer: @producer).acceptance_email.deliver_now
       redirect_to admin_dashboard_path
-      flash[:notice] = 'Mail sent successful'
+      # flash[:notice] = 'Mail sent successful'
     else
       redirect_to admin_dashboard_path
       flash[:notice] = 'Mail not sent. Please try again'
