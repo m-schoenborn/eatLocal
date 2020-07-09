@@ -31,6 +31,7 @@ resources :producers do
   resources :comments, only: [:new, :create, :destroy]
   resources :products, only: [:new, :create]
   resources :producer_news, only: [:new, :create]
+  resources :comments, only: [:new, :create]
   member do
     get :accept
     get :decline

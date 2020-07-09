@@ -97,7 +97,7 @@
     </div>
     <div class="card-container d-flex justify-content-center">
 
-      <div class="card p-2" style="width: 21rem;">
+      <div class="card p-2" style="width: 28rem;">
 
         <div class="news card-product-infos p-2 flex-column">
           <div class="text-center">
@@ -122,7 +122,7 @@
             <div class="carousel-item mr-0 <%= 'active' if i == 0 %>">
               <div class="card-container d-flex justify-content-center mb-3">
 
-                <div class="card-product p-1 mr-1" style="width: 21rem;">
+                <div class="card-product p-1 mr-1" style="width: 28rem;">
 
                   <div class="news card-product-infos flex-column text-center">
                     <h6 class="d-flex justify-content-center"><%= news.title %></h6>
@@ -147,6 +147,13 @@
         </div>
       </div>
   <% end %>
+
+<!--   LEAVE A COMMENT SECTION -->
+
+    <h4 class="text-center">WHAT HAVE CUSTOMERS SAID ABOUT <%= @producer.name.upcase%>?</h4>
+    <div class="card p-2 mb-3 mt-2">
+      <button class="btn-green">Leave a comment</button>
+    </div>
 
     <div class="card info border-0 bg-transparent">
       <div class="card-body ml-3 mr-3">
