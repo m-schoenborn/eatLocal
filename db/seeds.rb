@@ -112,7 +112,7 @@ user.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
 
 Product.create(
   name: 'Award-winning free-range pork meat',
-  producer: Producer.find_by(name: 'Quinta da Bicuda')
+  producer: Producer.find_by(name: 'Quinta da Bicuda',
   )
 
 ProductTag.create(
