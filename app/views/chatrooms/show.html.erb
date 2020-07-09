@@ -9,7 +9,7 @@
         <div class="card-body" style="background-color: #DFD8CB">
            <div class="card_chatroom">
         <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-          <% @chatroom.messages.each do |message| %>
+          <% @chatroom.messages.order('created_at ASC').each do |message| %>
             <%= render 'messages/message', message: message %>
           <% end %>
         </div>
