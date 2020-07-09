@@ -1,5 +1,6 @@
 class ProducersController < ApplicationController
-  # http://localhost:3000/producers?query=&lat=&lng=&commit=SEARCH
+  skip_before_action :authenticate_user!, only: [ :index, :show]
+
   def index
     @producers = policy_scope(Producer)
     if params[:lat].present? && params[:lng].present?
