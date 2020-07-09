@@ -436,6 +436,7 @@ ProductTag.create(
   product: Product.find_by(name: 'Rock Pear with Moscatel Wine Jam'),
   tag: Tag.find_by(name: 'Jam')
   )
+
 product = Product.create(
   name: 'Marmalade With Coconut Sugar',
   description: 'Ingredients: Quince, Coconut Sugar, Lemon Zest and Cinnamon Stick. Prepared with 80 g of fruit and 20 g of sugar per 100g.',
