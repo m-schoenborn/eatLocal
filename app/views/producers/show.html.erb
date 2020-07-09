@@ -42,7 +42,7 @@
   </div>
 
  <div id="carouselExampleControls<%= @producer.id %>" class="carousel slide" data-interval="false">
-    <div class="carousel-inner">
+    <div class="carousel-inner mb-3">
       <div class="carousel-item active">
         <% if @producer.photos.attached? %>
           <%= cl_image_tag @producer.photos.first.key, class: "d-block w-100" %>

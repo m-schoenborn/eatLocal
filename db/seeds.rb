@@ -116,7 +116,7 @@ user = User.create( email: "bla@bla.com", password: "123456")
 
 Product.create(
   name: 'Award-winning free-range pork meat',
-  producer: Producer.find_by(name: 'Quinta da Bicuda')
+  producer: Producer.find_by(name: 'Quinta da Bicuda',
   )
 
 ProductTag.create(
