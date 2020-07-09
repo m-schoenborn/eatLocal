@@ -68,11 +68,6 @@ Tag.create(
   )
 
 
-
-
-
-
-
  # file = URI.open("")
  #  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
  #  file = URI.open("")
@@ -82,13 +77,14 @@ Tag.create(
  #  file = URI.open("")
  #  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
 
+
  #  banner_file = URI.open("")
  #  producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
 
 
-
-
 user = User.create( email: "bla@bla.com", password: "123456")
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594230034/Producers%20Photos%20for%20EatLocal/Profile%20pictures/man_prof5_ath58a.jpg")
+user.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
 
   producer = Producer.create(
   name: 'Quinta da Bicuda',
@@ -98,7 +94,7 @@ user = User.create( email: "bla@bla.com", password: "123456")
   description: 'Based in Cascais, Rob and Alec Mercer have established a high welfare free-range pork and poultry farm with a simple philosophy of what’s good for the animals and the land will naturally be good for all those that eat the meat. It’s this simple philosophy that has enabled Quinta da Bicuda to rear and produce the most succulent, richly flavoured meat. All of the meat from Quinta da Bicuda is free-range and RSPCA assured. It is also Red Tractor Farm Assured. Quinta da Bicuda are multi award winning. Just in the last few years they have scooped a Compassion In World Farming Good Pig award in 2012, multiple Great Taste Awards over the years including a star for their pork in 2014 and a LEAF (Linking Environment and Farming) award.',
   latitude: 38.72240025,
   longitude: -9.39690917,
-  user: user,
+  user_id: user.id,
   status: 'accepted',
   selling_location: "Mercado Biologico do Principe Real"
   )
@@ -131,8 +127,10 @@ ProducerNews.create(
   )
 
 user = User.create( email: "bla25@bla.com", password: "123456")
+file = URI.open('https://res.cloudinary.com/agon91/image/upload/v1594309280/Producers%20Photos%20for%20EatLocal/Profile%20pictures/profs9_u3rekz.jpg')
+user.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
 
-Producer.create(
+producer = Producer.create(
   name: 'Dunleavy Vineyards',
   phone_number: 94589032,
   address: 'Rua Primeiro de Maio, 2660-186 Loures, Portugal',
@@ -140,7 +138,7 @@ Producer.create(
   description: 'Combining passion, sustainable agricultural practices and the latest grape growing techniques, Dunleavy Vineyards produce fantastic rosé wine using their Pinot noir and Seyval grapes. Located in the heart of a beautiful Vale just outside Loures, Dunleavy Vineyards were first planted in 2008 by owner and manager Ingrid Bates. One of the youngest vineyard owners in Portugal, Ingrid began her viticultural career over 10 years ago when she took up a job maintaining a local vineyard. Having found her true vocation she planned and saved for her own vineyard which was planted just a few weeks before the birth of her first child. A few years down the line, and after much hard work, Dunleavy Vineyards released its first wine in 2013. The wine sold out in three days. The subsequent Pinot noir releases have proved to be just as popular winning ‘Best Local Wine’ at the Bristol Good Food Awards two years in a row, a bronze at the International Wine Challenge and countless smaller awards to boot.',
   latitude: 38.8308741,
   longitude: -9.1684512,
-   user: user,
+   user_id: user.id,
    status: 'accepted',
    selling_location: "Mercado Biologico do Principe Real"
   )
@@ -175,8 +173,10 @@ ProducerNews.create(
   )
 
 user = User.create( email: "bla2@bla.com", password: "123456")
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594230034/Producers%20Photos%20for%20EatLocal/Profile%20pictures/man_prof2_anr8v5.jpg")
+user.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
 
-Producer.create(
+producer = Producer.create(
   name: 'Familia Castano',
   phone_number: 945904823,
   address: 'Ponte de Lima, Viana do Castelo, Alto Minho, Nord, 4990-999, Portugal',
@@ -184,7 +184,7 @@ Producer.create(
   description: 'Northern Portugal is known for its warm climate wines, and the Castaño family are keen promoters of one of Portugal’s native varieties – Monastrell. Their carefully nurtured Portuguese vineyards look beautiful and well-looked after, as they practice integrated farming production techniques, together with organic agriculture to produce some of the finest wines. The balmy Portuguese climate is perfect for delivering complex flavours, and the sandy limestone soil nourishes the grape plants with minerals. Of the family’s 600 acres, 80 percent is dedicated to growing Monastrell. It’s every wine connoisseur’s dream to see gorgeous, decades-old Monastrell vines, twined across their Las Gruesas and Pozuelo vineyards, bearing juicy grapes.',
   latitude: 42.12267315,
   longitude: -8.76571655,
-  user: user,
+  user_id: user.id,
   status: 'accepted',
   selling_location: "Mercado Beira-Rio, Mercado do Livramento"
   )
@@ -226,8 +226,10 @@ ProducerNews.create(
   )
 
 user = User.create( email: "bla3@bla.com", password: "123456")
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594230034/Producers%20Photos%20for%20EatLocal/Profile%20pictures/girl_profile_xugrax.jpg")
+user.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
 
-Producer.create(
+producer = Producer.create(
   name: 'Cobrey Farm',
   phone_number: 93759923,
   address: 'Vila do Conde, Porto, Área Metropolitana do Porto, Nord, Portugal',
@@ -235,7 +237,7 @@ Producer.create(
   description: 'Cobrey Farm is home to Wye Valley Produce. The farm is owned by the Chinn family, fourth-generation farmers that have been growing asparagus since 2003. The perfect conditions of the Wye Valley with the south-facing slopes and sandy soil, enables produce to grow early in the spring. They have invested strongly in research in order to develop new crops and new growing techniques. The harvest is picked by hand during two periods; March to July, and September to October. Within 30 minutes the asparagus are hydro-cooled down to 2°C for packing. The result is the freshest and sweetest asparagus possible unless you grow it yourself and pick straight from the plant. Fancy a visit? They host regular visits from school children and are members of the Open Farm Sunday Scheme.',
   latitude: 41.3406144,
   longitude: -8.68709311,
-  user: user,
+  user_id: user.id,
   status: 'accepted',
   selling_location: "Mercado Biologico do Principe Real"
 
@@ -271,8 +273,10 @@ ProducerNews.create(
   )
 
 user = User.create( email: "bla4@bla.com", password: "123456")
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594230033/Producers%20Photos%20for%20EatLocal/Profile%20pictures/man_prof6_vmkxsj.jpg")
+user.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
 
-Producer.create(
+producer = Producer.create(
   name: 'Miel la Molina',
   phone_number: 93759929,
   address: 'Sesimbra, Setúbal, Lisbon, 2970, Portugal',
@@ -280,7 +284,7 @@ Producer.create(
   description: 'Using natural extraction methods Miel La Molina produce some really unusual honeys with bees living amongst fields full of thyme, orange blossom, rosemary and eucolyptus. The result? A range of honeys so beautifully aromatic quite unlike anything on the Portugal mass market. All of the bees for each honey are based in a single region of the beautiful region of Sesimbra a couple of hours north of Lisbon. We asked Salva to explain how such exceptional honeys can be produced and delivered to Portugal at such a competitive price. We ship the honey in the same shipment as our fresh produce each week so we can basically ship it without delivery cost. This means we can enjoy the honey here at pretty much the same price as it sells in the valley where it is produced.',
   latitude: 38.4436932,
   longitude: -9.10766602,
-  user: user,
+  user_id: user.id,
   status: 'accepted',
   selling_location: "Mercado Biologico do Principe Real"
   )
@@ -309,8 +313,10 @@ ProductTag.create(
   )
 
 user = User.create( email: "bla5@bla.com", password: "123456")
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594302346/Producers%20Photos%20for%20EatLocal/Profile%20pictures/profs_khnnej.jpg")
+user.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
 
-Producer.create(
+producer = Producer.create(
   name: 'Burrow Hill Cider',
   phone_number: 5739402,
   address: 'Lourinha, Marmeleira, Mortágua, Viseu, Viseu Dão-Lafões, Mitte, Portugal',
@@ -318,7 +324,7 @@ Producer.create(
   description: 'Julian Temperley and Tim Stoddart have over 50 years cider-making experience between them. At Burrow Hill, it is obvious that apples are the principal starting point for their cider with more than 40 varieties being grown such as Brown Snout, Stoke Red, Harry Masters and the legendary Kingston Black. Visiting the farm (which is a must-do day out), you feel like you’ve stepped into a vintage world of cider. We asked Julian to tell us what makes Burrow Hill cider so special.‘Our policy of growing apples is to use the minimum of sprays possible, often not spraying at all. We use no artificial nitrogen and no insecticides. This means we produce smaller and tastier apples than those grown in orchards for industrial cider and we protect the bees at the same time. In fermenting and making cider we use traditional methods, fermenting juice in the autumn without first turning it into concentrate. We grow standard rather than intensive bush orchards and traditional, old varieties that produce unreliable crops and are therefore unviable for industrial cider production but known for their unique qualities and superior tastes.’',
   latitude: 40.3723735,
   longitude: -8.2780296,
-  user: user,
+  user_id: user.id,
   status: 'accepted',
   selling_location: "Mercado Biologico do Arroios"
   )
@@ -347,8 +353,10 @@ ProductTag.create(
   )
 
 user = User.create( email: "bla6@bla.com", password: "123456")
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594303465/Producers%20Photos%20for%20EatLocal/Profile%20pictures/profs3_g2znqr.jpg")
+user.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
 
-Producer.create(
+producer = Producer.create(
   name: 'Alquimia dos Sabores',
   phone_number: 936050601,
   address: 'Rua Augusto Barba Santa, CCI - 23304, 2965 - 291 Poceirão, Palmela',
@@ -358,10 +366,22 @@ Producer.create(
   The project Alquimia dos Sabores is the result of a special relationship with nature and its motivation to always produce “products with love” is due to the fact that this project reflects the lifestyle of this Portuguese family and its traditions.',
   latitude: 38.718542,
   longitude: -8.750787,
-  user: user,
+  user_id: user.id,
   status: 'accepted',
   selling_location: "Mercado Biologico do Arroios"
   )
+
+ file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594303264/Producers%20Photos%20for%20EatLocal/Alquimia%20dos%20Sabores/alq2_c8hnje.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594303254/Producers%20Photos%20for%20EatLocal/Alquimia%20dos%20Sabores/alq5_ua8mmr.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594303256/Producers%20Photos%20for%20EatLocal/Alquimia%20dos%20Sabores/alq4_kqr09q.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594303261/Producers%20Photos%20for%20EatLocal/Alquimia%20dos%20Sabores/alq3_ddyvrs.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+  banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594303268/Producers%20Photos%20for%20EatLocal/Alquimia%20dos%20Sabores/alq1_pofzre.jpg")
+  producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
 
 Product.create(
   name: 'Pumpkin & Spices Jam',
@@ -394,8 +414,10 @@ ProductTag.create(
   )
 
 user = User.create( email: "bla7@bla.com", password: "123456")
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594307434/Producers%20Photos%20for%20EatLocal/Profile%20pictures/profs8_ci6ci5.jpg")
+user.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
 
-Producer.create(
+producer = Producer.create(
   name: 'Quinta do Olival da Murta',
   phone_number: 916471885,
   address: 'Quinta do Olival da Murta , 2550-451 Cadaval - Portugal',
@@ -404,10 +426,25 @@ Producer.create(
   As is typical of these rural areas, around the main grape and wine production, a wide variety of complementary activities have emerged over time that, in an organic way, integrate a diverse unit rich in traditional histories and knowledge. A story that teaches us again to respect nature and to value the use of environmentally sustainable production methods.',
   latitude: 39.2406945,
   longitude: -9.0866073,
-  user: user,
+  user_id: user.id,
   status: 'accepted',
   selling_location: "Mercado Biologico do Arroios"
   )
+
+
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594304526/Producers%20Photos%20for%20EatLocal/Quinta%20do%20Olival%20da%20Murta/ol2_c86ktl.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594304531/Producers%20Photos%20for%20EatLocal/Quinta%20do%20Olival%20da%20Murta/ol1_ww446f.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594304518/Producers%20Photos%20for%20EatLocal/Quinta%20do%20Olival%20da%20Murta/olv4_es7mf5.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594304651/Producers%20Photos%20for%20EatLocal/Quinta%20do%20Olival%20da%20Murta/olv6_ic0dm4.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+  banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594304522/Producers%20Photos%20for%20EatLocal/Quinta%20do%20Olival%20da%20Murta/ol3_lyhnfn.jpg")
+  producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+
 
 
 Product.create(
@@ -422,9 +459,11 @@ ProductTag.create(
   )
 
 user = User.create( email: "bla8@bla.com", password: "123456")
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594305642/Producers%20Photos%20for%20EatLocal/Profile%20pictures/profs4_lm0nfo.jpg")
+user.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
 
 
-Producer.create(
+producer = Producer.create(
   name: 'Mestre Henriques',
   phone_number: 243992404,
   address: 'Henricarnes, Lda. Zona Industrial de Rio Maior, 2040-357 Rio Maior - Portugal',
@@ -432,10 +471,21 @@ Producer.create(
   description: 'Mestre Henriques is a family company established in 1978. Dedicated to the production of fine smoked sausages, manufactured according to the rich and authentic Portuguese traditions, strictly following the highest quality standards and satisfying the most demanding tastes.',
   latitude: 39.316331,
   longitude: -8.917514,
-  user: user,
+  user_id: user.id,
   status: 'accepted',
   selling_location: "Mercado Biologico do Arroios"
   )
+
+ file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594305387/Producers%20Photos%20for%20EatLocal/Mestre%20Henriques/mes3_wib4so.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594305322/Producers%20Photos%20for%20EatLocal/Mestre%20Henriques/mes4_oj2lv9.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594305324/Producers%20Photos%20for%20EatLocal/Mestre%20Henriques/mes2_sku924.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+  banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594305328/Producers%20Photos%20for%20EatLocal/Mestre%20Henriques/mes1_s40cbx.jpg")
+  producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
+
 Product.create(
   name: 'Flour & Pork sausage',
   description: 'Pork Meat and Fat, Corn and Wheat Flour, Red Capsicum Paste, Salt, Spices (Paprika, Piri-piri Sauce, Cloves, Garlic).',
@@ -470,9 +520,11 @@ ProductTag.create(
   )
 
 user = User.create( email: "bla9@bla.com", password: "123456")
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594306447/Producers%20Photos%20for%20EatLocal/Profile%20pictures/profs5_izrn1u.jpg")
+user.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
 
 
-producer = Producer.create(
+producer = producer = Producer.create(
   name: 'Vumba Organic Farm',
   phone_number: 914093739,
   address: 'Rua da Teixugueira, 3300-367 São Martinho da Cortiça',
@@ -481,13 +533,19 @@ producer = Producer.create(
   sustained development of our neighborhood. Vumba’s products are manually processed and most of the raw materials are from our own farm. We take care of our land with much pride and a high respect for both flora and fauna. As result of these practices, Vumba’s farm has a license for organic farming attributed by Sativa.',
   latitude: 40.273371,
   longitude: -8.151597,
-  user: user,
+  user_id: user.id,
   status: 'accepted',
   selling_location: "Mercado Biologico do Arroios"
   )
-  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218264/Producers%20Photos%20for%20EatLocal/Vumba%20Organic%20Farm/c71b00_d16c265e4e66410693c4c774414801ac_mv2_d_1600_1200_s_2_vblj5w.webp")
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594305986/Producers%20Photos%20for%20EatLocal/Vumba%20Organic%20Farm/vum4_sxdwiz.jpg")
   producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
-  banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218265/Producers%20Photos%20for%20EatLocal/Vumba%20Organic%20Farm/c71b00_fd03b82c73a84ef898721ed2cb866cec_mv2_d_1536_2308_s_2_s3hzjv.webp")
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594305990/Producers%20Photos%20for%20EatLocal/Vumba%20Organic%20Farm/vum3_vq3tuq.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594305994/Producers%20Photos%20for%20EatLocal/Vumba%20Organic%20Farm/vum2_rhbsct.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594305983/Producers%20Photos%20for%20EatLocal/Vumba%20Organic%20Farm/vum5_etqndv.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594305998/Producers%20Photos%20for%20EatLocal/Vumba%20Organic%20Farm/vum1_pap5we.jpg")
   producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
 
 Product.create(
@@ -513,8 +571,10 @@ ProductTag.create(
   )
 
 user = User.create( email: "bla10@bla.com", password: "123456")
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594230034/Producers%20Photos%20for%20EatLocal/Profile%20pictures/woman_prof1_yjl6m3.jpg")
+user.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
 
-Producer.create(
+producer = Producer.create(
   name: 'Queijaria Flor da Beira',
   phone_number: 232960220,
   address: 'Parque Industrial, Lote 5, 3430-132 Carregal do Sal, PORTUGAL',
@@ -523,7 +583,7 @@ Producer.create(
   Durante séculos, a elaboração do queijo tem-se modiﬁcado e reﬁnado. A elaboração de queijos manteve-se uma actividade artesanal até à aplicação das bases cientíﬁcas, com início no começo de século XX, permitindo às fabricas produzi-los em grande escala.',
   latitude: 40.425709,
   longitude: -8.022512,
-  user: user,
+  user_id: user.id,
   status: 'accepted',
   selling_location: "Mercado Biologico do Arroios"
   )
@@ -565,8 +625,10 @@ ProductTag.create(
   )
 
 user = User.create( email: "bla11@bla.com", password: "123456")
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594230034/Producers%20Photos%20for%20EatLocal/Profile%20pictures/man_prof_wadeiz.jpg")
+user.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
 
-Producer.create(
+producer = Producer.create(
   name: 'Spiracol',
   phone_number: 917395604,
   address: 'Estrada M509, Nº000, 4540-378 Fermedo',
@@ -574,7 +636,7 @@ Producer.create(
   description: 'Spiracol is a young and dynamic company in Arouca, Portugal. It has been actively working in the heliciculture sector since 2015. The companys activity is diverse, exploring all the stages of snails cycle, from breeding to commercialization.',
   latitude: 40.963127,
   longitude: -8.421260,
-  user: user,
+  user_id: user.id,
   status: 'accepted',
   selling_location: "Mercado Biologico do Arroios"
   )
@@ -604,8 +666,10 @@ ProductTag.create(
   )
 
 user = User.create( email: "bla12@bla.com", password: "123456")
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594307218/Producers%20Photos%20for%20EatLocal/Profile%20pictures/profs6_ldnllh.jpg")
+user.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
 
-Producer.create(
+producer = Producer.create(
   name: 'Casa Anadia Olive Oils',
   phone_number: 932951119,
   address: 'Quinta do Bom Sucesso, 2200-484 Alferrarede, Abrantes',
@@ -614,7 +678,7 @@ Producer.create(
   Casa Anadia olive oils are the result of three different terroirs in Alferrarede, with clay, chalky and shale soils to the north. The result is single olive oil lots, a perfect alchemy of varieties and the corresponding soil.',
   latitude: 39.483291,
   longitude: -8.171802,
-  user: user,
+  user_id: user.id,
   status: 'accepted',
   selling_location: "Mercado Biologico do Arroios"
   )
@@ -654,8 +718,10 @@ ProductTag.create(
   )
 
 user = User.create( email: "bla20@bla.com", password: "123456")
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594306756/Producers%20Photos%20for%20EatLocal/Profile%20pictures/profs7_mgdx3j.jpg")
+user.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
 
-Producer.create(
+producer = Producer.create(
   name: 'Hipólito - Tudo o Que a Terra Dá',
   phone_number: 249106007,
   address: 'Rua da Caniceira, nº105-A, 2140-416, Vale de Cavalos, Chamusca, Santarém',
@@ -665,10 +731,24 @@ Producer.create(
   Meet our products and delight in your own home, a wonderful walk through the forest!!! ',
   latitude: 39.283583726688704,
   longitude: -8.510584821794609,
-  user: user,
+  user_id: user.id,
   status: 'accepted',
   selling_location: "Mercado Biologico do Arroios"
   )
+
+ file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594247042/Producers%20Photos%20for%20EatLocal/Hip%C3%B3lito/hip4_x2ug1q.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594247040/Producers%20Photos%20for%20EatLocal/Hip%C3%B3lito/hip2_jhb6cd.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594247040/Producers%20Photos%20for%20EatLocal/Hip%C3%B3lito/hip5_jpxwlm.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594247040/Producers%20Photos%20for%20EatLocal/Hip%C3%B3lito/hip1_ohbied.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+  banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594247041/Producers%20Photos%20for%20EatLocal/Hip%C3%B3lito/hip3_zbhopt.jpg")
+  producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+
 Product.create(
   name: 'Exotic Mushrooms',
   description: 'Mushrooms from all over the world can be found here.',
@@ -681,8 +761,10 @@ ProductTag.create(
   )
 
 user = User.create( email: "bla13@bla.com", password: "123456")
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594230034/Producers%20Photos%20for%20EatLocal/Profile%20pictures/girl_prof2_ebcute.jpg")
+user.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
 
-Producer.create(
+producer = Producer.create(
   name: 'Visionagro',
   phone_number: 925377129,
   address: 'Estr. Rural A7 nº 22, 2090-066 Alpiarça',
@@ -690,10 +772,22 @@ Producer.create(
   description: 'VISIONAGRO LDA, has been founded in 2017 by 2 agricultural enthusiasts. This region is the most intensive agricultural region in Portugal with abundance of high quality ground water, acid and sandy soils. Region is well developed to support farming companies and has abundance of human resources to support blueberry business.',
   latitude: 39.252941,
   longitude: -8.547074,
-  user: user,
+  user_id: user.id,
   status: 'accepted',
   selling_location: "Mercado Biologico do Arroios"
    )
+
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218264/Producers%20Photos%20for%20EatLocal/Visionagro/%D0%B8%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_viber_2020-06-29_19-59-14-2-400x267_kuea02.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218264/Producers%20Photos%20for%20EatLocal/Visionagro/%D0%B8%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_viber_2020-06-29_19-59-14-1-400x267_nzdraj.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218264/Producers%20Photos%20for%20EatLocal/Visionagro/%D0%B8%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_viber_2020-06-29_19-59-13-400x267_hdkgdc.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+  banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594218264/Producers%20Photos%20for%20EatLocal/Visionagro/%D0%B8%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_viber_2020-06-29_19-59-12-1200x800_z162p5.jpg")
+  producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+
 Product.create(
   name: 'Blueberries',
   description: 'Blueberries remain one of the most nutricious, antioxidant-rich types of fruit in the world and have been shown to do everything from enhance brain health to keep your heart strong.',
@@ -706,8 +800,10 @@ ProductTag.create(
   )
 
 user = User.create( email: "bla14@bla.com", password: "123456")
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594230034/Producers%20Photos%20for%20EatLocal/Profile%20pictures/man_prof3_cfj9i3.jpg")
+user.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
 
-Producer.create(
+producer = Producer.create(
   name: 'Pepe Aromas',
   phone_number: 963453763,
   address: 'Quinta de São Miguel, 7005-127 Azaruja - PORTUGAL',
@@ -716,25 +812,37 @@ Producer.create(
   We produce and market prickly pears - Opuntia ficus-indica, also known as the prickly pear, Indian fig or Barbary fig, among other names - and its by-products. Our growth strategy is based on the continuous improvement of production and harvesting processes as well as research and the quest for new uses and sources of potential for the fruit and by-products. Committed to diversification and sustainability, we aim to create a citrus orchard and harness the potential of our cork- and holm-oak montado/dehesa for the  production of acorns.',
   latitude: 38.74000562683715,
   longitude: -7.815030812780606,
-  user: user,
+  user_id: user.id,
   status: 'accepted',
   selling_location: "Mercado Biologico do Arroios"
   )
 
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594297108/Producers%20Photos%20for%20EatLocal/Pepe%20Aromas/pepe3_dcrbpo.webp")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594297108/Producers%20Photos%20for%20EatLocal/Pepe%20Aromas/pepe2_rvw5wn.webp")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594297108/Producers%20Photos%20for%20EatLocal/Pepe%20Aromas/pepe4_m8kcpc.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+  banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594297108/Producers%20Photos%20for%20EatLocal/Pepe%20Aromas/pepe1_wosslj.jpg")
+  producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
+
 Product.create(
-  name: 'Lime trees',
-  description: 'Limes are round with a thin peel and a green or yellowish hue. The pulp of fruit is translucent and the flavour acidic. They have similar culinary and medicinal uses.',
+  name: 'Prickly Pears',
+  description: 'Cactus and their fruits are a large part of Mexican cuisine. The wide, flat cactus pads ("nopales") are used in many Mexican main dishes such as salads, eggs and as a filling for other dishes. The cactus fruit, sometimes called a "Prickly Pears" are very sweet and can be eaten raw, right off of the plant. Depending on the level of ripeness, they can range from slightly sweet to syrupy sweet.',
   producer: Producer.find_by(name: 'Pepe Aromas')
   )
 
 ProductTag.create(
-   product: Product.find_by(name: 'Lime trees'),
+   product: Product.find_by(name: 'Prickly Pears'),
    tag: Tag.find_by(name: 'Fruit')
   )
 
 user = User.create( email: "bla15@bla.com", password: "123456")
+file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594230034/Producers%20Photos%20for%20EatLocal/Profile%20pictures/man_prof7_rrmp4y.jpg")
+user.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
 
-Producer.create(
+producer = Producer.create(
   name: 'Fumeiro da Gardunha',
   phone_number: 217750680,
   address: 'Zona Industrial do Fundão, lot 106-108',
@@ -743,22 +851,39 @@ Producer.create(
   The factory is located in Beira Baixa, facing the Serra da Estrela, and maintains the tradition and familiar knowledge in making the regions sausages and hams. It uses current technologies for its production and an FSSC22000 certified management system.',
   latitude: 40.175872,
   longitude: -7.492009,
-  user: user,
+  user_id: user.id,
   status: 'accepted',
   selling_location: "Mercado Biologico do Arroios"
   )
-Product.create(
+
+ file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594247686/Producers%20Photos%20for%20EatLocal/Fumeiro%20da%20Gardunha/fum2_vddqt2.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594247685/Producers%20Photos%20for%20EatLocal/Fumeiro%20da%20Gardunha/fum3_n4vqid.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+  file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594247685/Producers%20Photos%20for%20EatLocal/Fumeiro%20da%20Gardunha/fum4_ljkvwa.jpg")
+  producer.photos.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+  banner_file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594247686/Producers%20Photos%20for%20EatLocal/Fumeiro%20da%20Gardunha/fum1_y0wz8u.jpg")
+  producer.banner.attach(io: banner_file, filename: 'producer.jpg', content_type: 'image/jpg')
+
+ product = Product.create(
   name: 'Ready to Cut Selction Ham',
   description: '1 Whole Ham Curing 12 months',
   producer: Producer.find_by(name: 'Fumeiro da Gardunha')
   )
+ # file = URI.open("")
+ # product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
 
 ProductTag.create(
    product: Product.find_by(name: 'Ready to Cut Selction Ham'),
    tag: Tag.find_by(name: 'Meat')
   )
 
+p "product photos"
+
+
 puts 'finish creating products seeds'
+
 
 
 

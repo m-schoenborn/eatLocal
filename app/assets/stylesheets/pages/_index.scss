@@ -10,7 +10,9 @@
 // @import "internal_error";
 
 
-
+.yield-content {
+  min-height: 95vh;
+}
 
 .producers.index {
   margin-top: 80px;
@@ -28,8 +30,4 @@
   margin-top: 80px;
 }
 
-.pages.home {
-  .footer {
-    position: fixed;
-  }
-}
+
