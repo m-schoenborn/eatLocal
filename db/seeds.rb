@@ -426,11 +426,12 @@ product = Product.create(
   name: 'Rock Pear with Moscatel Wine Jam',
   description: 'Ingredients: Rock Pear, Sugar and “Moscatel” Wine. Prepared with 62g of pear, 34g of sugar and 4g of ‘’Moscatel’’ per 100g.',
   producer: Producer.find_by(name: 'Alquimia dos Sabores')
+)
 
 file = URI.open("https://res.cloudinary.com/agon91/image/upload/v1594312243/Producers%20Photos%20for%20EatLocal/Alquimia%20dos%20Sabores/Products/yulia-khlebnikova-o_O75f28GiA-unsplash_tm9wtr.jpg")
 product.photo.attach(io: file, filename: 'producer.jpg', content_type: 'image/jpg')
 
-  )
+
 ProductTag.create(
   product: Product.find_by(name: 'Rock Pear with Moscatel Wine Jam'),
   tag: Tag.find_by(name: 'Jam')
