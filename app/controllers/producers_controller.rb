@@ -78,6 +78,8 @@ class ProducersController < ApplicationController
     @producer = Producer.find(params[:id])
     authorize @producer
     @producer.status = 'accepted'
+    @producer.user.role = "producer"
+    @producer.user.save
     if @producer.save
       ProducerMailer.with(producer: @producer).acceptance_email.deliver_now
       redirect_to admin_dashboard_path
