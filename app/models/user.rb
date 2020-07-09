@@ -9,7 +9,6 @@ class User < ApplicationRecord
   has_many :favorites
   has_many :chatrooms
   has_many :messsages, through: :chatrooms
-  has_many :comments, dependent: :destroy
 
   validates :role, inclusion: { in: %w(customer producer admin) }
 
