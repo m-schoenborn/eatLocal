@@ -42,7 +42,7 @@
   </div>
 
  <div id="carouselExampleControls<%= @producer.id %>" class="carousel slide" data-interval="false">
-    <div class="carousel-inner">
+    <div class="carousel-inner mb-3">
       <div class="carousel-item active">
         <% if @producer.photos.attached? %>
           <%= cl_image_tag @producer.photos.first.key, class: "d-block w-100" %>
@@ -181,7 +181,7 @@
           <li class="list-group-item border-0"><i class="fas fa-map-marked-alt"></i> <%= @producer.address %></li>
         <br>
 
-        <%= link_to 'Contact', create_chat_chatrooms_path(producer_id: @producer.id), class: "btn-green btn-main d-flex justify-content-around mt-0" %>
+        <%= link_to 'CONTACT', create_chat_chatrooms_path(producer_id: @producer.id), class: "btn-green d-flex justify-content-around mt-0" %>
 
       </div>
     </div>
