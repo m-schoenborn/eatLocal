@@ -3,30 +3,30 @@
      <%= render "map" %>
   </div>
 
-  <div class="producer-container col-12 col-lg-6">
-    <div class="searchbar mb-3">
-      <h6>LOOKING FOR A SPECIFIC PRODUCT?</h6>
-      <div class="d-flex justify-content-between">
-      <div class="search">
-        <%= form_tag producers_path, method: :get, class: "search-bar" do %>
+  <div class="d-block">
+    <div class="producer-search-bar-container col-12 col-lg-6">
+      <div class="product-search-bar-title">
+        <h6>LOOKING FOR A SPECIFIC PRODUCT?</h6>
+      </div>
+      <div class="mb-2">
+        <%= form_tag producers_path, method: :get, class: "product-search-bar" do %>
          <%= text_field_tag :query_product,
           params[:query_product],
           class: "form-control",
           placeholder: "Find a specific product"
           %>
-        </div>
-        <div class="submit">
-          <%= submit_tag "Search", class: "btn-green", id: "product-search" %>
-        </div>
+          <%= submit_tag "SEARCH", class: "btn-green", id: "product-search" %>
       <% end %>
-     </div>
+      </div>
     </div>
 
-    <div id="search-results">
-      <%= render "search_results", producers: @producers %>
+
+      <div id="search-results">
+        <%= render "search_results", producers: @producers %>
+      </div>
+     </div>
     </div>
-   </div>
-</div>
+  </div>
 
 
 <button type="button" class="d-lg-none d-md-none" id="map-button" data-toggle="modal" data-target="#mapModal">

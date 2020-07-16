@@ -53,7 +53,8 @@
       <% if @producer.photos.attached? %>
         <% @producer.photos.drop(1).each do |photo| %>
           <div class="carousel-item">
-            <%= cl_image_tag photo.key, class: "d-block w-100" %>
+            <%= cl_image_tag photo.key, class: "d-block w-100",transformation: [
+          { height: 300}] %>
           </div>
         <% end %>
       <% else %>
@@ -92,7 +93,7 @@
               <div class="card-product-infos">
                 <div>
                   <h4 class="product-name mb-1"><%= product.name%></h4>
-                  <p><%= product.description%></p>
+                  <p class="text-left"><%= product.description%></p>
                 </div>
               </div>
             </div>
@@ -181,7 +182,7 @@
           <li class="list-group-item border-0"><i class="fas fa-map-marked-alt"></i> <%= @producer.address %></li>
         <br>
 
-        <%= link_to 'Contact', create_chat_chatrooms_path(producer_id: @producer.id), class: "btn-green btn-main d-flex justify-content-around mt-0" %>
+        <%= link_to 'CONTACT', create_chat_chatrooms_path(producer_id: @producer.id), class: "btn-green d-flex justify-content-around mt-0" %>
 
       </div>
     </div>

@@ -8,9 +8,10 @@
   position: fixed;
   bottom: 30px;
   right: 30px;
-  height: 60px;
-  width: 60px;
+  height: 9vh;
+  width: 9vh;
   border-radius: 50%;
+  background-color: $light-gray;
 }
 
 .specific-info {
@@ -44,9 +45,9 @@
   letter-spacing: 4;
 }
 
-.info a {
-  color: $green-hover;
-}
+// .info a {
+//   color: $green-hover;
+// }
 
 .badge-light {
   position: absolute;

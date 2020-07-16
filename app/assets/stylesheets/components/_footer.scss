@@ -3,10 +3,10 @@
     bottom:0;
     flex-shrink: 0;
     width: 100%;
-    padding-top: 10px;
+    padding-top: 16px;
     background-color: #F1F7EE;
     font-size: 10px;
-    height: 85px;
+    height: 70px;
 
 
     a {
@@ -21,22 +21,13 @@
 }
 
 .footer-section-contact {
-  .contact-header {
-    letter-spacing: 3px;
-    text-align: center;
-  }
   p {
     margin-bottom: 6px;
   }
 }
 
 .footer-section-social-media {
-  .social-media-header {
-  letter-spacing: 3px;
-  text-align: center;
-  padding-top: 10px
-  }
   .social-media-links {
-    padding-top: 13px;
+    padding-top: 7px;
   }
 }
